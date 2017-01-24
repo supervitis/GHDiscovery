@@ -1,0 +1,1712 @@
+,author,date,activity,text,files,n_files,insertions,deletions,pat_code,pat_doc,pat_test,pat_build,text_code,text_doc,text_test,text_build,subjectivity,polarity
+8816caf26c0acc7067cd5bad9c03cfb54e54979,alex@louden.com,Thu Jan 5 16:49:02 2017 +0800,Docs,"    Docs: Correct typo in issue template
+","[' .github/ISSUE_TEMPLATE.md | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,1,0,0,0,0
+10ac0e532a9376106c50f0c21a0d0fd0483b700,m.goleb@gmail.com,Fri Dec 30 12:17:00 2016 +0100,Build,"    Build: Drop support for building on Node.js 0.12
+    
+    Node.js 0.12 is no longer supported by upstream. So far we had to keep
+    a workaround that would skip running ESLint there (or even load its task)
+    as it no longer supports Node.js <4; the same applied to Node smoke tests
+    as jsdom has also dropped support for those old Node versions. Those
+    workarounds have been removed now.
+    
+    Ref 030191ae32dfcb7ecb2efb61d17a4964a3633e44
+    Closes gh-3478
+","[' .travis.yml  |  1 -\n', ' Gruntfile.js | 39 +++++++++++----------------------------\n', ' 2 files changed, 11 insertions(+), 29 deletions(-)\n']",2.0,11.0,29.0,2,3,0,3,0,0,1,2,0,0
+d9145fa15d91ab6c804161ecd892d4d08b71aa2,broder93@gmail.com,Sat Dec 24 10:33:27 2016 +0000,Tests,"    Tests: Added tests for symbol-separated tag names
+    
+    Fixes gh-2006
+    Closes gh-3473
+","[' test/unit/core.js | 27 ++++++++++++++++++---------\n', ' 1 file changed, 18 insertions(+), 9 deletions(-)\n']",1.0,18.0,9.0,1,2,0,2,0,0,2,0,0,0
+cb4cd71ef018854f75646270bacd4c4d3da9cde,richard.gibson@gmail.com,Mon Dec 19 11:58:48 2016 -0500,Build,"    Build: Use valid ecmaVersion
+    
+    Fixes Node smoke tests
+    
+    Ref gh-3385
+    Closes gh-3460
+","[' test/node_smoke_tests/.eslintrc.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,1,0,0
+754e315f8a7760bcdc162712d2be7fee058fdc2,m.goleb@gmail.com,Wed Nov 30 15:32:29 2016 +0100,Build,"    Build: Add most of the dist folder to .eslintignore
+    
+    This way `eslint .` run from the terminal will work regardless of ignored
+    files present in the repository.
+    
+    Closes gh-3385
+","[' .eslintignore | 2 ++\n', ' 1 file changed, 2 insertions(+)\n']",1.0,2.0,0,0,2,0,2,0,0,0,1,0,0
+3e0a560723762036b7a2a9d5c99b7b3681cbbc6,m.goleb@gmail.com,Mon Nov 7 18:20:46 2016 +0100,Build,"    Build: Drop jscs.json from .npmignore
+    
+    The file doesn't exist anymore.
+","[' .npmignore | 1 -\n', ' 1 file changed, 1 deletion(-)\n']",1.0,1.0,0,0,2,0,2,0,0,0,1,0,0
+bc8638c38bccd4ac7b787ac4d79de4bf2b6a0a0,m.goleb@gmail.com,Thu Nov 3 00:51:34 2016 +0100,Build,"    Build: ESLint setup improvements
+    
+    1. Use the short name of the preset in the config.
+    2. Run ESLint first on non-minified files.
+    3. Explicitly specify environments in every config file (those settings cascade
+    which means we've been assuming a Node.js environment where we shouldn't have).
+","[' .eslintrc-browser.json                      | 31 +++++++++++++++++++++++++++++\n', ' .eslintrc-node.json                         | 13 ++++++++++++\n', ' .eslintrc.json                              |  6 ++----\n', ' Gruntfile.js                                | 13 ++++++++++--\n', ' dist/.eslintrc.json                         |  5 ++++-\n', ' src/.eslintrc.json                          | 19 +++---------------\n', ' test/.eslintrc.json                         | 20 +++++++++++--------\n', ' test/node_smoke_tests/.eslintrc.json        | 12 ++++++++---\n', ' test/promises_aplus_adapters/.eslintrc.json |  5 +++--\n', ' 9 files changed, 88 insertions(+), 36 deletions(-)\n']",9.0,88.0,36.0,9,10,0,10,0,0,0,1,0,0
+e50967725e61a5d71c2792131de61dec0520f9c,m.goleb@gmail.com,Sun Dec 4 01:16:36 2016 +0100,Build,"    Build: Make the @CODE-replacing regex more robust
+    
+    The code replacing @CODE in wrapper.js was written so that it expected
+    both the code and the next line to start in the first column. This commit
+    adjusts the regex so to get rid of that assumption and to work properly
+    regardless of number of lines with comments after this block.
+    
+    While this is technically not necessary for our code, contributors sometimes
+    re-format the wrapper file in their pull requests and the error
+    messages they get don't tell them what's the real problem with their code.
+    
+    Closes gh-3429
+","[' build/tasks/build.js | 6 +++++-\n', ' 1 file changed, 5 insertions(+), 1 deletion(-)\n']",1.0,5.0,1.0,1,2,0,2,6,0,0,1,0,0
+fbab88110725c6e0b89f6513b9f7cff50320e1e,4timmywil@gmail.com,Mon Nov 28 11:11:30 2016 -0500,Build,"    Build: jQuery Foundation -> JS Foundation
+    
+    Close gh-3414
+","[' CONTRIBUTING.md | 4 ++--\n', ' Gruntfile.js    | 2 +-\n', ' LICENSE.txt     | 2 +-\n', ' package.json    | 2 +-\n', ' src/wrapper.js  | 2 +-\n', ' 5 files changed, 6 insertions(+), 6 deletions(-)\n']",5.0,6.0,6.0,5,6,0,6,0,0,0,1,0,0
+b9575b9d14399e9426b9eacdd92b3717846c3f2,nithmanoj@gmail.com,Sun Aug 14 10:54:16 2016 +0000,Core,"    Core: Deprecate jQuery.isArray
+    
+    Fixes gh-2961
+    Closes gh-3278
+","[' src/attributes/val.js   | 4 ++--\n', ' src/core.js             | 6 ++----\n', ' src/css.js              | 2 +-\n', ' src/data/Data.js        | 2 +-\n', ' src/deprecated.js       | 1 +\n', ' src/effects.js          | 2 +-\n', ' src/queue.js            | 2 +-\n', ' src/serialize.js        | 6 +++---\n', ' test/data/testinit.js   | 2 +-\n', ' test/data/testrunner.js | 2 +-\n', ' test/unit/core.js       | 4 ++--\n', ' test/unit/deprecated.js | 6 ++++++\n', ' test/unit/queue.js      | 2 +-\n', ' 13 files changed, 23 insertions(+), 18 deletions(-)\n']",13.0,23.0,18.0,13,14,2,14,0,0,0,0,0,0
+b4cb0d33731a58384e02ad51e703e7dcb00e424,m.goleb@gmail.com,Mon Oct 31 18:38:35 2016 +0100,Build,"    Build: Stop testing on Node.js 0.10
+    
+    Node.js 0.10 loses upstream support today (see https://github.com/nodejs/LTS/)
+    so let's stop testing against it as well.
+","[' .travis.yml  | 1 -\n', ' Gruntfile.js | 4 ++--\n', ' 2 files changed, 2 insertions(+), 3 deletions(-)\n']",2.0,2.0,3.0,2,3,0,3,0,0,2,1,0,0
+edc1aa690cceb8396a10fb7dfbb4efe5f5ce26b,m.goleb@gmail.com,Fri Oct 21 20:55:21 2016 +0200,Docs,"    Docs: Remove supported jQuery versions from ISSUE_TEMPLATE.md
+    
+    We no longer support jQuery 1.x/2.x and mentioning 3.x would just mean the text
+    gets out of date once we release jQuery 4. We only really support the latest
+    jQuery version so let's make that clear.
+    
+    Closes gh-3372
+","[' .github/ISSUE_TEMPLATE.md | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,1,0,0,0,0
+bb62bb3ae771fc57cc62ee14bd10d94680efb4f,m.goleb@gmail.com,Wed Oct 26 12:08:14 2016 +0200,Build,"    Build: Run tests on Node.js 7
+","[' .travis.yml | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,1,1,0,0
+18ca7bfe0f5e3184bf1ed55daf1668702c5577a,4timmywil@gmail.com,Thu Sep 22 18:32:55 2016 -0400,Build,"    Build: Updating the master version to 3.1.2-pre.
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+1c29dc1fecc675054762fb1f50a0cdd6b1f0df0,4timmywil@gmail.com,Thu Sep 22 17:55:01 2016 -0400,Release,"    Release: fix quotes for releasing on Windows
+","[' build/release/dist.js | 7 ++++---\n', ' 1 file changed, 4 insertions(+), 3 deletions(-)\n']",1.0,4.0,3.0,1,2,0,2,0,0,0,0,0,0
+c16f1185493f94d20a9132621abc8106d614d58,4timmywil@gmail.com,Thu Sep 22 16:12:14 2016 -0400,Release,"    Release: add email to .mailmap, update AUTHORS
+    
+    - Not sure how that got there. I did check the privacy box at one point,
+    but can't find any commits with that email
+","[' .mailmap    | 1 +\n', ' AUTHORS.txt | 2 +-\n', ' 2 files changed, 2 insertions(+), 1 deletion(-)\n']",2.0,2.0,1.0,2,3,0,3,0,0,0,0,0,0
+cb8a1b3ebf53007637c12c376e3101681f57c02,maochenyan@gmail.com,Sun Aug 21 10:43:22 2016 +1000,Core,"    Core: remove precautionary variable `readyFiring`
+    
+    Close gh-3284
+","[' src/core/ready-no-deferred.js | 14 ++++----------\n', ' 1 file changed, 4 insertions(+), 10 deletions(-)\n']",1.0,4.0,10.0,1,2,0,2,0,0,0,0,0,0
+7f1da6b91a86ef3f54f4cf16dd87f5afd33c835,dave.methvin@gmail.com,Sun Sep 18 22:07:34 2016 -0400,Build,"    Build: Make sourcemap updates in two .replace() passes
+    
+    Fixes gh-3260
+    Closes gh-3321
+","[' build/release/cdn.js | 9 +++++----\n', ' 1 file changed, 5 insertions(+), 4 deletions(-)\n']",1.0,5.0,4.0,1,2,0,2,0,0,0,1,0,0
+23ed99f4a7e6259daf90af9bce849d1400b11d6,m.goleb@gmail.com,Mon Sep 19 18:55:12 2016 +0200,Tests,"    Tests: Add test results for Safari 10/iOS 10, remove for Safari 8
+","[' test/unit/support.js | 21 ++-------------------\n', ' 1 file changed, 2 insertions(+), 19 deletions(-)\n']",1.0,2.0,19.0,1,2,0,2,0,0,2,0,0,0
+5d09b90ca39876d1d9cc29508cfd56e7e3c350e,richard.gibson@gmail.com,Thu Sep 15 22:42:34 2016 -0400,Core,"    Core: Compress stripAndCollapse
+    
+    Close gh-3318
+","[' src/core/stripAndCollapse.js | 12 +++++++-----\n', ' 1 file changed, 7 insertions(+), 5 deletions(-)\n']",1.0,7.0,5.0,1,2,0,2,0,0,0,0,0,0
+bbcce68d7b8b8a7a2164a0f7a280ae9daf70b5c,4timmywil@gmail.com,Mon Sep 12 12:32:02 2016 -0400,Core,"    Core: rnotwhite -> rhtmlnotwhite and jQuery.trim -> stripAndCollapse
+    
+    - Renames and changes rnotwhite to focus on HTML whitespace chars
+    - Change internal use of jQuery.trim to more accurate strip and collapse
+    - Adds tests to ensure HTML space characters are retained where valid
+    - Doesn't add tests where the difference is inconsequential and
+      existing tests are adequate.
+    
+    Fixes gh-3003
+    Fixes gh-3072
+    Close gh-3316
+","[' src/ajax.js                  |  8 +++----\n', ' src/ajax/load.js             |  5 +++--\n', ' src/attributes/attr.js       |  9 +++++---\n', ' src/attributes/classes.js    | 29 +++++++++++--------------\n', ' src/attributes/val.js        |  8 +++----\n', ' src/callbacks.js             |  6 +++---\n', ' src/core/stripAndCollapse.js | 12 +++++++++++\n', ' src/data/Data.js             |  6 +++---\n', ' src/effects.js               |  6 +++---\n', ' src/event.js                 |  8 +++----\n', ' src/var/rnothtmlwhite.js     |  8 +++++++\n', ' src/var/rnotwhite.js         |  5 -----\n', ' test/data/test3.html         |  1 +\n', ' test/unit/ajax.js            | 11 ++++++++++\n', ' test/unit/attributes.js      | 50 +++++++++++++++++++++++++++++++++++++++++---\n', ' 15 files changed, 121 insertions(+), 51 deletions(-)\n']",15.0,121.0,51.0,14,16,1,16,0,0,3,0,0,0
+d4f53416e5f74fa98e0c1d66b6f3c285a12f0ce,m.goleb@gmail.com,Mon Sep 12 19:27:56 2016 +0200,Build,"    Build: Update promises-aplus-tests for compat with Node 7
+    
+    The older promises-aplus-tests was relying on old Mocha that, in turn,
+    used an obsolete graceful-fs version that is not guaranteed to work fine
+    with the upcoming Node 7 and later.
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,2,1,0,0
+f5f5433d5ba8bcc1644c8bbb3c1038f97d454bf,m.goleb@gmail.com,Mon Sep 12 18:36:48 2016 +0200,Tests,"    Tests: Disable a whitespace-setting test in Edge 14
+    
+    Working around this problem would require us to skip setting whitespace-only
+    values except when they're valid which would be very fragile. Another option
+    would be to set the value and see if it succeeded and then react to that.
+    
+    We've tried something like that in the past to be able to overwrite !important
+    styles (see 24e5879) but it broke the CSS cascade (see
+    https://bugs.jquery.com/ticket/14836#comment:5) and was triggering
+    MutationObserver callbacks too often so it was reverted in PR gh-1532.
+    
+    Ref gh-3204
+    Ref gh-1532
+","[' test/unit/css.js | 11 ++++++++++-\n', ' 1 file changed, 10 insertions(+), 1 deletion(-)\n']",1.0,10.0,1.0,1,2,0,2,0,0,2,0,0,0
+2e24471c89b80e6208b4987bb76994e64c1e489,4timmywil@gmail.com,Mon Aug 15 11:41:11 2016 -0400,Core,"    Core: expose noConflict in AMD mode
+    
+    - For compability reasons, we had already added the global
+      in AMD mode, but without noConflict. This adds back noConflict
+      to AMD (which fixes noConflict mode in the tests).
+    
+    Fixes gh-2930
+","[' build/tasks/build.js  |  6 +-----\n', ' src/exports/global.js | 12 ++++++------\n', ' src/jquery.js         |  5 +++--\n', ' test/data/testinit.js |  4 +---\n', ' test/unit/core.js     | 29 +++++++++++++----------------\n', ' 5 files changed, 24 insertions(+), 32 deletions(-)\n']",5.0,24.0,32.0,5,6,1,6,0,0,1,0,0,0
+ca2aa2254e805612d12bca457afefa920d0af5c,richard.gibson@gmail.com,Mon Aug 8 14:05:43 2016 -0400,Build,"    Build: Update Sizzle to 2.3.3
+    
+    Fixes gh-3263
+","[' external/sizzle/dist/sizzle.js      | 4 ++--\n', ' external/sizzle/dist/sizzle.min.js  | 4 ++--\n', ' external/sizzle/dist/sizzle.min.map | 2 +-\n', ' package.json                        | 2 +-\n', ' 4 files changed, 6 insertions(+), 6 deletions(-)\n']",4.0,6.0,6.0,4,5,0,5,0,0,0,1,0,0
+160523d30e8f05c1a84592dfaa20eb2f0333708,richard.gibson@gmail.com,Mon Aug 8 12:35:26 2016 -0400,Build,"    Build: Update Sizzle to 2.3.2
+","[' external/sizzle/dist/sizzle.js     | 2 +-\n', ' external/sizzle/dist/sizzle.min.js | 2 +-\n', ' package.json                       | 2 +-\n', ' 3 files changed, 3 insertions(+), 3 deletions(-)\n']",3.0,3.0,3.0,3,4,0,4,0,0,0,1,0,0
+526557e677abd237f8b299108b454a8532e7d5a,richard.gibson@gmail.com,Mon Aug 8 11:59:14 2016 -0400,Build,"    Build: Update Sizzle to 2.3.1
+    
+    Fixes gh-3224
+","[' external/sizzle/dist/sizzle.js      | 119 ++++++++++++++++++++++++++----------\n', ' external/sizzle/dist/sizzle.min.js  |   4 +-\n', ' external/sizzle/dist/sizzle.min.map |   2 +-\n', ' package.json                        |   2 +-\n', ' 4 files changed, 91 insertions(+), 36 deletions(-)\n']",4.0,91.0,36.0,4,5,0,5,0,0,0,1,0,0
+acf4a79467a5aea5bc1eb7d552d72366718635d,markelog@gmail.com,Fri Jul 29 22:18:58 2016 +0300,Build,"    Build: .eslintrc -> .eslintrc.json
+    
+    `.eslintrc` format is deprecated -
+    http://eslint.org/docs/user-guide/configuring#configuration-file-formats
+    
+    Fixes gh-3248
+    Closes gh-3247
+","[' .eslintrc => .eslintrc.json                         | 0\n', ' dist/{.eslintrc => .eslintrc.json}                  | 2 +-\n', ' src/{.eslintrc => .eslintrc.json}                   | 0\n', ' src/core.js                                         | 2 +-\n', ' test/{.eslintrc => .eslintrc.json}                  | 0\n', ' test/node_smoke_tests/{.eslintrc => .eslintrc.json} | 2 +-\n', ' test/promises_aplus_adapters/.eslintrc              | 4 ----\n', ' test/promises_aplus_adapters/.eslintrc.json         | 4 ++++\n', ' 8 files changed, 7 insertions(+), 7 deletions(-)\n']",8.0,7.0,7.0,7,9,0,9,0,1,0,1,0,0
+08e4b534b8b8bddff85b6327481d0cee6f70a2a,markelog@gmail.com,Tue Jul 26 02:53:57 2016 +0300,Build,"    Build: Simplify Gruntfile constructions
+    
+    Fixes gh-3246
+","[' .gitignore     |  4 ++--\n', ' .npmignore     |  2 +-\n', ' Gruntfile.js   | 60 ++++++++++++++++++++++++++++++++++------------------------\n', ' dist/.eslintrc |  2 +-\n', ' package.json   |  4 ++--\n', ' 5 files changed, 41 insertions(+), 31 deletions(-)\n']",5.0,41.0,31.0,3,6,0,6,0,0,0,1,0,0
+c90be9c0422a670e4d0a4501b1a865f61f6943b,timmywil@users.noreply.github.com,Tue Aug 2 12:04:21 2016 -0400,Build,"    Build: add new email to mailmap
+","[' .mailmap | 5 +++--\n', ' 1 file changed, 3 insertions(+), 2 deletions(-)\n']",1.0,3.0,2.0,1,2,0,2,0,0,0,1,0,0
+df7a43681ca0ba517b155fd5d748921660dfcd2,m.goleb@gmail.com,Tue Jul 26 01:22:53 2016 +0200,Build,"    Build: Don't lint every file in dist/ (#3245)
+    
+    Currently the ""all"" target for the eslint task includes way more than
+    the ""dev"" & ""dist"" targets combined and those 2 tasks are the one run in
+    `npm test`.
+","[' Gruntfile.js | 7 ++++---\n', ' 1 file changed, 4 insertions(+), 3 deletions(-)\n']",1.0,4.0,3.0,1,2,0,2,0,0,1,1,0,0
+4a2e036d0de3a0b382af3379c99d23e9ac7c390,all3fox@gmail.com,Thu Jun 16 11:42:26 2016 +0200,Build,"    Build: use commitplease via husky, prohibit #NNNN github-style tickets
+    
+    Closes gh-3176
+","[' package.json | 10 +++++++---\n', ' 1 file changed, 7 insertions(+), 3 deletions(-)\n']",1.0,7.0,3.0,1,2,0,2,0,0,0,1,0,0
+4fd41f8fa4190fbbb6cb98cf7ace64f6e00685d,markelog@gmail.com,Fri Jul 15 21:42:25 2016 +0400,Build,"    Build: Update eslint config and fix associated errors
+","[' .eslintrc                    |  4 ----\n', ' dist/.eslintrc               |  1 +\n', ' package.json                 |  2 +-\n', ' src/attributes/prop.js       | 17 ++++++++++++-----\n', ' src/attributes/val.js        | 26 +++++++++++++++-----------\n', ' src/core.js                  | 11 ++++++-----\n', ' src/core/access.js           | 15 +++++++++------\n', ' src/css.js                   | 16 +++++++++-------\n', ' src/data.js                  | 34 ++++++++++++++++++++++++++--------\n', ' src/effects.js               | 11 ++++++++---\n', ' src/event.js                 | 14 +++++++++++++-\n', ' src/manipulation/getAll.js   | 26 +++++++++++++++++---------\n', ' src/serialize.js             | 18 +++++++++++-------\n', ' src/traversing/findFilter.js | 12 +++++++-----\n', ' test/.eslintrc               |  1 -\n', ' 15 files changed, 135 insertions(+), 73 deletions(-)\n']",15.0,135.0,73.0,12,16,0,16,0,0,0,1,0,0
+6966c022079e3956018717136367fbf4ed548a2,m.goleb@gmail.com,Mon Jul 11 19:22:48 2016 +0200,Build,"    Build: Upgrade ESLint to 3.x again
+    
+    ESLint is now skipped in Node older than 4.x so we're safe.
+    
+    Refs gh-3222
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+30191ae32dfcb7ecb2efb61d17a4964a3633e44,m.goleb@gmail.com,Mon Jul 11 19:21:57 2016 +0200,Build,"    Build: Skip running ESLint on Node.js 0.x
+    
+    ESLint 3.0 drops support for Node.js older than 4.x. To be able to update
+    to this version and yet not block our contributors from building jQuery
+    on older Node.js (at least until it's supported by upstream) this commit
+    makes ESLint skipped on older Node; a proper message is displayed then.
+    
+    Fixes gh-3222
+","[' Gruntfile.js | 48 +++++++++++++++++++++++++++++++++++-------------\n', ' 1 file changed, 35 insertions(+), 13 deletions(-)\n']",1.0,35.0,13.0,1,2,0,2,0,0,0,2,0,0
+e605afb1fb85dddf0e2b3563f5dee26cd77623e,m.goleb@gmail.com,Wed Jul 13 10:49:13 2016 +0200,Build,"    Build: Fix the regex removing the ESLint comment from wrapper.js
+    
+    The new regex from after the switch from JSHint to ESLint wasn't catching
+    the ESLint pragma correctly.
+    
+    Also, the spacing of the pragma comment was updated to match other comments.
+","[' build/tasks/build.js | 2 +-\n', ' src/wrapper.js       | 2 +-\n', ' 2 files changed, 2 insertions(+), 2 deletions(-)\n']",2.0,2.0,2.0,2,3,0,3,0,0,0,1,0,0
+2c5e2908c2d99f191f5ec9e365ef2a3d357d1eb,markelog@gmail.com,Sat Jul 9 02:05:15 2016 +0300,Build,"    Build: Don't use ESLint 3.x
+    
+    Since it is not supported by older node versions :/
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+22f546d9607022a312cc30f8699c5282469f9a1,markelog@gmail.com,Sat Jul 9 00:46:58 2016 +0300,Build,"    Build: More ESLint related changes
+","[' .eslintrc                 | 4 ++++\n', ' dist/.eslintrc            | 1 +\n', ' package.json              | 2 +-\n', ' src/attributes/prop.js    | 8 ++++++++\n', ' src/css/showHide.js       | 2 +-\n', ' test/unit/core.js         | 1 -\n', ' test/unit/manipulation.js | 2 +-\n', ' 7 files changed, 16 insertions(+), 4 deletions(-)\n']",7.0,16.0,4.0,5,8,0,8,0,0,0,1,0,0
+3f706200c6101df137469ba2e0d965e93508991,timmywillisn@gmail.com,Thu Jul 7 17:46:08 2016 -0400,Build,"    Build: Updating the master version to 3.1.1-pre.
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+0bf85631de22a83649aa937ed5281aa99c8c37a,timmywillisn@gmail.com,Thu Jul 7 17:29:24 2016 -0400,Build,"    Build: ignore cdn and slim files when linting
+","[' .eslintignore | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,0,2,0,2,0,0,0,1,0,0
+7d502f5b4e0bde536c7fb04d27cbb1a593e5644,timmywillisn@gmail.com,Thu Jul 7 15:46:40 2016 -0400,Build,"    Build: Updating the master version to 3.1.0-pre.
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+d6a94c3f1747829082b85fd53ee2efbae879707,m.goleb@gmail.com,Wed Jun 29 14:19:04 2016 +0200,Core,"    Core: Re-throw errors that happened in callbacks wrapped in jQuery ready
+    
+    Also, expose jQuery.readyException that allows to overwrite the default
+    ready error handler.
+    
+    Fixes gh-3174
+    Closes gh-3210
+","[' src/core/ready.js          | 11 +++++++++-\n', ' src/core/readyException.js | 13 ++++++++++++\n', ' test/unit/core.js          | 52 +++++++++++++++++++++++++++++++++++++++++++++-\n', ' 3 files changed, 74 insertions(+), 2 deletions(-)\n']",3.0,74.0,2.0,3,4,0,4,0,0,0,0,0,0
+5d8ccd1112d75394b91071ff7eba13283aaf898,markelog@gmail.com,Wed Jun 22 19:41:57 2016 +0400,Build,"    Build: Improve ESLint configuration (#3188)
+    
+    * Bump eslint-config-jquery package to 0.1.4 version
+    
+    * Add subtask ""dist"" to ""eslint"" task and add it to the build task list
+    
+    * Make gitignore globs more flexible for the ""dist"" folder
+    
+    Fixes gh-3169
+","[' .gitignore   | 5 ++++-\n', ' Gruntfile.js | 3 ++-\n', ' package.json | 2 +-\n', ' 3 files changed, 7 insertions(+), 3 deletions(-)\n']",3.0,7.0,3.0,3,4,0,4,0,0,0,2,0,0
+8c6ca9822afa42d3b40cca8edb0abe90a2bcb34,markelog@gmail.com,Tue May 10 12:12:28 2016 +0300,Build,"    Build: ESLint details
+    
+    Use eslint pragmas, fix new errors, etc
+    
+    Closes gh-3148
+","[' .eslintignore                                      |   4 +-\n', ' .eslintrc                                          | 146 +--------------------\n', ' .gitignore                                         |   2 +-\n', ' .jshintignore                                      |  10 --\n', ' Gruntfile.js                                       |   5 +-\n', ' build/.eslintrc                                    |   7 -\n', ' build/release.js                                   |   5 +\n', ' build/tasks/build.js                               |  11 +-\n', ' build/tasks/lib/spawn_test.js                      |   4 +-\n', ' dist/.eslintrc                                     |  17 +++\n', ' package.json                                       |   1 +\n', ' src/.eslintrc                                      |  29 ++--\n', ' src/ajax.js                                        |   1 +\n', ' src/attributes/val.js                              |   5 +\n', ' src/core.js                                        |  14 +-\n', ' src/css/adjustCSS.js                               |   8 +-\n', ' src/data/var/acceptData.js                         |   1 -\n', ' src/deferred.js                                    |   2 +-\n', ' src/effects.js                                     |  16 ++-\n', ' src/exports/global.js                              |   2 +-\n', ' src/manipulation.js                                |   6 +\n', ' src/selector.js                                    |   4 +-\n', ' src/traversing/findFilter.js                       |   1 -\n', ' src/wrapper.js                                     |   6 +-\n', ' test/.eslintrc                                     | 106 ++++++++-------\n', ' test/data/testinit.js                              |  57 ++++----\n', ' test/node_smoke_tests/.eslintrc                    |   7 +-\n', ' .../iterable_with_symbol_polyfill.js               |   2 -\n', ' .../node_smoke_tests/lib/ensure_iterability_es6.js |   2 -\n', ' test/promises_aplus_adapters/.eslintrc             |   5 +-\n', ' test/unit/ajax.js                                  |   8 +-\n', ' test/unit/attributes.js                            |   8 +-\n', ' test/unit/core.js                                  |  23 ++--\n', ' test/unit/css.js                                   |  32 ++---\n', ' test/unit/data.js                                  |   6 +-\n', ' test/unit/deferred.js                              |  10 +-\n', ' test/unit/deprecated.js                            |   4 +-\n', ' test/unit/dimensions.js                            |   6 +-\n', ' test/unit/effects.js                               |   6 +-\n', ' test/unit/event.js                                 |  39 +++---\n', ' test/unit/manipulation.js                          |  18 +--\n', ' test/unit/offset.js                                | 112 ++++++++--------\n', ' test/unit/queue.js                                 |   2 +-\n', ' test/unit/selector.js                              |  30 ++---\n', ' test/unit/serialize.js                             |  14 +-\n', ' test/unit/wrap.js                                  |   2 +-\n', ' 46 files changed, 349 insertions(+), 457 deletions(-)\n']",46.0,349.0,457.0,38,47,2,47,0,0,0,1,0,0
+4474c9a0025095f82d734a9d7230eace2f08ef8,markelog@gmail.com,Sat Jun 11 10:30:12 2016 +0300,Tests,"    Tests: Move promise/A+ adapters for tests to dedicated folder
+","[' build/tasks/promises_aplus_tests.js                            | 10 +++++-----\n', ' test/node_smoke_tests/.eslintrc                                |  3 +++\n', ' test/promises_aplus_adapters/.eslintrc                         |  7 +++++++\n', ' .../deferred.js}                                               |  6 ++----\n', ' .../when.js}                                                   |  6 ++----\n', ' 5 files changed, 19 insertions(+), 13 deletions(-)\n']",5.0,19.0,13.0,3,6,0,6,0,0,2,0,0,0
+80ae67c53c0a4bfc95741ed39d7f9e498eaf02b,markelog@gmail.com,Tue May 10 12:06:37 2016 +0300,Build,"    Build: Switch from jscs+jshint to eslint
+","[' .eslintignore                   |  12 ++++\n', ' .eslintrc                       | 145 ++++++++++++++++++++++++++++++++++++++++\n', ' .jscsrc                         |  10 ---\n', ' .jshintrc                       |  14 ----\n', ' .npmignore                      |   4 +-\n', ' Gruntfile.js                    |  49 +++++---------\n', ' build/.eslintrc                 |   7 ++\n', ' package.json                    |   3 +-\n', ' src/.eslintrc                   |  15 +++++\n', ' src/.jshintrc                   |  30 ---------\n', ' test/.eslintrc                  |  55 +++++++++++++++\n', ' test/.jshintrc                  |  56 ----------------\n', ' test/node_smoke_tests/.eslintrc |   7 ++\n', ' test/node_smoke_tests/.jshintrc |  14 ----\n', ' 14 files changed, 261 insertions(+), 160 deletions(-)\n']",14.0,261.0,160.0,7,15,0,15,0,0,0,1,0,0
+19c8f1f41de8696b2b90c43648fe339efdb6a02,timmywillisn@gmail.com,Thu Jun 9 14:33:16 2016 -0400,Build,"    Build: Updating the master version to 3.0.1-pre.
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+430c540dfedf1a64558d5f55f668904ee787817,m.goleb@gmail.com,Sun May 29 23:08:37 2016 +0200,Docs,"    Docs: Fix an incorrect comment in the attributes module
+    
+    Attributes are no longer always treated as lowercase, although hooks for
+    them are. This commit fixes a no longer correct comment.
+","[' src/attributes/attr.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,1,0,0,0,0
+9ea869ab5e887dad28088f6b477fa2ecac747a9,m.goleb@gmail.com,Sun May 29 22:50:28 2016 +0200,Tests,"    Tests: Remove side-effects of one attributes test
+    
+    One test in the attribute module was overwriting jQuery.expr.attrHandle.checked
+    and wasn't restoring the original state after it finished. It started causing
+    issues for another checked-related test.
+","[' test/unit/attributes.js | 11 ++++++++++-\n', ' 1 file changed, 10 insertions(+), 1 deletion(-)\n']",1.0,10.0,1.0,1,2,0,2,0,0,4,0,0,0
+3bf35ecf31867d7ed4662374121efa310cf9f8d,m.goleb@gmail.com,Sun May 29 21:42:54 2016 +0200,Build,"    Build: Drop testing on Node.js 5
+    
+    Node.js 5's upstream support ends in about a month, there is not much point
+    in testing it when we're releasing a new major version of jQuery
+","[' .travis.yml | 1 -\n', ' 1 file changed, 1 deletion(-)\n']",1.0,1.0,0,1,2,0,2,0,0,2,1,0,0
+3a303f7392fdb16bcf767f04cca27207b202b9f,m.goleb@gmail.com,Fri May 20 22:16:17 2016 +0200,Docs,"    Docs: Use HTTPS URLs for jsfiddle & jsbin
+","[' .github/ISSUE_TEMPLATE.md | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,1,0,0,0,0
+fa4bfbf2ab31bc81906f4f4a31a98dfed018e15,m.goleb@gmail.com,Fri May 20 22:14:45 2016 +0200,Docs,"    Docs: Tweak formatting of ISSUE_TEMPLATE.md
+","[' .github/ISSUE_TEMPLATE.md | 4 ++--\n', ' 1 file changed, 2 insertions(+), 2 deletions(-)\n']",1.0,2.0,2.0,1,2,0,2,0,1,0,0,0,0
+47d495ce10f58f966e962cfb8de1a1e6a853cab,timmywillisn@gmail.com,Fri May 20 14:16:33 2016 -0400,Release,"    Release: update AUTHORS.txt
+","[' AUTHORS.txt | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,0,0,0,0
+5c7ab68970ce201a2bbff48c8e951d38c228ce8,timmywillisn@gmail.com,Mon May 9 13:53:03 2016 -0400,Release,"    Release: remove extraneous files from dist during release
+    
+    Fixes gh-3094
+    Close gh-3116
+","[' build/release.js      |  2 +-\n', ' build/release/dist.js | 17 ++++++++++++++++-\n', ' 2 files changed, 17 insertions(+), 2 deletions(-)\n']",2.0,17.0,2.0,2,3,0,3,0,0,0,0,0,0
+086b3012d0f29de04b6823732b6f48250adda97,timmywillisn@gmail.com,Mon May 9 11:57:31 2016 -0400,Release,"    Release: copy sizzle separately into an 'external' folder
+    
+    Fixes gh-2945
+","[' build/release/dist.js | 9 +++++++--\n', ' 1 file changed, 7 insertions(+), 2 deletions(-)\n']",1.0,7.0,2.0,1,2,0,2,0,0,0,0,0,0
+8bd48109c3e4c2204fdcf91a4e87779f2b1a948,timmywillisn@gmail.com,Mon May 9 14:17:01 2016 -0400,Release,"    Release: update AUTHORS.txt
+","[' AUTHORS.txt | 5 +++++\n', ' 1 file changed, 5 insertions(+)\n']",1.0,5.0,0,1,2,0,2,0,0,0,0,0,0
+f2ebd2c4dea186d7d981b939e6e2983a9d7f9c1,m.goleb@gmail.com,Mon May 2 23:05:56 2016 +0200,Tests,"    Tests: Make the regex catching Safari 9.0/9.1 more resilient
+    
+    The word boundary character will prevent iOS from being a false positive.
+","[' test/unit/support.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,0,0,0
+34a2d828021b6eb36d83d83cc30c5a09045e781,m.goleb@gmail.com,Mon May 2 22:49:17 2016 +0200,Tests,"    Tests: take Safari 9.1 into account
+    
+    Safari 9.1 shares its support test results with Safari 9.0 but it's been
+    excluded from the regex catching Safari 9.0. This has been fixed.
+","[' test/unit/support.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,2,0,0,0
+3a781d762913c55a7b9b97eb2fd38711a371f9a,m.goleb@gmail.com,Fri Apr 29 10:36:57 2016 +0200,Build,"    Build: Don't lint the built file in the husky precommit hook
+    
+    The husky Git precommit hook was linting not only the source but also the
+    built file. Normally it's expected, we want to run basic checks on what's
+    built but in the precommit hook we're not building the file so we might
+    be linting some previous, broken version.
+    
+    Fixes gh-3091
+","[' Gruntfile.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,2,0,0
+bdc4b761b51c59c90e05fe2fb8977d2182ba992,dave.methvin@gmail.com,Wed Apr 27 19:47:50 2016 -0400,Docs,"    Docs: Add FAQ to reduce noise in issues
+","[' .github/ISSUE_TEMPLATE.md | 3 +++\n', ' 1 file changed, 3 insertions(+)\n']",1.0,3.0,0,1,2,0,2,0,1,0,0,0,0
+b356cfde431142eeaae4a916231487716ee4f23,m.goleb@gmail.com,Mon Apr 25 22:35:15 2016 +0200,Build,"    Build: Strip the strict-mode related comment in exports/global.js
+    
+    The comment (& the JSHint pragma) doesn't make sense in the context of the
+    full built file.
+    
+    Closes gh-3078
+","[' build/tasks/build.js  | 5 ++++-\n', ' src/exports/global.js | 4 ++++\n', ' 2 files changed, 8 insertions(+), 1 deletion(-)\n']",2.0,8.0,1.0,2,3,0,3,0,0,0,1,0,0
+652c4d6a203a1c56ab08f62d6649ba31b7ddfab,m.goleb@gmail.com,Mon Apr 25 22:34:29 2016 +0200,Build,"    Build: Strip excessive ""use strict"" pragmas when building
+    
+    Fixes gh-3077
+","[' build/tasks/build.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,2,1,0
+b5ce70cb558f8d8d50b13186f8c0a66741480e8,m.goleb@gmail.com,Tue Apr 26 22:44:11 2016 +0200,Build,"    Build: test on Node.js 6
+","[' .travis.yml | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,1,1,0,0
+4961822160c671fd72f1da7501049aab6cfd56b,richard.gibson@gmail.com,Tue Apr 26 10:14:53 2016 -0400,Tests,"    Tests: Weaken sync-assumption from jQuery.when to jQuery.ready.then
+","[' test/unit/ready.js | 46 +++++++++++++++++++++++++++++++++++-----------\n', ' 1 file changed, 35 insertions(+), 11 deletions(-)\n']",1.0,35.0,11.0,1,2,0,2,0,0,1,0,0,0
+05f193aa57014dc7d8fa0739a3fefd47166cd44,m.goleb@gmail.com,Mon Apr 25 20:25:08 2016 +0200,Build,"    Build: Put all AMD modules in ""src/"" in strict mode
+    
+    Fixes gh-3073
+","[' src/.jshintrc                          | 1 +\n', ' src/ajax.js                            | 2 ++\n', ' src/ajax/jsonp.js                      | 2 ++\n', ' src/ajax/load.js                       | 2 ++\n', ' src/ajax/parseXML.js                   | 2 ++\n', ' src/ajax/script.js                     | 2 ++\n', ' src/ajax/var/location.js               | 2 ++\n', ' src/ajax/var/nonce.js                  | 2 ++\n', ' src/ajax/var/rquery.js                 | 2 ++\n', ' src/ajax/xhr.js                        | 2 ++\n', ' src/attributes.js                      | 2 ++\n', ' src/attributes/attr.js                 | 2 ++\n', ' src/attributes/classes.js              | 2 ++\n', ' src/attributes/prop.js                 | 2 ++\n', ' src/attributes/support.js              | 2 ++\n', ' src/attributes/val.js                  | 2 ++\n', ' src/callbacks.js                       | 2 ++\n', ' src/core.js                            | 2 ++\n', ' src/core/DOMEval.js                    | 2 ++\n', ' src/core/access.js                     | 2 ++\n', ' src/core/init.js                       | 2 ++\n', ' src/core/parseHTML.js                  | 2 ++\n', ' src/core/ready-no-deferred.js          | 2 ++\n', ' src/core/ready.js                      | 2 ++\n', ' src/core/support.js                    | 2 ++\n', ' src/core/var/rsingleTag.js             | 1 +\n', ' src/css.js                             | 2 ++\n', ' src/css/addGetHookIf.js                | 2 ++\n', ' src/css/adjustCSS.js                   | 2 ++\n', ' src/css/curCSS.js                      | 2 ++\n', ' src/css/hiddenVisibleSelectors.js      | 2 ++\n', ' src/css/showHide.js                    | 2 ++\n', ' src/css/support.js                     | 2 ++\n', ' src/css/var/cssExpand.js               | 2 ++\n', ' src/css/var/getStyles.js               | 2 ++\n', ' src/css/var/isHiddenWithinTree.js      | 1 +\n', ' src/css/var/rmargin.js                 | 2 ++\n', ' src/css/var/rnumnonpx.js               | 2 ++\n', ' src/css/var/swap.js                    | 2 ++\n', ' src/data.js                            | 2 ++\n', ' src/data/Data.js                       | 2 ++\n', ' src/data/var/acceptData.js             | 2 ++\n', ' src/data/var/dataPriv.js               | 2 ++\n', ' src/data/var/dataUser.js               | 2 ++\n', ' src/deferred/exceptionHook.js          | 2 ++\n', ' src/deprecated.js                      | 2 ++\n', ' src/dimensions.js                      | 2 ++\n', ' src/effects.js                         | 2 ++\n', ' src/effects/Tween.js                   | 2 ++\n', ' src/effects/animatedSelector.js        | 2 ++\n', ' src/event.js                           | 2 ++\n', ' src/event/ajax.js                      | 2 ++\n', ' src/event/alias.js                     | 2 ++\n', ' src/event/focusin.js                   | 2 ++\n', ' src/event/support.js                   | 2 ++\n', ' src/event/trigger.js                   | 2 ++\n', ' src/exports/amd.js                     | 2 ++\n', ' src/exports/global.js                  | 4 ++++\n', ' src/jquery.js                          | 2 ++\n', ' src/manipulation.js                    | 2 ++\n', ' src/manipulation/_evalUrl.js           | 2 ++\n', ' src/manipulation/buildFragment.js      | 2 ++\n', ' src/manipulation/getAll.js             | 2 ++\n', ' src/manipulation/setGlobalEval.js      | 2 ++\n', ' src/manipulation/support.js            | 2 ++\n', ' src/manipulation/var/rcheckableType.js | 2 ++\n', ' src/manipulation/var/rscriptType.js    | 2 ++\n', ' src/manipulation/var/rtagName.js       | 2 ++\n', ' src/manipulation/wrapMap.js            | 2 ++\n', ' src/offset.js                          | 2 ++\n', ' src/queue.js                           | 2 ++\n', ' src/queue/delay.js                     | 2 ++\n', ' src/selector-native.js                 | 2 ++\n', ' src/selector-sizzle.js                 | 2 ++\n', ' src/serialize.js                       | 2 ++\n', ' src/traversing.js                      | 2 ++\n', ' src/traversing/findFilter.js           | 2 ++\n', ' src/traversing/var/dir.js              | 2 ++\n', ' src/traversing/var/rneedsContext.js    | 2 ++\n', ' src/traversing/var/siblings.js         | 2 ++\n', ' src/var/ObjectFunctionString.js        | 2 ++\n', ' src/var/arr.js                         | 2 ++\n', ' src/var/class2type.js                  | 1 +\n', ' src/var/concat.js                      | 2 ++\n', ' src/var/document.js                    | 2 ++\n', ' src/var/documentElement.js             | 2 ++\n', ' src/var/fnToString.js                  | 2 ++\n', ' src/var/getProto.js                    | 2 ++\n', ' src/var/hasOwn.js                      | 2 ++\n', ' src/var/indexOf.js                     | 2 ++\n', ' src/var/pnum.js                        | 2 ++\n', ' src/var/push.js                        | 2 ++\n', ' src/var/rcssNum.js                     | 2 ++\n', ' src/var/rnotwhite.js                   | 2 ++\n', ' src/var/slice.js                       | 2 ++\n', ' src/var/support.js                     | 1 +\n', ' src/var/toString.js                    | 2 ++\n', ' src/wrap.js                            | 2 ++\n', ' src/wrapper.js                         | 2 ++\n', ' 99 files changed, 195 insertions(+)\n']",99.0,195.0,0,99,100,0,100,0,0,0,1,0,0
+2d1142c2e8eb1c5ef2177e6739b1ce6d875d604,richard.gibson@gmail.com,Sat Apr 23 21:52:00 2016 -0400,Build,"    Build: Fix grunt-compare-size branch-tip storage
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+f1497a58cd088d3f293d655803d230ee4cc4c07,richard.gibson@gmail.com,Sat Apr 23 22:06:52 2016 -0400,Build,"    Build: A more modest block-level function proposal
+    
+    This reverts commit fa610da68440530e73bba296a1f982f94dfeac99.
+","[' Gruntfile.js       |  1 -\n', ' src/css/support.js | 37 +++++++++++++++++++------------------\n', ' 2 files changed, 19 insertions(+), 19 deletions(-)\n']",2.0,19.0,19.0,2,3,0,3,0,0,0,1,0,0
+51cb2596551f12448ae1659f1ebce29607a94d8,richard.gibson@gmail.com,Sat Apr 23 21:52:00 2016 -0400,Build,"    Build: Update dependencies
+    
+    Ref bc39338d3545522e31b68c50caa2a7d719354a70
+","[' package.json | 4 ++--\n', ' 1 file changed, 2 insertions(+), 2 deletions(-)\n']",1.0,2.0,2.0,1,2,0,2,0,0,0,1,0,0
+c39338d3545522e31b68c50caa2a7d719354a70,m.goleb@gmail.com,Sat Apr 23 20:53:09 2016 +0200,Build,"    Build: Revert grunt from 1.0.1 to 0.4.5
+    
+    grunt-compare-size specifies grunt "">= 0.4.0 < 0.5"" in its peerDependencies
+    which makes `npm install` break with npm <3.
+    
+    Refs rwaldron/grunt-compare-size#25
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,1,1
+a610da68440530e73bba296a1f982f94dfeac99,m.goleb@gmail.com,Sat Apr 23 20:30:00 2016 +0200,Build,"    Build: Workaround strict mode violations caused by UglifyJS
+    
+    This commit increases the gzipped size by 90 bytes so a better solution
+    is needed but, at the same time, it disables the very optimizations
+    that are causing strict mode violations in Firefox 45, Safari 9 & IE 10.
+    
+    Refs 76084372c29a59b3fa790ea4d2687f0767514999
+    Refs mishoo/UglifyJS2#1052
+","[' Gruntfile.js | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,0,1,0,0
+a0ebad86b13be721fe00f65fa29f9d4fb216ed7,m.goleb@gmail.com,Sat Apr 23 19:25:47 2016 +0200,Build,"    Build: Update dependencies (except jsdom)
+","[' package.json | 32 ++++++++++++++++----------------\n', ' 1 file changed, 16 insertions(+), 16 deletions(-)\n']",1.0,16.0,16.0,1,2,0,2,0,0,0,1,0,0
+5ffcb0838c894e26f4ff32dfec162cf624d8d7d,dave.methvin@gmail.com,Sun Apr 10 15:42:44 2016 -0400,Tests,"    Tests: Refactor testIframe() to make it DRYer and more consistent
+    
+    Ref gh-3040
+    Closes gh-3049
+","[' README.md                                   | 30 ++++++++++++++++++-----------\n', ' test/data/ajax/onunload.html                |  3 ++-\n', ' test/data/ajax/unreleasedXHR.html           |  3 ++-\n', ' test/data/core/aliased.html                 |  7 ++++---\n', ' test/data/core/cc_on.html                   |  3 ++-\n', ' test/data/core/dynamic_ready.html           |  5 +++--\n', ' test/data/core/onready.html                 |  3 ++-\n', ' test/data/css/cssWidthBeforeDocReady.html   |  3 ++-\n', ' test/data/data/dataAttrs.html               |  3 ++-\n', ' test/data/dimensions/documentLarge.html     |  5 ++---\n', ' test/data/event/focusElem.html              |  3 ++-\n', ' test/data/event/focusinCrossFrame.html      |  3 ++-\n', ' test/data/event/interactiveReady.html       |  7 ++++---\n', ' test/data/event/promiseReady.html           |  3 ++-\n', ' test/data/event/syncReady.html              |  3 ++-\n', ' test/data/event/triggerunload.html          |  3 ++-\n', ' test/data/iframeTest.js                     |  8 ++++++++\n', ' test/data/manipulation/iframe-denied.html   |  3 ++-\n', ' test/data/manipulation/scripts-context.html |  7 ++-----\n', ' test/data/offset/absolute.html              |  3 ++-\n', ' test/data/offset/body.html                  |  3 ++-\n', ' test/data/offset/fixed.html                 |  3 ++-\n', ' test/data/offset/relative.html              |  3 ++-\n', ' test/data/offset/scroll.html                |  3 ++-\n', ' test/data/offset/static.html                |  3 ++-\n', ' test/data/offset/table.html                 |  3 ++-\n', ' test/data/selector/html5_selector.html      |  6 ++----\n', ' test/data/selector/sizzle_cache.html        |  5 ++---\n', ' test/data/support/bodyBackground.html       |  3 ++-\n', ' test/data/support/csp.js                    |  2 +-\n', ' test/data/support/csp.php                   |  1 +\n', ' test/data/testinit.js                       |  7 +++----\n', ' test/unit/ajax.js                           |  6 +++---\n', ' test/unit/core.js                           | 18 ++++++++---------\n', ' test/unit/css.js                            |  4 ++--\n', ' test/unit/data.js                           |  4 ++--\n', ' test/unit/dimensions.js                     |  4 ++--\n', ' test/unit/event.js                          | 24 +++++++++++------------\n', ' test/unit/manipulation.js                   | 10 +++++-----\n', ' test/unit/offset.js                         | 16 +++++++--------\n', ' test/unit/selector.js                       |  8 ++++----\n', ' test/unit/support.js                        |  8 ++++----\n', ' 42 files changed, 142 insertions(+), 110 deletions(-)\n']",42.0,142.0,110.0,14,43,1,43,0,0,2,0,0,0
+8d73d7f9c7eec2f0abd14d00bf903625728ef17,dave.methvin@gmail.com,Fri Apr 8 12:00:17 2016 -0400,Tests,"    Tests: Make iframe tests wait after checking isReady
+    
+    Ref gh-3040
+","[' README.md                               | 33 +++++++++++++--------------------\n', ' test/data/dimensions/documentLarge.html |  5 +++++\n', ' test/data/offset/absolute.html          |  1 +\n', ' test/data/offset/body.html              |  1 +\n', ' test/data/offset/fixed.html             |  1 +\n', ' test/data/offset/relative.html          |  1 +\n', ' test/data/offset/scroll.html            |  1 +\n', ' test/data/offset/static.html            |  1 +\n', ' test/data/offset/table.html             |  1 +\n', ' test/data/selector/html5_selector.html  |  4 ++++\n', ' test/data/selector/sizzle_cache.html    |  5 +++++\n', ' test/data/testinit.js                   | 31 -------------------------------\n', ' test/unit/dimensions.js                 |  4 ++--\n', ' test/unit/offset.js                     | 23 ++++++++---------------\n', ' test/unit/selector.js                   |  8 ++++----\n', ' 15 files changed, 48 insertions(+), 72 deletions(-)\n']",15.0,48.0,72.0,5,16,1,16,0,0,2,0,0,0
+e6c83f710c28108ccb4d50a7b924baa890dc961,markelog@gmail.com,Fri Apr 8 13:51:32 2016 +0300,Core,"    Core: add test for `jQuery.isPlainObject(localStorage)`
+    
+    Ref gh-3045
+","[' test/unit/core.js | 6 ++++++\n', ' 1 file changed, 6 insertions(+)\n']",1.0,6.0,0,1,2,0,2,0,0,1,0,0,0
+158f5761a6a66b0ef6e7ee450ab721c80620d67,markelog@gmail.com,Mon Apr 4 01:07:14 2016 +0300,Tests,"    Tests: do not run IE9 effect tests if inside testswarm
+    
+    That test doesn't work properly in such environment
+    
+    Ref e04e246552c27e872bbf4ae00b55def02b197189
+    Fixes gh-2888
+    Closes gh-3034
+","[' test/data/testinit.js |  9 +++++----\n', ' test/unit/effects.js  | 49 +++++++++++++++++++++++++++++--------------------\n', ' 2 files changed, 34 insertions(+), 24 deletions(-)\n']",2.0,34.0,24.0,2,3,1,3,0,0,4,0,0,0
+0d3bfa77073a245ca112736a1ed3db07d5adcf6,richard.gibson@gmail.com,Mon Mar 14 16:46:51 2016 -0400,Core,"    Core: Simplify isPlainObject
+    
+    Fixes gh-2986
+    Close gh-2998
+","[' src/core.js                     | 36 ++++++++++++++++++------------------\n', ' src/var/ObjectFunctionString.js |  5 +++++\n', ' src/var/fnToString.js           |  5 +++++\n', ' src/var/getProto.js             |  3 +++\n', ' test/unit/core.js               | 11 ++++++-----\n', ' 5 files changed, 37 insertions(+), 23 deletions(-)\n']",5.0,37.0,23.0,5,6,0,6,0,0,0,0,0,0
+0fc59007d717432ea126e49ce4142e6c4d5136e,timmywillisn@gmail.com,Mon Mar 28 10:32:15 2016 -0400,Core,"    Core: set the base href of the context in parseHTML
+    
+    Fixes gh-2965
+    Close gh-3022
+","[' src/core/parseHTML.js | 30 ++++++++++++++++++++++--------\n', ' test/unit/core.js     |  9 +++++++++\n', ' 2 files changed, 31 insertions(+), 8 deletions(-)\n']",2.0,31.0,8.0,2,3,0,3,0,0,0,0,1,0
+cbb234dd3273d8e0bbd454fb431ad639c7242c1,timmywillisn@gmail.com,Tue Jan 19 14:47:52 2016 -0500,Core,"    Core: implement ready without Deferred
+    
+    - Make jQuery.ready promise-compatible
+    - Gives up sync guarantee for post-ready callbacks
+    
+    Fixes gh-1778
+    Fixes gh-1823
+    Close gh-2891
+","[' Gruntfile.js                  |   4 ++\n', ' build/tasks/build.js          |  13 ++++-\n', ' src/core/ready-no-deferred.js | 109 ++++++++++++++++++++++++++++++++++++++++++\n', ' src/core/ready.js             |  50 ++++++++-----------\n', ' test/unit/ready.js            |  78 +++++++++++++++++++++++++-----\n', ' 5 files changed, 210 insertions(+), 44 deletions(-)\n']",5.0,210.0,44.0,5,6,0,6,0,0,0,0,0,0
+072d150d61655ec07f714e1d58a0bd7baa5ec3f,m.goleb@gmail.com,Wed Mar 23 15:03:06 2016 +0100,Docs,"    Docs: Update support comments to follow the new syntax
+    
+    The changes follow the spec proposed in:
+    https://github.com/jquery/contribute.jquery.org/issues/95#issuecomment-69379197
+","[' src/.jshintrc                     |  2 +-\n', ' src/ajax/parseXML.js              |  2 +-\n', ' src/ajax/xhr.js                   |  8 ++++----\n', ' src/attributes/prop.js            |  2 +-\n', ' src/attributes/support.js         |  2 +-\n', ' src/core.js                       | 10 +++++-----\n', ' src/core/ready.js                 |  2 +-\n', ' src/css.js                        |  7 +++----\n', ' src/css/curCSS.js                 |  4 ++--\n', ' src/css/support.js                |  4 ++--\n', ' src/css/var/getStyles.js          |  2 +-\n', ' src/data/Data.js                  |  2 +-\n', ' src/deferred/exceptionHook.js     |  2 +-\n', ' src/effects.js                    |  2 +-\n', ' src/effects/Tween.js              |  4 ++--\n', ' src/event.js                      | 10 +++++-----\n', ' src/event/focusin.js              |  4 ++--\n', ' src/manipulation.js               |  8 ++++----\n', ' src/manipulation/buildFragment.js |  4 ++--\n', ' src/manipulation/getAll.js        |  2 +-\n', ' src/manipulation/support.js       |  4 ++--\n', ' src/manipulation/wrapMap.js       |  4 ++--\n', ' src/offset.js                     |  2 +-\n', ' test/unit/css.js                  |  2 +-\n', ' test/unit/deferred.js             |  4 ++--\n', ' test/unit/deprecated.js           |  2 +-\n', ' test/unit/event.js                |  6 +++---\n', ' test/unit/offset.js               |  2 +-\n', ' 28 files changed, 54 insertions(+), 55 deletions(-)\n']",28.0,54.0,55.0,28,29,0,29,0,1,0,0,0,0
+93f1b537b0a19cda8b7e8f5379bffa5351b8a6e,m.goleb@gmail.com,Wed Mar 23 15:02:26 2016 +0100,Docs,"    Docs: Update support comments related to IE
+    
+    All support comments were checked for Edge applicability.
+","[' src/ajax.js               | 7 ++++---\n', ' src/attributes/support.js | 4 ++--\n', ' src/attributes/val.js     | 2 +-\n', ' src/core.js               | 2 +-\n', ' src/data.js               | 2 +-\n', ' src/effects.js            | 2 +-\n', ' src/manipulation.js       | 2 +-\n', ' src/offset.js             | 2 +-\n', ' 8 files changed, 12 insertions(+), 11 deletions(-)\n']",8.0,12.0,11.0,8,9,0,9,0,1,0,0,0,0
+22db29d9c1aed1e51586db72861a1aab4d7606f,m.goleb@gmail.com,Wed Mar 23 14:16:38 2016 +0100,Docs,"    Docs:Tests: Remove legacy code & add support comments where needed
+    
+    This commits backports some changes done in the patch to the then-existing
+    compat branch that removed support for old browsers and added some support
+    comments.
+    
+    Refs 90d7cc1d8b2ea7ac75f0eacb42439349c9c73278
+","[' src/attributes/val.js                     |  1 +\n', ' test/data/css/cssWidthBeforeDocReady.html |  1 -\n', ' test/unit/css.js                          | 38 ++++++++++-------------\n', ' test/unit/effects.js                      | 50 ++++++++++++-------------------\n', ' test/unit/event.js                        |  1 +\n', ' test/unit/wrap.js                         |  2 +-\n', ' 6 files changed, 38 insertions(+), 55 deletions(-)\n']",6.0,38.0,55.0,5,7,0,7,1,1,1,0,0,0
+8ff8176fcef5a78a2447fc1b3d6e371cd3de929,markelog@gmail.com,Mon Mar 28 16:11:10 2016 +0300,Build,"    Build: add ""Support"" module to commitplease list
+","[' package.json | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,0,1,0,0
+55cb7534e2dcf7ee8ad145be83cb2d74b5331c7,markelog@gmail.com,Sat Mar 12 17:48:37 2016 +0300,Build,"    Build: try insight package to get info about custom builds
+    
+    Fixes gh-2890
+    Closes gh-2988
+","[' build/tasks/build.js | 43 +++++++++++++++++++++++++++++++++++++++++--\n', ' package.json         |  1 +\n', ' 2 files changed, 42 insertions(+), 2 deletions(-)\n']",2.0,42.0,2.0,2,3,0,3,0,0,0,2,0,0
+c1f72667dd74bf00c6c514ebe8b7e92c3e7ad0e,richard.gibson@gmail.com,Fri Mar 11 10:48:00 2016 -0500,Core,"    Core: Restore 1.x isPlainObject constructor checks
+    
+    - Guard isPlainObject against inherited scalar constructors
+    
+    Fixes gh-2982
+    Close gh-2985
+","[' src/core.js       |  4 +++-\n', ' test/unit/core.js | 11 ++++++++++-\n', ' 2 files changed, 13 insertions(+), 2 deletions(-)\n']",2.0,13.0,2.0,2,3,0,3,0,0,0,0,0,0
+f5f0c981aeedf56fa5b395029cc06b40c3ac2f1,timmywillisn@gmail.com,Wed Mar 9 12:06:17 2016 -0500,Release,"    Release: set version in source for releases
+    
+    Fixes gh-2979
+    Close gh-2981
+","[' build/release.js      | 14 +++++++++++++-\n', ' build/release/dist.js |  3 +++\n', ' 2 files changed, 16 insertions(+), 1 deletion(-)\n']",2.0,16.0,1.0,2,3,0,3,0,0,0,0,0,0
+28ea2f27720a351a014b698fd66d25075c0c5e3,markelog@gmail.com,Sat Mar 12 16:40:41 2016 +0300,Tests,"    Tests: add additional test for jQuery.isPlainObject
+    
+    Ref 00575d4d8c7421c5119f181009374ff2e7736127
+    Also see discussion in
+    https://github.com/jquery/jquery/pull/2970#discussion_r54970557
+","[' test/unit/core.js | 12 +++++++++++-\n', ' 1 file changed, 11 insertions(+), 1 deletion(-)\n']",1.0,11.0,1.0,1,2,0,2,0,0,2,0,0,0
+9ec78e6020cc963c1f95cb96a28eaaf20e37b3e,all3fox@gmail.com,Sat Mar 5 10:48:52 2016 +0100,Tests,"    Tests: Restrict ""p > * > *"" selection in selector.js to #qunit-fixture
+    
+    Add `match` and `QUnit.assert.selectInFixture` functions that
+    mimic `QUnit.assert.t`.
+    
+    Ref gh-2880
+    Closes gh-2973
+","[' test/data/testinit.js | 40 ++++++++++++++++++++++++++++++++--------\n', ' test/unit/selector.js |  2 +-\n', ' 2 files changed, 33 insertions(+), 9 deletions(-)\n']",2.0,33.0,9.0,2,3,1,3,0,0,1,0,0,0
+74b477eed8643c7e4e62247918c705dd8c933e6,timmywillisn@gmail.com,Wed Mar 9 12:13:21 2016 -0500,Release,"    Release: update AUTHORS.txt
+","[' AUTHORS.txt | 9 +++++++++\n', ' 1 file changed, 9 insertions(+)\n']",1.0,9.0,0,1,2,0,2,0,0,0,0,0,0
+a098f4883a3f7cc2634444117ac5a5d7f39b85b,timmywillisn@gmail.com,Mon Mar 7 11:57:35 2016 -0500,Build,"    Build: combine intro and outro
+    
+    Fixes gh-2975
+    Close gh-2976
+","[' .jscsrc                      |  2 +-\n', ' .jshintignore                |  2 --\n', ' build/tasks/build.js         |  9 +++++++--\n', ' src/outro.js                 |  2 --\n', ' src/{intro.js => wrapper.js} | 13 ++++++++++---\n', ' 5 files changed, 18 insertions(+), 10 deletions(-)\n']",5.0,18.0,10.0,5,6,0,6,0,0,0,1,0,0
+b086888b803db872e8906cbdbf0de458231f225,m.goleb@gmail.com,Thu Feb 25 01:18:55 2016 +0100,Docs,"    Docs:Tests: Remove obsolete code from tests, update support comments
+    
+    Support comments that were lacking the final IE/Edge version that exhibits
+    the bug were checked & updated. Links to the Chromium bug tracker were updated.
+    Code in tests related to unsupported browsers (like Android 2.3 in non-basic
+    tests) has been removed.
+    
+    Fixes gh-2868
+    Closes gh-2949
+","[' src/ajax/parseXML.js          |  3 ++-\n', ' src/ajax/xhr.js               |  6 ++---\n', ' src/core/support.js           |  2 +-\n', ' src/css/curCSS.js             |  4 +--\n', ' src/css/showHide.js           |  2 +-\n', ' src/css/support.js            |  6 ++---\n', ' src/css/var/getStyles.js      |  2 +-\n', ' src/data/Data.js              |  2 +-\n', ' src/deferred/exceptionHook.js |  2 +-\n', ' src/effects/Tween.js          |  2 +-\n', ' src/event.js                  |  4 +--\n', ' src/event/focusin.js          |  6 ++---\n', ' src/manipulation/getAll.js    |  2 +-\n', ' src/manipulation/support.js   |  4 +--\n', ' src/offset.js                 |  4 +--\n', ' test/unit/ajax.js             | 20 +--------------\n', ' test/unit/basic.js            | 25 ++++--------------\n', ' test/unit/css.js              | 13 +++-------\n', ' test/unit/dimensions.js       |  8 +++---\n', ' test/unit/effects.js          |  8 +-----\n', ' test/unit/event.js            | 59 ++++++++++++++++++-------------------------\n', ' test/unit/manipulation.js     | 32 ++---------------------\n', ' test/unit/offset.js           |  5 ++--\n', ' 23 files changed, 70 insertions(+), 151 deletions(-)\n']",23.0,70.0,151.0,23,24,0,24,2,1,4,0,0,0
+0575d4d8c7421c5119f181009374ff2e7736127,timmywillisn@gmail.com,Thu Mar 3 18:29:45 2016 -0500,Core,"    Core: restore enumeration behavior in isPlainObject
+    
+    Fixes gh-2968
+    Close gh-2970
+","[' src/core.js       |  9 ++++++---\n', ' test/unit/core.js | 16 ++++++++++++++--\n', ' 2 files changed, 20 insertions(+), 5 deletions(-)\n']",2.0,20.0,5.0,2,3,0,3,0,0,0,0,0,0
+b235ed3b4003e1a36bafddf007e24d3e03a80a6,markelog@gmail.com,Fri Mar 4 21:41:05 2016 +0300,Build,"    Build: update husky dependency
+    
+    Fixes gh-2915
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+e7388115488b66a1f6c905712c14defd56b2d48,markelog@gmail.com,Fri Mar 4 00:49:58 2016 +0300,Build,"    Build: update grunt-contrib-jshint and grunt-jscs while we at it
+","[' package.json | 4 ++--\n', ' 1 file changed, 2 insertions(+), 2 deletions(-)\n']",1.0,2.0,2.0,1,2,0,2,0,0,0,1,0,0
+3a8fa6bfc1c8a469e188630b61e736dfb69e128,m.goleb@gmail.com,Wed Feb 24 23:47:19 2016 +0100,Core,"    Core: Deprecate jQuery.parseJSON
+    
+    Fixes gh-2800
+    Closes gh-2948
+","[' src/ajax.js             |  3 +-\n', ' src/ajax/parseJSON.js   |  9 -----\n', ' src/data.js             |  2 +-\n', ' src/deprecated.js       |  2 ++\n', ' test/unit/ajax.js       |  2 +-\n', ' test/unit/basic.js      |  4 +--\n', ' test/unit/core.js       | 87 -------------------------------------------------\n', ' test/unit/data.js       |  6 ++--\n', ' test/unit/deprecated.js | 72 +++++++++++++++++++++++++++++++++++++++-\n', ' 9 files changed, 80 insertions(+), 107 deletions(-)\n']",9.0,80.0,107.0,9,10,0,10,0,0,0,0,0,0
+a91f8442f4d31bdd4b43035ee88d40fbb116f64,timmywillisn@gmail.com,Wed Feb 24 10:20:22 2016 -0500,Release,"    Release: include external/sizzle in releases
+    
+    Ref gh-2945
+","[' build/release/dist.js | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,0,0,0,0
+db2c06f51a20d1da2d444ecda88f9ed64ef2e91,all3fox@gmail.com,Mon Feb 15 00:18:21 2016 +0300,Tests,"    Tests: limit selection to #qunit-fixture in attributes.js
+    
+    Ref gh-2880
+    Close gh-2921
+","[' test/unit/attributes.js | 11 ++++++-----\n', ' 1 file changed, 6 insertions(+), 5 deletions(-)\n']",1.0,6.0,5.0,1,2,0,2,0,0,1,0,0,0
+2038c7234ed808b2116a9f03c448c139d5fb9ae,william.robinet@conostix.com,Wed Feb 17 16:34:24 2016 +0100,Tests,"    Tests: fix typos
+    
+    Closes gh-2927
+","[' test/unit/attributes.js | 4 ++--\n', ' test/unit/core.js       | 2 +-\n', ' 2 files changed, 3 insertions(+), 3 deletions(-)\n']",2.0,3.0,3.0,2,3,0,3,0,0,1,0,0,0
+88028b5205d0143c0649240b8c04c3b562fb628,markelog@gmail.com,Sat Feb 13 22:35:59 2016 +0300,Build,"    Build: add `npm-debug.log` to `.gitignore`
+","[' .gitignore | 2 ++\n', ' 1 file changed, 2 insertions(+)\n']",1.0,2.0,0,1,2,0,2,0,0,0,1,0,0
+f96024cf087a1cc36e784372485203dae687d5e,markelog@gmail.com,Sat Feb 13 21:37:11 2016 +0300,Build,"    Build: remove npm-debug file
+","[' npm-debug.log | 44 --------------------------------------------\n', ' 1 file changed, 44 deletions(-)\n']",1.0,44.0,0,0,2,0,2,0,0,0,1,0,0
+c5079146999d86f9a5d123dc7bd33fd03edcd35,markelog@gmail.com,Sat Feb 13 21:14:46 2016 +0300,Tests,"    Tests: use `jQuery` variable instead of `$`
+    
+    For some reason that works with `amd` but not with builded version
+    
+    Fixes gh-2909
+","[' npm-debug.log           | 44 ++++++++++++++++++++++++++++++++++++++++++++\n', ' test/unit/dimensions.js |  2 +-\n', ' 2 files changed, 45 insertions(+), 1 deletion(-)\n']",2.0,45.0,1.0,1,3,0,3,0,0,1,1,0,0
+3a0b5e09de3c363c7eb752ce77427a9159d0466,markelog@gmail.com,Thu Feb 11 22:49:19 2016 +0300,Build,"    Build: simplify and correct .editorconfig
+","[' .editorconfig | 19 ++++---------------\n', ' 1 file changed, 4 insertions(+), 15 deletions(-)\n']",1.0,4.0,15.0,0,2,0,2,0,0,0,1,0,0
+2f63ffd9640ce1e13465f718b1e2c6ca87f8772,markelog@gmail.com,Thu Feb 11 22:31:49 2016 +0300,Tests,"    Tests: test element position outside view
+    
+    Ref 49833f7795d665ff1d543c4f71f29fca95b567e9
+    Ref gh-2828
+    Ref gh-2836
+    Fixes gh-2909
+","[' test/data/testsuite.css | 12 ++++++++++++\n', ' test/unit/dimensions.js | 30 ++++++++++++++++++++++++++++++\n', ' 2 files changed, 42 insertions(+)\n']",2.0,42.0,0,2,3,1,3,0,0,2,0,0,0
+943f1d7ffef41cc1a99bffe189f6d111fbccfd0,timmywillisn@gmail.com,Wed Feb 10 13:47:25 2016 -0800,Build,"    Build: use hard-coded path to sizzle in selector-sizzle
+    
+    Fixes gh-2898
+","[' build/tasks/build.js   | 5 +----\n', ' src/selector-sizzle.js | 2 +-\n', ' test/jquery.js         | 5 +----\n', ' 3 files changed, 3 insertions(+), 9 deletions(-)\n']",3.0,3.0,9.0,3,4,0,4,1,0,0,1,0,0
+7431c7793f7605250807f91bee7c9ddcbaeb91b,m.goleb@gmail.com,Wed Feb 10 12:57:49 2016 +0100,Build,"    Build: Drop testing on jsdom with Node 0.10 & 0.12
+    
+    Fixes gh-2841
+","[' Gruntfile.js                     | 14 +++-----------\n', ' build/tasks/install_old_jsdom.js | 20 --------------------\n', ' 2 files changed, 3 insertions(+), 31 deletions(-)\n']",2.0,3.0,31.0,2,3,0,3,0,0,1,1,0,0
+91e3f3e2a3c81944c9d9e35ed52b0eb7a4bb1c9,m.goleb@gmail.com,Wed Feb 10 12:54:25 2016 +0100,Build,"    Build: Move the stripJSONComments variable to the function that uses it
+","[' Gruntfile.js | 4 ++--\n', ' 1 file changed, 2 insertions(+), 2 deletions(-)\n']",1.0,2.0,2.0,1,2,0,2,0,0,0,1,0,0
+f46cec169addb096fe576313e5cc6dde8618c04,m.goleb@gmail.com,Tue Feb 9 10:18:19 2016 +0100,Build,"    Build: Stop removing the JSHint onevar option, it's no longer there
+","[' Gruntfile.js | 4 ----\n', ' 1 file changed, 4 deletions(-)\n']",1.0,4.0,0,1,2,0,2,0,0,0,1,0,0
+52fa81811c173e300a75306436d66f27f30bbb3,markelog@gmail.com,Tue Feb 9 00:27:03 2016 +0300,Tests,"    Tests: account for new offset tests
+    
+    Ref 49833f7795d665ff1d543c4f71f29fca95b567e9
+","[' test/unit/offset.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,2,0,0,0
+1300f18877f0140994190bb1b3a945fa4b2fd3d,markelog@gmail.com,Sun Jan 31 12:09:48 2016 +0300,Tests,"    Tests: fix another traverse test
+    
+    Tricky test - if isolated, was executed fine, but falling
+    if runned with other tests
+    
+    Ref b97c8d30c5aedace75dc17056d429f28e41b20c1
+","[' test/unit/traversing.js | 6 +++++-\n', ' 1 file changed, 5 insertions(+), 1 deletion(-)\n']",1.0,5.0,1.0,1,2,0,2,0,0,4,0,0,0
+97c8d30c5aedace75dc17056d429f28e41b20c1,markelog@gmail.com,Fri Jan 29 21:07:28 2016 +0300,Tests,"    Tests:Build: update qunit and fix incorrect test
+    
+    * Update QUnit to the latest version (1.20.0)
+    
+    * Corrected test was dependent on QUnit UI, which is always a bad idea
+","[' external/qunit/qunit.css |   24 +-\n', ' external/qunit/qunit.js  | 4288 +++++++++++++++++++++++++---------------------\n', ' package.json             |    2 +-\n', ' test/unit/traversing.js  |   27 +-\n', ' 4 files changed, 2352 insertions(+), 1989 deletions(-)\n']",4.0,2352.0,1989.0,4,5,0,5,0,0,3,1,0,0
+0f4ef7475376513757c852e977f3e45b00cea12,markelog@gmail.com,Fri Jan 29 02:41:04 2016 +0300,Build,"    Build: add scripts.precommit script
+    
+    It was losted while merging gh-2881
+","[' package.json | 3 ++-\n', ' 1 file changed, 2 insertions(+), 1 deletion(-)\n']",1.0,2.0,1.0,1,2,0,2,0,0,0,1,0,0
+94c4539796d02dd0f54e9a3417b660195b844b0,createnaman@gmail.com,Fri Jan 29 02:29:49 2016 +0300,Build,"    Build: run linters on git-commit
+    
+    Fixes gh-2577
+    Closes gh-2881
+","[' Gruntfile.js | 2 ++\n', ' package.json | 2 ++\n', ' 2 files changed, 4 insertions(+)\n']",2.0,4.0,0,2,3,0,3,0,0,0,1,0,0
+de834672959636da8c06263c3530226b17a84c3,jquerybmw@lsmod.de,Wed Jan 27 09:18:40 2016 +0100,Docs,"    Docs: use https where possible
+    
+    Close gh-2875
+","[' README.md         | 2 +-\n', ' src/css/curCSS.js | 2 +-\n', ' src/event.js      | 2 +-\n', ' 3 files changed, 3 insertions(+), 3 deletions(-)\n']",3.0,3.0,3.0,3,4,0,4,0,1,0,0,1,0
+bb571580719328cc5431068bb5519b212f0f043,m.goleb@gmail.com,Wed Jan 27 13:02:58 2016 +0100,Build,"    Build: switch from win-spawn to cross-spawn
+    
+    The win-spawn package is deprecated.
+    
+    Refs gh-2877
+    Refs 67c96a59f5af9e8404b3f904028e1c730d647498
+","[' build/tasks/lib/spawn_test.js | 2 +-\n', ' package.json                  | 4 ++--\n', ' 2 files changed, 3 insertions(+), 3 deletions(-)\n']",2.0,3.0,3.0,2,3,1,3,0,0,0,1,0,0
+7c96a59f5af9e8404b3f904028e1c730d647498,m.goleb@gmail.com,Wed Jan 27 12:54:39 2016 +0100,Build,"    Build: Update npm deps, fix Sinon npmcopy config
+    
+    All deps were updated except:
+     * jsdom - tests using a Symbol polyfill are hacky and break with newer jsdom;
+       we need to re-do them properly first
+     * qunitjs - versions 1.19.0 & 1.20.0 introduce race conditions to the tests,
+       making the fail randomly
+    
+    Those two packages will be updated once issues related to them get resolved.
+    
+    Fixes gh-2877
+","[' .babelrc                       |    3 +\n', ' Gruntfile.js                   |    2 +-\n', ' external/npo/npo.js            |    4 +-\n', ' external/qunit/LICENSE.txt     |    7 +-\n', ' external/qunit/qunit.css       |   17 +-\n', ' external/qunit/qunit.js        | 1389 +++++++--\n', ' external/requirejs/require.js  |  137 +-\n', ' external/sinon/LICENSE.txt     |   27 +\n', ' external/sinon/sinon-1.14.1.js | 5931 ------------------------------------\n', ' external/sinon/sinon.js        | 6437 ++++++++++++++++++++++++++++++++++++++++\n', ' package.json                   |   33 +-\n', ' test/index.html                |    2 +-\n', ' 12 files changed, 7771 insertions(+), 6218 deletions(-)\n']",12.0,7771.0,6218.0,10,13,0,13,0,0,2,1,0,0
+600e2e2b9863dc91601d94541a3808cf3ccc90c,m.goleb@gmail.com,Wed Jan 27 12:26:52 2016 +0100,Build,"    Build: Add .npmrc with save-exact=true
+    
+    This makes commands like `npm install package --save-dev` always get saved
+    to package.json as a pinned version and not as a `^`-delimited range.
+","[' .npmrc | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,0,2,0,2,0,0,0,1,0,0
+da87f6b16fa36c728aef1a85a69176a36cf5b21,m.goleb@gmail.com,Wed Jan 27 12:13:32 2016 +0100,Build,"    Build: enable JSCS for test/unit/support.js, fix styling issues
+","[' Gruntfile.js         | 1 +\n', ' test/unit/support.js | 8 +++++---\n', ' 2 files changed, 6 insertions(+), 3 deletions(-)\n']",2.0,6.0,3.0,2,3,0,3,0,0,1,1,0,0
+8f0329a02c453ae26b6bc028b6aaeec578bef6f,zackhall@outlook.com,Thu Jan 21 16:24:42 2016 -0800,Tests,"    Tests: Set Edge's expected support for clearCloneStyle to true
+    
+    This is done for a version 13 or newer as the bug still exists in Edge 12.
+    
+    Closes gh-2857
+","[' test/unit/support.js | 5 +++--\n', ' 1 file changed, 3 insertions(+), 2 deletions(-)\n']",1.0,3.0,2.0,1,2,0,2,0,0,1,0,0,0
+b0d4c634ab8a953a58bf531dd93e0ea4d632fdd,m.goleb@gmail.com,Wed Jan 27 12:02:00 2016 +0100,Tests,"    Tests: Fix manipulation tests in Android 4.4
+    
+    Chromium < 35 incorrectly upper-cases µ; Android 4.4 uses such a version by
+    default (and its WebView, being un-updatable, will use it for eternity) so we
+    need to blacklist that one for the tests to pass.
+","[' test/unit/manipulation.js | 12 ++++++++++++\n', ' 1 file changed, 12 insertions(+)\n']",1.0,12.0,0,1,2,0,2,0,0,3,0,0,0
+868db0d41b8d1d7b141c0494c262120dd9864b7,richard.gibson@gmail.com,Sun Jan 24 19:51:06 2016 -0500,Core,"    Core: Update isNumeric tests for pre-ES2015 safety
+    
+    Ref 7103d8ef47e04a4cf373abee0e8bfa9062fd616f
+","[' test/unit/core.js | 44 ++++++++++++++++++++------------------------\n', ' 1 file changed, 20 insertions(+), 24 deletions(-)\n']",1.0,20.0,24.0,1,2,0,2,0,0,1,0,0,0
+103d8ef47e04a4cf373abee0e8bfa9062fd616f,maochenyan@gmail.com,Thu Jan 14 20:22:15 2016 +1100,Core,"    Core: Improve isNumeric logic and test coverage
+    
+    Also add back accidentally deleted comments about the implementation.
+    
+    Fixes gh-2780
+    Ref gh-2663
+    Ref gh-2781
+    Closes gh-2827
+","[' src/core.js       |  6 +++++-\n', ' test/unit/core.js | 25 +++++++++++++++++++++++--\n', ' 2 files changed, 28 insertions(+), 3 deletions(-)\n']",2.0,28.0,3.0,2,3,0,3,0,0,1,0,0,0
+c01cb1cc4a41b29d6739d061de8217c33037639,m.goleb@gmail.com,Wed Jan 20 13:54:31 2016 +0100,Tests,"    Tests: Fix Deferred tests in Android 5.0's stock Chrome browser & Yandex.Browser
+    
+    Some Chrome versions newer than 30 but older than 42 display the ""undefined is
+    not a function"" error, not mentioning the function name. This has been fixed
+    in Chrome 42. Relax two tests to allow for this divergence in older Chromoiums.
+    
+    This affects our Android 5.0 & Yandex.Browser testing.
+","[' test/unit/deferred.js | 38 ++++++++++++++++++++++++++++++++++++--\n', ' 1 file changed, 36 insertions(+), 2 deletions(-)\n']",1.0,36.0,2.0,1,2,0,2,0,0,4,0,0,0
+bc4608ed10bd1347649e6f1514f459957cda003,timmywillisn@gmail.com,Thu Jan 14 12:24:33 2016 -0500,Docs,"    Docs: add note about code organization with AMD
+    
+    Fixes gh-2750
+    Close gh-2832
+","[' CONTRIBUTING.md | 6 ++++++\n', ' 1 file changed, 6 insertions(+)\n']",1.0,6.0,0,1,2,0,2,1,1,0,0,0,0
+0c1254d159dbd3d78e8afca590fe53b0c6dfa26,timmywillisn@gmail.com,Thu Jan 14 12:22:45 2016 -0500,Docs,"    Docs: remove compat references
+","[' CONTRIBUTING.md   | 2 --\n', ' README.md         | 6 ++----\n', ' test/unit/core.js | 2 +-\n', ' 3 files changed, 3 insertions(+), 7 deletions(-)\n']",3.0,3.0,7.0,3,4,0,4,0,1,0,0,0,0
+eb68280e5a89d0941a2520c8d024db62f68cd17,timmywillisn@gmail.com,Wed Jan 13 16:45:27 2016 -0500,Release,"    Release: update AUTHORS.txt
+","[' AUTHORS.txt | 6 ++++++\n', ' 1 file changed, 6 insertions(+)\n']",1.0,6.0,0,1,2,0,2,0,0,0,0,0,0
+0b280cd61d1fa12b67bd723ac2c2fa91b92db01,jon.dufresne@gmail.com,Sun Nov 29 09:41:37 2015 -0800,Docs,"    Docs: Updated links to https where they are supported.
+    
+    Close gh-2746
+","[' CONTRIBUTING.md           | 24 ++++++++++++------------\n', ' README.md                 | 20 ++++++++++----------\n', ' package.json              |  2 +-\n', ' src/intro.js              |  6 +++---\n', ' src/manipulation.js       |  2 +-\n', ' src/queue/delay.js        |  2 +-\n', ' test/networkerror.html    |  2 +-\n', ' test/readywait.html       |  4 ++--\n', ' test/unit/manipulation.js |  2 +-\n', ' 9 files changed, 32 insertions(+), 32 deletions(-)\n']",9.0,32.0,32.0,7,10,0,10,0,1,0,0,0,0
+05413994f06b01b0295ff681e9043049542b99a,richard.gibson@gmail.com,Sat Nov 7 03:27:06 2015 -0500,Docs,"    Docs: Reference new feature guidelines and API tenets
+    
+    Fixes gh-2320
+    Close gh-2697
+","[' CONTRIBUTING.md | 6 ++++--\n', ' 1 file changed, 4 insertions(+), 2 deletions(-)\n']",1.0,4.0,2.0,1,2,0,2,0,1,0,0,0,0
+712457fbc648caa1b6a86cd36f79eacb1100d10,henryw4k@gmail.com,Sat Dec 5 01:35:01 2015 -0800,Tests,"    Tests: fixed grammar in comment
+    
+    Close gh-2757
+","[' test/index.html | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,0,2,0,2,0,0,1,0,0,0
+ae44111e2d30d908b48f6711272efddb84e6b79,apache@soref.com,Fri Dec 4 06:49:23 2015 +0000,Docs,"    Docs: Fix various spelling errors
+    
+    Closes gh-2761
+","[' build/release/dist.js     | 2 +-\n', ' src/deferred.js           | 2 +-\n', ' test/unit/ajax.js         | 2 +-\n', ' test/unit/animation.js    | 2 +-\n', ' test/unit/core.js         | 2 +-\n', ' test/unit/manipulation.js | 6 +++---\n', ' 6 files changed, 8 insertions(+), 8 deletions(-)\n']",6.0,8.0,8.0,6,7,0,7,0,1,0,0,0,0
+5fb8d71cb20bdbe1b536d05a0b40b503e4e1a43,timmywillisn@gmail.com,Mon Jan 11 11:42:33 2016 -0500,Build,"    Build: Encode non-ASCII as \uXXXX
+","[' Gruntfile.js | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,0,1,0,0
+680c1b29ea79bf33ac6bd31578755c7c514ed3e,markelog@gmail.com,Sat Nov 14 01:28:16 2015 +0300,Core,"    Core: do not expose second argument of the `jQuery.globalEval`
+    
+    Closes jquery/api.jquery.com#831
+    Closes gh-2718
+","[' src/core.js         | 14 ++++++--------\n', ' src/core/DOMEval.js | 14 ++++++++++++++\n', ' src/manipulation.js |  5 +++--\n', ' 3 files changed, 23 insertions(+), 10 deletions(-)\n']",3.0,23.0,10.0,3,4,0,4,0,0,0,0,0,0
+0c25abb435db6e210d00407af2ba40e5f0b56ad,timmywillisn@gmail.com,Mon Nov 16 15:49:59 2015 -0500,Docs,"    Docs: add a note about loading source with AMD
+    
+    - Moves the note about the watch task and the note about
+      loading with AMD to their own section under
+      ""Test Suite Tips""
+    
+    Fixes gh-2714
+    Close gh-2725
+","[' CONTRIBUTING.md | 21 ++++++++++++++-------\n', ' 1 file changed, 14 insertions(+), 7 deletions(-)\n']",1.0,14.0,7.0,1,2,0,2,0,1,1,0,1,0
+f7102c3f1bcbd135f24947a3a3216cff272bdc2,timmywillisn@gmail.com,Thu Nov 12 13:18:59 2015 -0500,Release,"    Release: push a custom slim build to the CDN
+    
+    Fixes gh-2653
+    Close gh-2711
+","[' Gruntfile.js             | 10 ++++++++--\n', ' build/release.js         | 16 ++++++++++++++--\n', ' build/release/cdn.js     | 19 ++++++++++---------\n', ' build/release/dist.js    | 21 ++++++++++-----------\n', ' build/tasks/build.js     |  8 ++++++--\n', ' build/tasks/dist.js      |  9 +++++----\n', ' build/tasks/sourcemap.js |  3 ++-\n', ' 7 files changed, 55 insertions(+), 31 deletions(-)\n']",7.0,55.0,31.0,7,8,0,8,0,0,0,1,0,0
+b65446a60c421cfc3411fe273edcc506783f628,timmywillisn@gmail.com,Thu Nov 12 13:25:42 2015 -0500,Release,"    Release: update authors
+","[' AUTHORS.txt | 13 +++++++++++++\n', ' 1 file changed, 13 insertions(+)\n']",1.0,13.0,0,1,2,0,2,0,0,0,0,0,0
+f5aee3b582cff72823efe9ed2785c1d17eadfd3,timmywillisn@gmail.com,Thu Nov 12 13:23:53 2015 -0500,Release,"    Release: use chalk instead of colors for terminal colors
+","[' build/release.js               | 3 ++-\n', ' build/release/ensure-sizzle.js | 7 ++++---\n', ' 2 files changed, 6 insertions(+), 4 deletions(-)\n']",2.0,6.0,4.0,2,3,0,3,0,0,0,0,0,0
+da144867f3a49bbac4342bd3f3242baae108eb9,timmywillisn@gmail.com,Thu Nov 5 18:13:00 2015 -0500,Tests,"    Tests: make editorconfig match css style
+","[' .editorconfig | 3 +--\n', ' 1 file changed, 1 insertion(+), 2 deletions(-)\n']",1.0,1.0,2.0,0,2,0,2,0,0,1,0,0,0
+15d16c02dae770eda88e644ec69ce82f25c0412,m.goleb@gmail.com,Fri Oct 30 19:16:27 2015 +0100,Tests,"    Tests: Make regexes for iOS devices more rigid
+","[' test/unit/support.js | 6 +++---\n', ' 1 file changed, 3 insertions(+), 3 deletions(-)\n']",1.0,3.0,3.0,1,2,0,2,0,0,1,0,0,0
+7e2aa6593a77c94eef610ac784494884f598253,m.goleb@gmail.com,Fri Oct 30 19:14:41 2015 +0100,Tests,"    Tests: Remove Safari 7.0 & iOS 6 support tests results
+","[' test/unit/support.js | 19 +------------------\n', ' 1 file changed, 1 insertion(+), 18 deletions(-)\n']",1.0,1.0,18.0,1,2,0,2,0,0,2,0,0,0
+c2b5362ef40058d5b375a40362c88559f81a293,m.goleb@gmail.com,Fri Oct 30 19:13:45 2015 +0100,Tests,"    Tests: Add iOS 9 support tests results
+","[' test/unit/support.js | 17 +++++++++++++++++\n', ' 1 file changed, 17 insertions(+)\n']",1.0,17.0,0,1,2,0,2,0,0,2,0,0,0
+be5b2b79a46c61ad36ea5df44f80b1cc2c1b60a,m.goleb@gmail.com,Fri Oct 30 01:34:33 2015 +0100,Build,"    Build: Test on Node 5
+","[' .travis.yml | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,1,1,0,0
+bb39f35118c33f1f7effc49112579ec9393f02c,timmywillisn@gmail.com,Thu Oct 29 15:21:46 2015 -0400,Release,"    Release: remove antiquated release-notes.js
+","[' build/release/release-notes.js | 58 ------------------------------------------\n', ' 1 file changed, 58 deletions(-)\n']",1.0,58.0,0,1,2,0,2,0,0,0,0,0,0
+abd5ba96c05279b3ffb052db5b8d17f75996694,timmywillisn@gmail.com,Wed Oct 28 13:54:04 2015 -0400,Core,"    Core: use interactive to evaluate dom ready, barring IE9-10
+    
+    Fixes gh-2100
+","[' src/core/ready.js                     |  8 ++++----\n', ' test/data/event/interactiveReady.html | 23 +++++++++++++++++++++++\n', ' test/unit/event.js                    | 12 ++++++++++++\n', ' 3 files changed, 39 insertions(+), 4 deletions(-)\n']",3.0,39.0,4.0,2,4,0,4,0,0,0,0,0,0
+931786018058174fa63551a7a4a3fccf9de41fa,richard.gibson@gmail.com,Sun Oct 25 15:25:56 2015 -0400,Tests,"    Tests: Post-Summit cleanup
+    
+    Ref 67d7a2eefee768b59eb3d51cb1fb2c671873e58a
+    Ref c752a5030bc00eb5b45dea9c28963f824a5c4f44
+","[' test/unit/attributes.js | 2 +-\n', ' test/unit/dimensions.js | 8 --------\n', ' 2 files changed, 1 insertion(+), 9 deletions(-)\n']",2.0,1.0,9.0,2,3,0,3,0,0,1,0,0,0
+b554cf04e809d77026d7afba6f02a7599724377,richard.gibson@gmail.com,Fri Oct 23 11:55:52 2015 -0400,Tests,"    Tests: Use standard external domain name
+    
+    Ref 01c360f96390ff16edfe65ef3b34e167087ef645
+    
+    (cherry picked from commit 36806891657b0a3b7c4a12d9698f2ebf552fd712)
+","[' test/unit/ajax.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,0,0,0
+5ac848868e993dfe5ccd7751a94f5c8edc288bc,timmywillisn@gmail.com,Sun Oct 18 15:50:43 2015 -0400,Core,"    Core: make isNumeric limited to strings and numbers
+    
+    Fixes gh-2662
+","[' src/core.js       | 12 ++++++------\n', ' test/unit/core.js |  2 +-\n', ' 2 files changed, 7 insertions(+), 7 deletions(-)\n']",2.0,7.0,7.0,2,3,0,3,0,0,0,0,0,0
+144e754a6a131bd4affec26fd85299e71bdab06,dave.methvin@gmail.com,Tue Oct 20 12:30:01 2015 -0400,Build,"    Build: Add ""deprecated"" to the Testswarm module list
+    
+    Ref #1740
+    
+    Yeah.
+","[' Gruntfile.js | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,1,1,0,0
+99a3ac7066226d00ff5828de596d4a4b3818c0c,m.goleb@gmail.com,Sun Oct 18 17:26:56 2015 -0400,Tests,"    Tests: Add Safari 9 support tests results
+","[' test/unit/support.js | 17 +++++++++++++++++\n', ' 1 file changed, 17 insertions(+)\n']",1.0,17.0,0,1,2,0,2,0,0,2,0,0,0
+090d98439f8dc449beafee98f8ff35cfb4f9116,liza.h.ramo@gmail.com,Sun Oct 18 15:00:38 2015 -0400,Core,"    Core: add unit test for isPlainObject(Symbol)
+    
+    Fixes #2645
+    Closes #2661
+","[' test/unit/core.js | 9 +++++++++\n', ' 1 file changed, 9 insertions(+)\n']",1.0,9.0,0,1,2,0,2,0,0,1,0,0,0
+577928d45bdcc3ee8f93da89ab7aadca21919f3,julian.alexander.murillo@gmail.com,Wed May 20 23:59:06 2015 -0500,Tests,"    Tests: Change quotes according to style guidelines
+    
+    Close gh-2339
+","[' test/data/offset/absolute.html | 4 ++--\n', ' test/data/offset/body.html     | 4 ++--\n', ' test/data/offset/fixed.html    | 4 ++--\n', ' test/data/offset/relative.html | 4 ++--\n', ' test/data/offset/scroll.html   | 8 ++++----\n', ' test/data/offset/static.html   | 4 ++--\n', ' test/data/offset/table.html    | 4 ++--\n', ' test/delegatetest.html         | 2 +-\n', ' test/networkerror.html         | 2 +-\n', ' 9 files changed, 18 insertions(+), 18 deletions(-)\n']",9.0,18.0,18.0,0,10,1,10,0,0,1,0,0,0
+fb84fa8ccefcd07febf282fd7b80262ad70add7,richard.gibson@gmail.com,Sat Oct 17 17:40:30 2015 -0400,Tests,"    Tests: Keep test iframes around for assertions
+    
+    Ref 44f8239d3f9d09d81e2885e9ae7e044277b67341
+    Ref gh-2644
+    Ref gh-2390
+","[' test/data/testinit.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,1,2,0,0,2,0,0,0
+703fd52ef88a2cdac93502070c51c93ffa1dfdd,liza.h.ramo@gmail.com,Sat Oct 17 16:48:57 2015 -0400,Core,"    Core: make isNumeric test work on Symbol
+    
+    Ref #2645
+    Closes #2657
+","[' src/core.js       | 3 ++-\n', ' test/unit/core.js | 7 +++++++\n', ' 2 files changed, 9 insertions(+), 1 deletion(-)\n']",2.0,9.0,1.0,2,3,0,3,0,0,1,0,0,0
+4f8239d3f9d09d81e2885e9ae7e044277b67341,markelog@gmail.com,Sat Oct 17 14:17:20 2015 -0400,Build,"    Build: update Sizzle to 2.2.1
+    
+    Ref #2644 - `selector` module in Edge - Waiting for Sizzle update
+    Fixes #2390
+","[' external/sizzle/dist/sizzle.js      | 16 ++++++++--------\n', ' external/sizzle/dist/sizzle.min.js  |  4 ++--\n', ' external/sizzle/dist/sizzle.min.map |  2 +-\n', ' package.json                        |  2 +-\n', ' 4 files changed, 12 insertions(+), 12 deletions(-)\n']",4.0,12.0,12.0,4,5,0,5,0,0,0,1,0,0
+7b76f5986a78d868553b9aec0d0192f5259a078,aurelioderosa@gmail.com,Mon Sep 21 00:05:50 2015 +0100,Tests,"    Tests: Account for array-like objects in jQuery.grep
+    
+    Closes gh-2605
+","[' test/unit/core.js | 79 ++++++++++++++++++++++++++++++++++++++++++++++++++-----\n', ' 1 file changed, 73 insertions(+), 6 deletions(-)\n']",1.0,73.0,6.0,1,2,0,2,0,0,1,0,0,0
+25bd303d99408bca86b7002cd42b8716e2b267e,markelog@gmail.com,Tue Oct 13 01:22:57 2015 +0300,Tests,"    Tests: fix code style issues
+    
+    Follow-up for 8a734344f2566dab5b8d34ecd79ae81ebd8843c5
+","[' test/unit/core.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,1,0,1,0,0,0
+a734344f2566dab5b8d34ecd79ae81ebd8843c5,webmaster@christiangrete.com,Sat Oct 3 00:28:34 2015 +0200,Core,"    Core: Support Symbol wrapper objects in jQuery.type
+    
+    In ECMAScript 2015 (ES6), the native typeof operator returns ""symbol""
+    for Symbol primitives. As it is possible to wrap symbols using the
+    Object constructor, symbols can be objects as well as any other
+    primitive type in JavaScript and should be determined by jQuery.type.
+    
+    Closes gh-2627
+","[' src/core.js       |  2 +-\n', ' test/unit/core.js | 13 +++++++++++++\n', ' 2 files changed, 14 insertions(+), 1 deletion(-)\n']",2.0,14.0,1.0,2,3,0,3,0,0,0,0,0,0
+c34e688439713725d4215c63bc4cf876d8d0423,martin@geekonaut.de,Mon Oct 12 16:02:25 2015 +0200,Build,"    Build: Fixed issue with base path that contain 'var'
+    
+    Remove the cwd from the paths, so the regex doesn't kick in on ""var""
+    
+    Fixes gh-2450
+    Closes gh-2641
+","[' build/tasks/build.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+3eaadb131df925d1072afd2496ee3b41d2f1fc6,garysye@gmail.com,Fri Sep 18 09:59:48 2015 -0700,Tests,"    Tests:Docs: Fix various typos
+    
+    * Changes ""baar"" to ""bar"" when used with ""foo"" in readme
+      and comments of js files
+    
+    * mousenter -> mouseenter
+    
+    Thanks @garysye, @KimTaehee
+    
+    Closes gh-2613
+    Closes gh-2601
+","[' README.md                 | 2 +-\n', ' src/event.js              | 2 +-\n', ' test/data/jquery-1.9.1.js | 2 +-\n', ' test/data/testinit.js     | 4 ++--\n', ' test/unit/event.js        | 2 +-\n', ' test/unit/selector.js     | 2 +-\n', ' 6 files changed, 7 insertions(+), 7 deletions(-)\n']",6.0,7.0,7.0,6,7,1,7,0,1,1,0,0,0
+748e436ad80d6a2e1661ba4cf8d7391ed87c3ad,c.liam.atherton@gmail.com,Fri Sep 25 12:02:53 2015 -0700,Tests,"    Tests: Add .extend test for defined accessor properties
+    
+    Closes gh-2615
+","[' test/unit/core.js | 23 +++++++++++++++++++++++\n', ' 1 file changed, 23 insertions(+)\n']",1.0,23.0,0,1,2,0,2,0,0,2,0,0,0
+35dea34fb0ae625542d51eae3f4e7316e403eaa,stdin+git@riichard.com,Sun Sep 20 14:41:37 2015 +0200,Docs,"    Docs: ""npm run build"" was missing from the contributing guides
+    
+    Close gh-2537
+","[' CONTRIBUTING.md | 6 ++++++\n', ' 1 file changed, 6 insertions(+)\n']",1.0,6.0,0,1,2,0,2,0,1,0,1,0,0
+23a64d745759d358d423ba0557e8f74d65f76cc,richard.gibson@gmail.com,Tue Sep 8 16:03:10 2015 -0400,Tests,"    Tests: Use QUnit URL parameter parsing
+","[' test/data/testinit.js | 9 +++------\n', ' 1 file changed, 3 insertions(+), 6 deletions(-)\n']",1.0,3.0,6.0,1,2,1,2,0,0,1,0,0,0
+9af896bb8f4cb37b22d508443174c8edf40fc54,richard.gibson@gmail.com,Tue Sep 8 15:56:08 2015 -0400,Tests,"    Tests: Add dummy modules when running basic tests
+    
+    Without this, other modules don't appear in the QUnit module picker.
+    
+    Ref 855b0c8c288533948b257925a8906f7da3449eed
+    Closes gh-2582
+","[' test/data/testinit.js | 29 ++++++++++++++++-------------\n', ' 1 file changed, 16 insertions(+), 13 deletions(-)\n']",1.0,16.0,13.0,1,2,1,2,0,0,2,0,0,0
+4fd7ef3d081b5c65d541237f73a4d89f0f0ad7b,m.goleb@gmail.com,Mon Sep 14 21:13:44 2015 +0200,Tests,"    Tests: Account for Edge in originalEvent UA-sniffs
+    
+    All other cases where Edge user agent needed to be taken into account
+    in tests have already been resolved.
+    
+    Fixes gh-2357
+","[' test/unit/event.js | 10 ++++------\n', ' 1 file changed, 4 insertions(+), 6 deletions(-)\n']",1.0,4.0,6.0,1,2,0,2,0,0,2,0,0,0
+ea94a83c7a5c5df6da578d417e5fb26152b19e1,m.goleb@gmail.com,Fri Sep 11 21:44:54 2015 +0200,Build,"    Build: Remove a double empty line at the end of .travis.yml
+    
+    The file already had an empty line at the end, I just can't see.
+    
+    Refs 06320c88af5be9cd937917282deb6eb4c4ad0443
+","[' .travis.yml | 1 -\n', ' 1 file changed, 1 deletion(-)\n']",1.0,1.0,0,1,2,0,2,0,0,0,1,0,0
+6320c88af5be9cd937917282deb6eb4c4ad0443,m.goleb@gmail.com,Fri Sep 11 21:35:10 2015 +0200,Build,"    Build: Use double quotes in .travis.yml
+    
+    .travis.yml used single quotes which is inconsistent with what we use in most
+    other files. Also, the file was missing an empty line at the end.
+","[' .travis.yml | 7 ++++---\n', ' 1 file changed, 4 insertions(+), 3 deletions(-)\n']",1.0,4.0,3.0,1,2,0,2,0,0,0,1,0,0
+50a1990baa571de60325ab2c52eabb399c4cf9e,m.goleb@gmail.com,Tue Sep 8 22:38:29 2015 +0200,Build,"    Build: Drop io.js testing, test on latest Node.js
+    
+    Node.js & io.js have merged, there will be no more major io.js releases.
+    Also, as of today io.js is officially unsupported (even if it still gets some
+    updates) while Node.js 4.0.0 (just released!) will be supported until 2018.
+","[' .travis.yml | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,2,1,0,0
+3d8d9751f3d14a545b26cf820dc1f51896a7b50,richard.gibson@gmail.com,Tue Sep 8 16:23:26 2015 -0400,Tests,"    Tests: Provide equal() arguments in correct order (actual, expected)
+    
+    Ref 224271982eb9cd351d7db1b38c740b4e927e6f97
+    Ref f5bf9bc48897e3b8f050d87d02252c8be456044a
+","[' test/unit/data.js | 25 +++++++++++++------------\n', ' 1 file changed, 13 insertions(+), 12 deletions(-)\n']",1.0,13.0,12.0,1,2,0,2,0,0,1,0,0,0
+b566d37a2879af12364a03c633c235a76f49925,m.goleb@gmail.com,Tue Sep 8 18:57:39 2015 +0200,Tests,"    Tests: Really fix tests in IE 8 this time
+    
+    IE 8 doesn't have indexOf on arrays. Also, one toLowerCase() was missing. Oops.
+    
+    This commit is not necessary on master but has been brought here to keep
+    tests similar in both branches.
+    
+    (cherry-picked from 1b48eef4caf7fa3aba0ee1a3473e0d46487d20ea)
+","[' test/data/testinit.js | 2 +-\n', ' test/unit/basic.js    | 2 +-\n', ' 2 files changed, 2 insertions(+), 2 deletions(-)\n']",2.0,2.0,2.0,2,3,1,3,0,0,3,0,0,0
+914b103627e3773418ad1fd8c3b034bf3748d51,m.goleb@gmail.com,Tue Sep 8 18:43:08 2015 +0200,Tests,"    Tests: Make basic tests work in IE 8
+    
+    IE 8 prints tag names in upper case which was breaking some tests.
+    
+    This commit is not necessary on master but has been brought here to keep
+    tests similar in both branches.
+","[' test/unit/basic.js | 48 +++++++++++++++++++++++++++++++++++++++++++-----\n', ' 1 file changed, 43 insertions(+), 5 deletions(-)\n']",1.0,43.0,5.0,1,2,0,2,0,0,4,0,0,0
+55b0c8c288533948b257925a8906f7da3449eed,m.goleb@gmail.com,Tue Sep 8 18:36:02 2015 +0200,Tests,"    Tests: Don't load non-basic tests when basic module is selected
+    
+    When loading basic tests don't load any others to not overload Android 2.3.
+    The drawback is that most tests are not selectable in the module dropdown
+    when the basic module is seelcted.
+    
+    Refs 2c7e9c934971500a746d012c529e13ec0b560a83
+","[' test/data/testinit.js | 66 +++++++++++++++++++++++++++++----------------------\n', ' 1 file changed, 37 insertions(+), 29 deletions(-)\n']",1.0,37.0,29.0,1,2,1,2,0,0,4,0,0,0
+c7e9c934971500a746d012c529e13ec0b560a83,m.goleb@gmail.com,Thu Jul 30 00:54:00 2015 +0200,Tests,"    Tests: Add simple tests for Android 2.3
+    
+    Fixes gh-2505
+    Closes gh-2509
+    Refs gh-2483
+","[' Gruntfile.js             |   8 ++\n', ' build/tasks/testswarm.js |  12 ++-\n', ' test/data/testinit.js    |   6 ++\n', ' test/unit/basic.js       | 264 +++++++++++++++++++++++++++++++++++++++++++++++\n', ' 4 files changed, 286 insertions(+), 4 deletions(-)\n']",4.0,286.0,4.0,4,5,2,5,0,0,2,0,0,0
+bb2daa8c3a458e3525d310440f4365548edc138,m.goleb@gmail.com,Mon Aug 3 20:28:37 2015 +0200,Build,"    Build: Don't install jsdom 3 on Node.js 0.10 & 0.12 by default
+    
+    jsdom 3 requires Python & Visual Studio on Windows which is a significant
+    barrier to contributors. Newer jsdom versions don't require pre-compiling
+    but work only on io.js. This commit installs the new jsdom everywhere (it
+    does install in old Node.js, it just won't work) and executes Node-related
+    tests only on newer Nodes or if a working jsdom version is installed. The
+    latter can be achieved by running the `old_jsdom` task.
+    
+    Node.js is merging with io.js soon so this will become a smaller problem over
+    time.
+    
+    One drawback is our Jenkins setup runs on Node 0.10 so it won't be running
+    Node tests anymore. We have Travis set up on io.js, though so all PRs
+    have those tests run. When the new LTS Node.js arrives (as it soon merges
+    with io.js) we should update our Jenkins infrastructure so that it runs on this
+    new version.
+    
+    Fixes gh-2519
+    Closes gh-2526
+","[' Gruntfile.js                     | 22 +++++++++++++++++++---\n', ' build/tasks/install_jsdom.js     | 27 ---------------------------\n', ' build/tasks/install_old_jsdom.js | 20 ++++++++++++++++++++\n', ' build/tasks/node_smoke_tests.js  |  2 +-\n', ' package.json                     |  5 +----\n', ' 5 files changed, 41 insertions(+), 35 deletions(-)\n']",5.0,41.0,35.0,5,6,0,6,0,0,3,1,0,0
+161eecce09fc66ce252d4adf64b565f726bb6d2,markelog@gmail.com,Tue Sep 8 03:28:56 2015 +0300,Tests,"    Tests: more style corrections
+    
+    Provocated by jscs-dev/node-jscs@2de68c0d8351103bb2a989dc942ab47a391d3546
+    
+    Closes gh-2578
+","[' test/unit/core.js  | 2 +-\n', ' test/unit/data.js  | 2 +-\n', ' test/unit/event.js | 2 +-\n', ' 3 files changed, 3 insertions(+), 3 deletions(-)\n']",3.0,3.0,3.0,3,4,0,4,0,0,1,0,0,0
+8d15a2f9f108e90d3651c31e4abf45415a30fde,markelog@gmail.com,Tue Sep 8 03:26:29 2015 +0300,Tests,"    Tests: further improvements QUnit 2.0 migration
+    
+    * Remove QUnit jshint globals
+    * Extend QUnit.assert methods
+    * Use assert.async instead of start/stop/done
+    
+    Ref b930d14ce64937e9478405eee2828d4da091d2cb
+","[' test/.jshintrc            |  13 ---\n', ' test/data/testinit.js     |   6 +-\n', ' test/data/testrunner.js   |  16 ++--\n', ' test/unit/ajax.js         |  74 +++++++++-------\n', ' test/unit/attributes.js   |   4 +-\n', ' test/unit/core.js         |  20 +++--\n', ' test/unit/css.js          | 161 ++++++++++++++++++-----------------\n', ' test/unit/data.js         |   4 +-\n', ' test/unit/deferred.js     |   6 +-\n', ' test/unit/dimensions.js   |  12 +--\n', ' test/unit/effects.js      |   8 +-\n', ' test/unit/event.js        |  14 ++-\n', ' test/unit/manipulation.js |   8 +-\n', ' test/unit/selector.js     | 212 +++++++++++++++++++++++-----------------------\n', ' test/unit/support.js      |   6 +-\n', ' test/unit/traversing.js   |   2 +-\n', ' 16 files changed, 294 insertions(+), 272 deletions(-)\n']",16.0,294.0,272.0,16,17,2,17,0,0,1,0,0,0
+8cee73244d55910a1ac82bcf6cae04a7f650484,yongwoo.jeon@navercorp.com,Thu Jul 2 15:33:38 2015 +0900,Core,"    Core: Remove unnecessary parameter to jQuery#constructor
+    
+    Closes gh-2441
+","[' src/core.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,0,0,0
+b30934c1d7e023d9e80525c6e7ad4da31b543af,batiste.bieler@gmail.com,Tue Jul 7 10:38:44 2015 +0200,Build,"    Build: Fix an email address of a contributor
+    
+    Closes gh-2455
+","[' .mailmap    | 2 +-\n', ' AUTHORS.txt | 2 +-\n', ' 2 files changed, 2 insertions(+), 2 deletions(-)\n']",2.0,2.0,2.0,2,3,0,3,0,0,0,1,0,0
+adf04a73c135dc729b9d9889bc963b45a9fc471,markelog@gmail.com,Tue Sep 8 02:33:43 2015 +0300,Build,"    Build: put back ""lint"" command to the ""dev"" list
+    
+    Also fix lint error in `data` module.
+    
+    It seems this command was removed from the list during merge
+","[' Gruntfile.js               | 2 +-\n', ' src/data/var/acceptData.js | 1 +\n', ' 2 files changed, 2 insertions(+), 1 deletion(-)\n']",2.0,2.0,1.0,2,3,0,3,0,0,0,1,0,0
+2e10082b25df3b47b6b98e3b35399712795b7df,m.goleb@gmail.com,Tue Sep 8 00:40:52 2015 +0200,Tests,"    Tests: lower the PHP sleep time in unreleasedXHR.html
+    
+    The AJAX test performed in unreleasedXHR.html was scheduling PHP processes
+    sleeping for 10 minutes. When a lot of commits are tested in short intervals
+    this was causing build failures due to the drained php-fpm pool.
+    
+    The 10 seconds sleep time should be enough for this test.
+    
+    Refs 62acda819f9b6fba9263d0b613e15285807b23a7
+","[' test/data/ajax/unreleasedXHR.html | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,0,2,0,2,0,0,4,1,0,0
+35e9218beef8f0c559da314fac01cb85dacb740,reed@reedloden.com,Mon Aug 24 12:24:56 2015 -0700,Build,"    Build: Update grunt-contrib-uglify because of a security issue in uglify
+    
+    Update grunt-contrib-uglify dependency to v0.9.2 in order to
+    avoid a security issue fixed in uglify-js v2.4.24.
+    
+    https://github.com/mishoo/UglifyJS2/issues/751
+    https://zyan.scripts.mit.edu/blog/backdooring-js/
+    
+    Closes gh-2556
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+35bdc1a22d7b5786b8f849acdc4653f1dc25e9b,markelog@gmail.com,Thu Sep 3 02:53:29 2015 +0300,Build,"    Build: correct style tests files which could be automatically corrected
+","[' test/data/support/csp.js                    |  4 ++--\n', ' test/integration/data/gh-1764-fullscreen.js |  6 +++---\n', ' test/jquery.js                              | 20 +++++++++++---------\n', ' test/promises_aplus_adapter.js              |  4 ++--\n', ' 4 files changed, 18 insertions(+), 16 deletions(-)\n']",4.0,18.0,16.0,4,5,0,5,0,0,1,1,0,0
+9975c44abc8c1092764c7fca3ccfe89fc832b87,markelog@gmail.com,Thu Sep 3 02:52:52 2015 +0300,Build,"    Build: correct jscs paths
+","[' Gruntfile.js | 5 ++---\n', ' 1 file changed, 2 insertions(+), 3 deletions(-)\n']",1.0,2.0,3.0,1,2,0,2,0,0,0,1,0,0
+0fdad742a2a6aa9f0e00b3e04fc5264797c53c7,markelog@gmail.com,Sun Aug 16 09:59:58 2015 +0300,Build,"    Build: Update jscs and lint files
+    
+    Fixes gh-2056
+","[' .jscsrc                                   |    6 +-\n', ' Gruntfile.js                              |   14 +-\n', ' build/release.js                          |    7 +-\n', ' build/release/cdn.js                      |   19 +-\n', ' build/release/dist.js                     |   13 +-\n', ' build/release/ensure-sizzle.js            |   11 +-\n', ' build/release/release-notes.js            |   34 +-\n', ' build/tasks/build.js                      |   51 +-\n', ' build/tasks/dist.js                       |   14 +-\n', ' build/tasks/install_jsdom.js              |    2 +-\n', ' build/tasks/sourcemap.js                  |    3 +-\n', ' build/tasks/testswarm.js                  |   13 +-\n', ' package.json                              |    4 +-\n', ' src/ajax.js                               |   84 +-\n', ' src/ajax/jsonp.js                         |   26 +-\n', ' src/ajax/load.js                          |   18 +-\n', ' src/ajax/parseJSON.js                     |    4 +-\n', ' src/ajax/parseXML.js                      |    4 +-\n', ' src/ajax/script.js                        |   17 +-\n', ' src/ajax/var/location.js                  |    4 +-\n', ' src/ajax/var/nonce.js                     |    4 +-\n', ' src/ajax/var/rquery.js                    |    6 +-\n', ' src/ajax/xhr.js                           |   26 +-\n', ' src/attributes.js                         |    4 +-\n', ' src/attributes/attr.js                    |   22 +-\n', ' src/attributes/classes.js                 |   38 +-\n', ' src/attributes/prop.js                    |   20 +-\n', ' src/attributes/support.js                 |    8 +-\n', ' src/attributes/val.js                     |   46 +-\n', ' src/callbacks.js                          |   22 +-\n', ' src/core.js                               |   50 +-\n', ' src/core/access.js                        |   15 +-\n', ' src/core/init.js                          |   27 +-\n', ' src/core/parseHTML.js                     |   13 +-\n', ' src/core/ready.js                         |   11 +-\n', ' src/core/support.js                       |    8 +-\n', ' src/core/var/rsingleTag.js                |    7 +-\n', ' src/css.js                                |   51 +-\n', ' src/css/addGetHookIf.js                   |    8 +-\n', ' src/css/adjustCSS.js                      |   10 +-\n', ' src/css/curCSS.js                         |    7 +-\n', ' src/css/hiddenVisibleSelectors.js         |    4 +-\n', ' src/css/showHide.js                       |    5 +-\n', ' src/css/support.js                        |   14 +-\n', ' src/css/var/cssExpand.js                  |    4 +-\n', ' src/css/var/getStyles.js                  |    4 +-\n', ' src/css/var/isHidden.js                   |    6 +-\n', ' src/css/var/rmargin.js                    |    6 +-\n', ' src/css/var/rnumnonpx.js                  |    4 +-\n', ' src/css/var/swap.js                       |    4 +-\n', ' src/data.js                               |   27 +-\n', ' src/data/Data.js                          |    8 +-\n', ' src/data/accepts.js                       |    5 +-\n', ' src/data/var/dataPriv.js                  |    4 +-\n', ' src/data/var/dataUser.js                  |    4 +-\n', ' src/deferred.js                           |   57 +-\n', ' src/deprecated.js                         |    4 +-\n', ' src/dimensions.js                         |   10 +-\n', ' src/effects.js                            |   81 +-\n', ' src/effects/Tween.js                      |    6 +-\n', ' src/effects/animatedSelector.js           |    8 +-\n', ' src/event.js                              |  120 +-\n', ' src/event/ajax.js                         |    8 +-\n', ' src/event/alias.js                        |   15 +-\n', ' src/event/support.js                      |    4 +-\n', ' src/exports/amd.js                        |    6 +-\n', ' src/exports/global.js                     |    1 +\n', ' src/jquery.js                             |    6 +-\n', ' src/manipulation.js                       |   51 +-\n', ' src/manipulation/_evalUrl.js              |    8 +-\n', ' src/manipulation/buildFragment.js         |    5 +-\n', ' src/manipulation/getAll.js                |    5 +-\n', ' src/manipulation/setGlobalEval.js         |    4 +-\n', ' src/manipulation/support.js               |    8 +-\n', ' src/manipulation/var/rcheckableType.js    |    6 +-\n', ' src/manipulation/var/rscriptType.js       |    4 +-\n', ' src/manipulation/var/rtagName.js          |    4 +-\n', ' src/manipulation/wrapMap.js               |    4 +-\n', ' src/offset.js                             |   26 +-\n', ' src/queue.js                              |   33 +-\n', ' src/queue/delay.js                        |    6 +-\n', ' src/selector-native.js                    |   36 +-\n', ' src/selector-sizzle.js                    |    6 +-\n', ' src/selector.js                           |    2 +-\n', ' src/serialize.js                          |   35 +-\n', ' src/traversing.js                         |   39 +-\n', ' src/traversing/findFilter.js              |   24 +-\n', ' src/traversing/var/rneedsContext.js       |    4 +-\n', ' src/var/arr.js                            |    4 +-\n', ' src/var/class2type.js                     |    5 +-\n', ' src/var/concat.js                         |    4 +-\n', ' src/var/document.js                       |    4 +-\n', ' src/var/documentElement.js                |    4 +-\n', ' src/var/hasOwn.js                         |    4 +-\n', ' src/var/indexOf.js                        |    4 +-\n', ' src/var/pnum.js                           |    6 +-\n', ' src/var/push.js                           |    4 +-\n', ' src/var/rcssNum.js                        |    4 +-\n', ' src/var/rnotwhite.js                      |    6 +-\n', ' src/var/slice.js                          |    4 +-\n', ' src/var/support.js                        |    5 +-\n', ' src/var/toString.js                       |    4 +-\n', ' src/wrap.js                               |   32 +-\n', ' test/data/jquery-1.9.1.js                 | 1852 ++++++++++++++++------------\n', ' test/data/readywaitloader.js              |   12 +-\n', ' test/data/testinit.js                     |   41 +-\n', ' test/data/testrunner.js                   |   27 +-\n', ' test/node_smoke_tests/document_missing.js |    2 +-\n', ' test/unit/ajax.js                         |  938 +++++++--------\n', ' test/unit/attributes.js                   | 1220 +++++++++----------\n', ' test/unit/callbacks.js                    |  130 +-\n', ' test/unit/core.js                         | 1004 ++++++++--------\n', ' test/unit/css.js                          |  874 +++++++-------\n', ' test/unit/data.js                         |  672 ++++++-----\n', ' test/unit/deferred.js                     |  430 +++----\n', ' test/unit/deprecated.js                   |    2 +-\n', ' test/unit/dimensions.js                   |  240 ++--\n', ' test/unit/effects.js                      | 1336 +++++++++++----------\n', ' test/unit/event.js                        | 1866 +++++++++++++++--------------\n', ' test/unit/exports.js                      |    8 +-\n', ' test/unit/manipulation.js                 | 1577 ++++++++++++------------\n', ' test/unit/offset.js                       |  416 ++++---\n', ' test/unit/queue.js                        |  240 ++--\n', ' test/unit/ready.js                        |   10 +-\n', ' test/unit/selector.js                     |  458 +++----\n', ' test/unit/serialize.js                    |  128 +-\n', ' test/unit/support.js                      |   16 +-\n', ' test/unit/traversing.js                   | 1046 ++++++++--------\n', ' test/unit/wrap.js                         |  551 ++++++---\n', ' 129 files changed, 8708 insertions(+), 7968 deletions(-)\n']",129.0,8708.0,7968.0,129,130,3,130,0,0,0,1,0,0
+aa46e0df8a673e6b00550bbbbed21eed50108b7,markelog@gmail.com,Sun Aug 16 09:06:13 2015 +0300,Tests,"    Tests: do not define two modules with the same name
+    
+    Fixes gh-2437
+","[' test/unit/ready.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,0,0,0
+930d14ce64937e9478405eee2828d4da091d2cb,markelog@gmail.com,Sun Aug 16 06:45:28 2015 +0300,Tests,"    Tests: partially use new qunit interface
+    
+    http://qunitjs.com/upgrade-guide-2.x/
+    
+    For most of the boring work was used
+    https://github.com/apsdehal/qunit-migrate package
+    
+    However, it can't update local qunit helpers, plus in some places
+    old QUnit.asyncTest signature is still used
+    
+    Fixes gh-2540
+","[' test/data/testinit.js     |   49 +-\n', ' test/unit/ajax.js         | 2382 ++++++++++++++++++++++++---------------------\n', ' test/unit/animation.js    |  231 +++--\n', ' test/unit/attributes.js   |  982 +++++++++----------\n', ' test/unit/callbacks.js    |  130 +--\n', ' test/unit/core.js         | 1072 ++++++++++----------\n', ' test/unit/css.js          |  569 +++++------\n', ' test/unit/data.js         |  517 +++++-----\n', ' test/unit/deferred.js     |  196 ++--\n', ' test/unit/deprecated.js   |    2 +-\n', ' test/unit/dimensions.js   |  356 +++----\n', ' test/unit/effects.js      |  905 ++++++++---------\n', ' test/unit/event.js        | 1160 +++++++++++-----------\n', ' test/unit/exports.js      |    8 +-\n', ' test/unit/manipulation.js | 1342 ++++++++++++-------------\n', ' test/unit/offset.js       |  322 +++---\n', ' test/unit/queue.js        |  180 ++--\n', ' test/unit/ready.js        |   30 +-\n', ' test/unit/selector.js     |  340 +++----\n', ' test/unit/serialize.js    |   78 +-\n', ' test/unit/support.js      |   45 +-\n', ' test/unit/traversing.js   |  816 ++++++++--------\n', ' test/unit/tween.js        |  203 ++--\n', ' test/unit/wrap.js         |  224 ++---\n', ' 24 files changed, 6198 insertions(+), 5941 deletions(-)\n']",24.0,6198.0,5941.0,24,25,1,25,0,0,1,0,0,0
+adfad19865837f5dffedb1eb41e407f196ca515,m.goleb@gmail.com,Mon Aug 3 19:31:25 2015 +0200,Core,"    Core: Don't expose jQuery.access
+    
+    jQuery.access was never documented, there is no need to keep it exposed.
+    
+    Fixes gh-2513
+    Closes gh-2524
+","[' src/core/access.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,1,0,0,0,0
+69cb16d763cb5486dadd56ec15a17b2b0303571,m.goleb@gmail.com,Sun Aug 2 01:48:54 2015 +0200,Build,"    Build: Add a comment explaining why the es3 option is needed
+    
+    It might not be obvious to everyone that IE 9 & Android 4.0 are not
+    ES5-compliant browsers (by a large margin) so it's better to add a support
+    comment. This requires slight changes in parsing the config file
+    as it's not a pure JSON anymore. JSHint understands such files without
+    problems.
+    
+    Closes gh-2520
+","[' Gruntfile.js  | 8 ++++++--\n', ' package.json  | 1 +\n', ' src/.jshintrc | 3 +++\n', ' 3 files changed, 10 insertions(+), 2 deletions(-)\n']",3.0,10.0,2.0,3,4,0,4,0,0,0,1,0,0
+abe94edb4880c75eeebc5b5b5d66a9ad17008fe,markelog@gmail.com,Wed Jul 29 18:10:04 2015 +0300,Tests,"    Tests: don't use deprecated argument in test declaration
+    
+    Closes gh-2507
+","[' test/unit/ajax.js         | 20 +++++++---\n', ' test/unit/attributes.js   |  7 +++-\n', ' test/unit/core.js         | 12 ++++--\n', ' test/unit/css.js          | 24 +++++++++---\n', ' test/unit/data.js         | 32 +++++++++++----\n', ' test/unit/dimensions.js   |  8 +++-\n', ' test/unit/effects.js      | 99 +++++++++++++++++++++++++++++++++++------------\n', ' test/unit/event.js        | 12 ++++--\n', ' test/unit/manipulation.js | 28 ++++++++++----\n', ' test/unit/queue.js        |  8 +++-\n', ' test/unit/wrap.js         |  8 +++-\n', ' 11 files changed, 193 insertions(+), 65 deletions(-)\n']",11.0,193.0,65.0,11,12,0,12,0,0,2,0,0,0
+60a4780339b7f412b75ad8a06dca7f39616f654,brunoperel@gmail.com,Thu Jul 30 15:34:34 2015 +0200,Docs,"    Docs: Fix various spelling mistakes
+    
+    Closes gh-2487
+","[' build/release/dist.js     | 2 +-\n', ' test/data/support/csp.php | 2 +-\n', ' test/unit/css.js          | 2 +-\n', ' test/unit/event.js        | 2 +-\n', ' test/unit/manipulation.js | 2 +-\n', ' test/unit/tween.js        | 2 +-\n', ' 6 files changed, 6 insertions(+), 6 deletions(-)\n']",6.0,6.0,6.0,5,7,0,7,0,1,0,0,0,0
+3bee4701d14202045a88aab156da0daf9418430,m.goleb@gmail.com,Mon Jul 27 22:14:48 2015 +0200,Core,"    Core: Adjust comments & tests after dropping Safari 6 support
+    
+    Support comments that mentioned only Safari < 7 were checked & updated
+    to account for bugs existing in newer versions as well; Safari 6 support
+    test results were removed.
+    
+    Refs gh-2482
+","[' src/event.js         | 2 +-\n', ' src/offset.js        | 2 +-\n', ' test/unit/css.js     | 2 +-\n', ' test/unit/support.js | 2 +-\n', ' 4 files changed, 4 insertions(+), 4 deletions(-)\n']",4.0,4.0,4.0,4,5,0,5,0,0,2,0,1,0
+f48c21d225c31f0f9b5441d95f73615ca3dcfdb,thomastortorini@gmail.com,Thu Jun 25 06:18:04 2015 +0200,Core,"    Core: .each/.map should accept an undefined/null value
+    
+    Fixes gh-2267
+    Closes gh-2363
+","[' src/core.js       | 20 +++++++++-----------\n', ' test/unit/core.js | 12 ++++++++++++\n', ' 2 files changed, 21 insertions(+), 11 deletions(-)\n']",2.0,21.0,11.0,2,3,0,3,0,0,0,0,0,0
+24275372624bac897c4131fd1507a58c09a1483,m.goleb@gmail.com,Mon Jul 20 20:22:34 2015 +0200,Core,"    Core: Add a support comment for Safari 8
+    
+    Related issue: https://bugs.webkit.org/show_bug.cgi?id=137337
+    
+    Thanks @phistuck!
+    
+    Refs cfe468f29c4cbe1a457d0feb17dec90dcfd7c280
+","[' src/core/support.js | 5 +++++\n', ' 1 file changed, 5 insertions(+)\n']",1.0,5.0,0,1,2,0,2,0,0,0,0,0,0
+c59b308d201d6dd0f0aed2ad0256d01b9f68047,m.goleb@gmail.com,Mon Jul 20 00:55:48 2015 +0200,Build,"    Build: Acknowledge Android 2.3 is not ES5-compatible
+    
+    Android 2.3 chokes on unquoted reserved words being used as property names
+    which was making Deferred tests not run.
+    
+    Acknowledge the sad fact that Android 2.3 is not ES5-compliant browser
+    and enable the ""es3"" option in JSHint config.
+    
+    Fixes gh-2478
+    Closes gh-2481
+","[' src/.jshintrc         | 3 +++\n', ' test/.jshintrc        | 3 +++\n', ' test/unit/core.js     | 2 +-\n', ' test/unit/css.js      | 2 +-\n', ' test/unit/deferred.js | 8 ++++----\n', ' test/unit/effects.js  | 2 +-\n', ' 6 files changed, 13 insertions(+), 7 deletions(-)\n']",6.0,13.0,7.0,6,7,0,7,0,0,1,1,1,0
+44dd7775b387094d8c921c7e839e3c266e4f2c8,timmywillisn@gmail.com,Mon Jul 13 15:01:33 2015 -0400,Release,"    Release: properly set the dist remote when it's a real release
+","[' build/release/dist.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,0,0,0
+ec73efb26317239a4f22f0b023b0b99a4300a20,timmywillisn@gmail.com,Sat Jul 11 11:41:06 2015 -0400,Build,"    Build: add mailmap entry
+","[' .mailmap    | 1 +\n', ' AUTHORS.txt | 3 +--\n', ' 2 files changed, 2 insertions(+), 2 deletions(-)\n']",2.0,2.0,2.0,2,3,0,3,0,0,0,1,0,0
+f13997e89ca325a49f7581fad7e85fe37bad166,timmywillisn@gmail.com,Wed Jul 8 13:41:48 2015 -0400,Build,"    Build: update AUTHORS.txt
+","[' AUTHORS.txt | 15 +++++++++++++++\n', ' 1 file changed, 15 insertions(+)\n']",1.0,15.0,0,1,2,0,2,0,0,0,1,0,0
+c8ba6af921f4c9650fb1e4cfc698b2a276fa53d,m.goleb@gmail.com,Wed Jul 8 13:00:38 2015 +0200,Tests,"    Tests: Remove a trailing comma for compatibility with the compat branch
+","[' test/integration/data/gh-1764-fullscreen.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,0,0,0
+44cfa00665d21c3197e25c2d63741dc15f6ffb9,gnarf@gnarf.net,Fri Jun 26 20:20:48 2015 -0400,Tests,"    Tests: Lower the checks rounding error
+    
+    The CSS value rounding error was causig failures on FF and IE.
+","[' test/unit/tween.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,0,0,0
+153b5334eb2c8317372b46209bd9d092a91afdc,giladp007@gmail.com,Wed Jun 10 17:56:17 2015 +0300,Core,"    Core: organize prop & attr code to be similar
+    
+    Closes gh-2384
+","[' src/attributes/attr.js | 70 ++++++++++++++++++++++++--------------------------\n', ' src/attributes/prop.js | 40 ++++++++++++++++-------------\n', ' 2 files changed, 56 insertions(+), 54 deletions(-)\n']",2.0,56.0,54.0,2,3,0,3,1,0,0,0,0,0
+3a577aa0bcb439c1730c3825407d86c128b17be,timmywillisn@gmail.com,Tue Jun 16 11:24:21 2015 -0400,Build,"    Build: space between curly and paren is optional
+    
+    Fixes gh-2399
+    Close gh-2400
+","[' build/tasks/build.js | 4 ++--\n', ' 1 file changed, 2 insertions(+), 2 deletions(-)\n']",1.0,2.0,2.0,1,2,0,2,0,0,0,1,0,0
+42958e7aecd0d75a7ee9e2aaec83457701aa2f3,m.goleb@gmail.com,Wed Jun 17 12:55:59 2015 +0200,Core,"    Core: Switch from modules to just window.setTimeout etc.
+    
+    Using modules for window.setTimeout etc. made those functions cached and
+    disabled Sinon mocking, making effects tests fail. Just writing
+    window.setTimeout directly is smaller anyway.
+","[' src/ajax.js              |  9 +++------\n', ' src/core/ready.js        |  5 ++---\n', ' src/deferred.js          |  5 ++---\n', ' src/effects.js           | 12 ++++--------\n', ' src/queue/delay.js       |  8 +++-----\n', ' src/var/clearInterval.js |  3 ---\n', ' src/var/clearTimeout.js  |  3 ---\n', ' src/var/setInterval.js   |  3 ---\n', ' src/var/setTimeout.js    |  3 ---\n', ' 9 files changed, 14 insertions(+), 37 deletions(-)\n']",9.0,14.0,37.0,9,10,0,10,0,0,1,0,0,0
+19c7494938a10b985b7827990bc419e41585b10,m.goleb@gmail.com,Sun Jun 14 19:21:57 2015 +0200,Core,"    Core: Use window.setTimeout & friends instead of global equivalents
+    
+    Fixes gh-2177
+","[' src/.jshintrc            | 4 ----\n', ' src/ajax.js              | 5 ++++-\n', ' src/core/ready.js        | 3 ++-\n', ' src/deferred.js          | 3 ++-\n', ' src/effects.js           | 6 +++++-\n', ' src/queue/delay.js       | 4 +++-\n', ' src/var/clearInterval.js | 3 +++\n', ' src/var/clearTimeout.js  | 3 +++\n', ' src/var/setInterval.js   | 3 +++\n', ' src/var/setTimeout.js    | 3 +++\n', ' 10 files changed, 28 insertions(+), 9 deletions(-)\n']",10.0,28.0,9.0,10,11,0,11,0,0,0,0,0,0
+831856490d2212bdbaff4cd76137b93ccf26d92,m.goleb@gmail.com,Tue Jun 16 16:25:16 2015 +0200,Tests,"    Tests: Remove test/data/ua.txt
+    
+    The file was used by $.browser tests but $.browser now doesn't exists
+    in Core and this file hasn't been updated for a few years.
+    
+    Fixes gh-2398
+","[' test/data/ua.txt | 272 -------------------------------------------------------\n', ' 1 file changed, 272 deletions(-)\n']",1.0,272.0,0,1,2,0,2,0,0,3,0,0,0
+a1217e40193c8884155ccaf415091d326ddb52a,m.goleb@gmail.com,Tue Jun 16 14:44:24 2015 +0200,Tests,"    Tests: Remove Edge version from the user agent
+    
+    The version will change in the future, matching by /edge\//i is enough
+    
+    Refs 8e111df641cca3e1b75b31a1971bfc89014b4ded
+","[' test/unit/support.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,0,0,0
+e111df641cca3e1b75b31a1971bfc89014b4ded,m.goleb@gmail.com,Sun Jun 14 00:50:05 2015 +0200,Tests,"    Tests: Add Microsoft Edge results (from Windows 10 build 10130)
+    
+    The Microsoft Edge user agent contains ""Chrome"" so it needs to be checked
+    before Chrome.
+","[' test/unit/support.js | 26 ++++++++++++++++++++++----\n', ' 1 file changed, 22 insertions(+), 4 deletions(-)\n']",1.0,22.0,4.0,1,2,0,2,0,0,1,1,0,0
+17543fd3c14ff86c448dbb90f9fe1223661a73b,m.goleb@gmail.com,Sun Jun 14 00:37:31 2015 +0200,Tests,"    Tests: Correct a typo in the regex matching Safari 8
+","[' test/unit/support.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,0,0,0
+b026fc12c3c2ad37f47f0919e484bddcdc3d291,m.goleb@gmail.com,Mon Jun 1 23:25:38 2015 +0200,Core,"    Core: Make jQuery objects iterable
+    
+    Make iterating over jQuery objects possible using ES 2015 for-of:
+    
+        for ( node of $( ""<div id=narwhal>"" ) ) {
+            console.log( node.id ); // ""narwhal""
+        }
+    
+    Fixes gh-1693
+","[' .gitignore                                         |  2 ++\n', ' .jscsrc                                            |  3 ++-\n', ' .jshintignore                                      |  1 +\n', ' Gruntfile.js                                       | 12 +++++++++++\n', ' build/tasks/node_smoke_tests.js                    |  2 +-\n', ' package.json                                       |  2 ++\n', ' src/core.js                                        | 10 +++++++++\n', ' test/.jshintrc                                     |  1 +\n', ' .../iterable_with_native_symbol.js                 |  8 +++++++\n', ' .../iterable_with_symbol_polyfill.js               | 13 +++++++++++\n', ' .../node_smoke_tests/lib/ensure_iterability_es6.js | 25 ++++++++++++++++++++++\n', ' test/unit/core.js                                  | 20 +++++++++++++++++\n', ' 12 files changed, 97 insertions(+), 2 deletions(-)\n']",12.0,97.0,2.0,12,13,0,13,0,0,0,0,1,0
+c8a3ecdc46156afd8f93aa44b6e6aea7c52c049,m.goleb@gmail.com,Mon Jun 1 23:25:38 2015 +0200,Build,"    Build: Refactor Node smoke tests
+    
+    Utilize the assert module, avoid inline JSHint comments.
+","[' build/tasks/node_smoke_tests.js                      |  3 ++-\n', ' test/node_smoke_tests/.jshintrc                      | 14 ++++++++++++++\n', ' test/node_smoke_tests/document_missing.js            | 20 ++++++--------------\n', ' test/node_smoke_tests/document_passed.js             |  9 +++------\n', ' test/node_smoke_tests/document_present_originally.js |  9 +++------\n', ' .../lib/ensure_global_not_created.js                 | 10 ++++------\n', ' test/node_smoke_tests/lib/ensure_jquery.js           | 10 ++++------\n', ' 7 files changed, 36 insertions(+), 39 deletions(-)\n']",7.0,36.0,39.0,7,8,0,8,0,0,1,1,0,0
+556c4661af647e355a9a5c0a814012955e231bc,m.goleb@gmail.com,Mon Jun 1 23:25:38 2015 +0200,Build,"    Build: Update grunt-contrib-jshint
+","[' package.json   | 2 +-\n', ' test/.jshintrc | 1 +\n', ' 2 files changed, 2 insertions(+), 1 deletion(-)\n']",2.0,2.0,1.0,2,3,0,3,0,0,0,1,0,0
+85cfbfccc4c61d50ee8e0fe6e23695dc663e166,markelog@gmail.com,Thu Jun 11 16:25:36 2015 +0300,Build,"    Build: remove bower.json lint target
+    
+    Ref 26eca143c2dd857b9e3d1c446a467fed16e903d2
+","[' Gruntfile.js | 4 ----\n', ' 1 file changed, 4 deletions(-)\n']",1.0,4.0,0,1,2,0,2,0,0,0,1,0,0
+e92e1ea3c533f3be82c99bbafaaf74b5bdedecc,giladp007@gmail.com,Tue May 19 14:05:21 2015 +0300,Build,"    Build: Update the license attribute
+    
+    Specifying the type and URL is deprecated:
+    
+    https://docs.npmjs.com/files/package.json#license
+    http://npm1k.org/
+    
+    Fixes gh-2331
+    Closes gh-2330
+","[' package.json | 7 +------\n', ' 1 file changed, 1 insertion(+), 6 deletions(-)\n']",1.0,1.0,6.0,1,2,0,2,0,1,0,1,0,0
+c9277086742fe3a38a268ef97184be34e294655,markelog@gmail.com,Fri May 29 19:45:02 2015 +0300,Docs,"    Docs: remove redundant instruction from the readme
+    
+    Thanks @elas7
+    
+    Fixes gh-2359
+","[' README.md | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,1,0,0,0,0
+644101ed04d0beacea864ce805e0c4f86ba1cd1,markelog@gmail.com,Tue May 19 18:45:14 2015 +0300,Build,"    Build: update requirejs dependency to 2.1.17
+    
+    Fixes gh-2290
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+1e21a4eaf479406b660328f4df7e3183c32386b,github@rebertia.com,Tue May 12 20:13:46 2015 -0700,Build,"    Build: bower.json: remove moot `version` field
+    
+    Related:
+    https://github.com/bower/bower.json-spec/commit/a325da3d79baab018c572d75dc1781b12322f6cd
+    
+    Close gh-2304
+","[' build/release/dist.js | 1 -\n', ' 1 file changed, 1 deletion(-)\n']",1.0,1.0,0,1,2,0,2,0,0,0,1,0,0
+252c5fac2a25869524c2eba2e93d4230e6af25c,timmywillisn@gmail.com,Wed May 6 10:47:07 2015 -0700,Core,"    Core: remove custom ready event
+    
+    Fixes gh-2264
+    Close gh-2265
+","[' src/core/ready.js  |  7 ------\n', ' test/unit/ready.js | 63 ++++++++++++++++++++++++++----------------------------\n', ' 2 files changed, 30 insertions(+), 40 deletions(-)\n']",2.0,30.0,40.0,2,3,0,3,0,0,0,0,0,0
+6713fb6097849727de2ba1b489c98e242a168c3,timmywillisn@gmail.com,Tue May 12 09:58:55 2015 -0400,Tests,"    Tests: fix tests in accordance with new :visible behavior
+","[' test/unit/css.js     | 10 ++++++----\n', ' test/unit/effects.js |  2 +-\n', ' 2 files changed, 7 insertions(+), 5 deletions(-)\n']",2.0,7.0,5.0,2,3,0,3,0,0,2,0,0,0
+c3101fee60046fa7976b3131fada8dfe9fbd53e,timmywillisn@gmail.com,Wed May 6 16:23:00 2015 -0700,Build,"    Build: use different versions of jsdom for Node and iojs testing
+    
+    Fixes gh-2266
+","[' build/tasks/install_jsdom.js    | 27 +++++++++++++++++++++++++++\n', ' build/tasks/node_smoke_tests.js |  2 +-\n', ' package.json                    |  5 ++++-\n', ' 3 files changed, 32 insertions(+), 2 deletions(-)\n']",3.0,32.0,2.0,3,4,0,4,0,0,1,1,0,0
+36f0aee0a4c37ecb61b87a3a44227f6f5153b3a,mhbseal@163.com,Thu Apr 30 00:53:30 2015 +0800,Core,"    Core: remove isArraylike check for nodes
+    
+    Fixes gh-2238
+    Close gh-2243
+","[' src/core.js | 4 ----\n', ' 1 file changed, 4 deletions(-)\n']",1.0,4.0,0,1,2,0,2,0,0,0,0,0,0
+92acf72372c3ad09d5f67ba3a1b2c19355a0e5f,calvin.metcalf@gmail.com,Sat May 2 09:08:30 2015 -0400,Build,"    Build: Remove npm from dependencies
+    
+    Close gh-2254
+","[' package.json | 1 -\n', ' 1 file changed, 1 deletion(-)\n']",1.0,1.0,0,1,2,0,2,0,0,0,1,0,0
+a6931de689865f559bed26e797e8cbb5674bbce,timmywillisn@gmail.com,Mon May 4 15:16:28 2015 -0700,Core,"    Core: allow init to accept an alternate rootjQuery for migrate's sake
+    
+    - This will be tested in migrate
+    
+    Fixes gh-2101
+","[' src/core/init.js | 12 ++++++++----\n', ' 1 file changed, 8 insertions(+), 4 deletions(-)\n']",1.0,8.0,4.0,1,2,0,2,0,0,1,0,0,0
+5577a348a72ae765e0d7330b9e82985d23c94b7,markelog@gmail.com,Mon Apr 27 09:49:12 2015 +0300,Core,"    Core:CSS:Event: simplification of native method signatures
+    
+    * Remove third argument from ""addEventListener""
+    
+    * Remove third argument from ""removeEventListener""
+    
+    * Remove second argument from ""getComputedStyle""
+    
+    Ref gh-2047
+","[' src/core/ready.js        | 8 ++++----\n', ' src/css/support.js       | 4 ++--\n', ' src/css/var/getStyles.js | 4 ++--\n', ' src/event.js             | 5 +++--\n', ' 4 files changed, 11 insertions(+), 10 deletions(-)\n']",4.0,11.0,10.0,4,5,0,5,0,0,0,0,0,0
+54166458284bcce7d6a86328b7fd13483232a1a,timmywillisn@gmail.com,Sat Apr 4 15:34:07 2015 -0400,Core,"    Core: add workaround for iOS JIT error in isArrayLike
+    
+    Fixes gh-2145
+","[' src/core.js       |  7 ++++++-\n', ' test/unit/core.js | 21 +++++++++++++++++++++\n', ' 2 files changed, 27 insertions(+), 1 deletion(-)\n']",2.0,27.0,1.0,2,3,0,3,0,0,0,0,0,0
+b407258795bfa05756b009058757f8b42aa9c53,m.goleb@gmail.com,Sun Apr 26 19:33:05 2015 +0200,Core,"    Core: Test all factory use cases from intro.js
+    
+    There is a lot of logic in intro.js; now we test four cases:
+    1. (implicitly, via QUnit tests) A real browser with window being the global
+    2. Browserify where there are both global & window variables.
+    3. Node with jsdom where window is passed manually to the jQuery factory.
+    4. Pure Node with incorrect window passed; jQuery should throw then.
+    
+    Previously the second & fourth case was not tested and the third was tested
+    in a way that interfered with the main test environment.
+    
+    We now also test if in the Browserify case we're not creating a jQuery global
+    by default.
+    
+    Fixes gh-2181
+    Closes gh-2234
+","[' Gruntfile.js                                       |  4 +--\n', ' build/tasks/lib/spawn_test.js                      | 16 +++++++++++\n', ' build/tasks/node_smoke_test.js                     | 16 -----------\n', ' build/tasks/node_smoke_tests.js                    | 31 ++++++++++++++++++++++\n', ' build/tasks/promises-aplus-tests.js                | 20 --------------\n', ' build/tasks/promises_aplus_tests.js                | 13 +++++++++\n', ' package.json                                       |  3 ++-\n', ' test/node_smoke_tests/document_missing.js          | 19 +++++++++++++\n', ' test/node_smoke_tests/document_passed.js           | 17 ++++++++++++\n', ' .../document_present_originally.js                 | 20 ++++++++++++++\n', ' .../lib/ensure_global_not_created.js               | 17 ++++++++++++\n', ' test/node_smoke_tests/lib/ensure_jquery.js         | 11 ++++++++\n', ' ...-aplus-adapter.js => promises_aplus_adapter.js} |  9 +++----\n', ' 13 files changed, 152 insertions(+), 44 deletions(-)\n']",13.0,152.0,44.0,13,14,2,14,0,0,7,0,0,0
+f18d8e2060ae7c15c7694dc6bcbbeb9cbfbdaa4,m.goleb@gmail.com,Sun Apr 26 17:11:10 2015 +0200,Tests,"    Tests: Increase QUnit timeout
+    
+    Android 2.3 is very slow & times out a lot in async tests, they have to be
+    restarted multiple times to settle. Long test execution is not a huge problem
+    as Android 2.3 is tested only periodically during the night, unstable tests
+    are a bigger problem. This might mitigate that.
+    
+    In a regular scenario almost all tests should pass so increasing the timeout
+    for all browsers shouldn't have a huge impact on overall test time.
+    
+    Closes gh-2232
+","[' test/data/testrunner.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,1,2,0,0,7,0,0,0
+6de5a90ddde29e9096c2e45b9da21e65882b7c0,m.goleb@gmail.com,Sun Apr 26 17:22:46 2015 +0200,Core,"    Core: Align branches: remove an unused variable, add comments
+    
+    Closes gh-2233
+","[' src/ajax/script.js     | 2 ++\n', ' src/attributes/attr.js | 4 ++--\n', ' src/css/support.js     | 1 +\n', ' 3 files changed, 5 insertions(+), 2 deletions(-)\n']",3.0,5.0,2.0,3,4,0,4,0,0,0,0,0,0
+92625b3c36eda6bb6ac226d15e0a158ba35cf21,me@alexomara.com,Mon Mar 30 11:52:00 2015 -0400,Core,"    Core: Follow the AMD specification for define
+    
+    AMD specification requires the factory argument be defined.
+    
+    Close gh-2179
+","[' src/selector.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,0,0,0
+a0dd5a3d3a23e81dfb32af2871fab6be4619434,timmywillisn@gmail.com,Mon Apr 13 11:30:18 2015 -0400,Build,"    Build: update Sizzle
+    
+    Fixes gh-2042
+    Fixes gh-1969
+    Closes gh-1709
+","[' external/sizzle/LICENSE.txt         |   3 +-\n', ' external/sizzle/dist/sizzle.js      | 379 ++++++++++++++++++++++--------------\n', ' external/sizzle/dist/sizzle.min.js  |   4 +-\n', ' external/sizzle/dist/sizzle.min.map |   2 +-\n', ' package.json                        |   2 +-\n', ' 5 files changed, 234 insertions(+), 156 deletions(-)\n']",5.0,234.0,156.0,5,6,0,6,0,0,0,1,0,0
+62b5267d0a3538f1f6dee3df16da536b73061ea,m.goleb@gmail.com,Mon Mar 30 22:44:18 2015 +0200,Docs,"    Docs: Add info about Sizzle not being excludable on the compat branch
+    
+    Most people just read the README that's displayed to them on GitHub which
+    is the one for the master branch. Let's include the info about Sizzle
+    not being excludable there.
+    
+    Fixes gh-2184
+","[' README.md | 2 ++\n', ' 1 file changed, 2 insertions(+)\n']",1.0,2.0,0,1,2,0,2,0,1,0,0,0,0
+6f6cd1ffd2a4e9f5955d146d229492f245d83cb,m.goleb@gmail.com,Fri Mar 20 16:28:10 2015 +0100,Core,"    Core: Update tested jsdom, drop obsolete workarounds
+    
+    The latest version supporting Node.js is 3.1.2; some workarounds are not needed
+    for this version. For example, in jsdom 3.1.2 a document created via
+    document.implementation.createHTMLDocument( """" ) has a body.
+    
+    Fixes gh-2153
+    Closes gh-2154
+","[' package.json        |  2 +-\n', ' src/core/support.js | 11 ++-----\n', ' src/css/support.js  | 94 +++++++++++++++++++++++++----------------------------\n', ' 3 files changed, 49 insertions(+), 58 deletions(-)\n']",3.0,49.0,58.0,3,4,0,4,0,2,1,0,0,0
+5aa89af7029ae6b9203c2d3e551a8554a0b4b89,m.goleb@gmail.com,Sat Mar 28 16:42:43 2015 +0100,Build,"    Build: Update native-promise-only (again)
+    
+    This should fix Android 4.0 jQuery.when tests issues, for reals this time.
+","[' external/npo/npo.js | 4 ++--\n', ' package.json        | 2 +-\n', ' 2 files changed, 3 insertions(+), 3 deletions(-)\n']",2.0,3.0,3.0,2,3,0,3,0,0,1,1,0,0
+d9a1385feea349f48de658875c3f1bfc75daf74,jon.d.hester@gmail.com,Thu Mar 5 23:07:25 2015 +0000,Tests,"    Tests: add the current version of node and iojs to the travis config
+    
+    Close gh-2121
+","[' .travis.yml | 2 ++\n', ' 1 file changed, 2 insertions(+)\n']",1.0,2.0,0,1,2,0,2,0,0,1,0,0,0
+065e1f3e3021fc2bcb32e915177498bca034b34,m.goleb@gmail.com,Tue Mar 24 11:54:36 2015 +0100,Build,"    Build: Update native-promise-only
+    
+    This should fix Android 4.0 jQuery.when tests issues.
+    
+    Closes gh-2159
+","[' external/npo/npo.js | 4 ++--\n', ' package.json        | 2 +-\n', ' 2 files changed, 3 insertions(+), 3 deletions(-)\n']",2.0,3.0,3.0,2,3,0,3,0,0,1,1,0,0
+8c25b7c803fe708a587f70e5b70541192004247,timmywillisn@gmail.com,Tue Mar 24 11:44:51 2015 -0400,Build,"    Build: save sinon update for later
+    
+    Fixes gh-2160
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+22ef5d9017c44cad97ae541fefce76cc455edcb,richard.gibson@gmail.com,Mon Mar 16 23:05:36 2015 -0400,Tests,"    Tests: Expand CSS relative adjustment tolerance for IE
+    
+    Ref 48be675200e817f40fa8ec25da1be2ab0839d28d
+","[' test/unit/css.js | 4 ++--\n', ' 1 file changed, 2 insertions(+), 2 deletions(-)\n']",1.0,2.0,2.0,1,2,0,2,0,0,1,0,0,0
+8be675200e817f40fa8ec25da1be2ab0839d28d,richard.gibson@gmail.com,Mon Mar 16 23:05:36 2015 -0400,Tests,"    Tests: Fix CSS relative adjustment test for round-down browsers
+    
+    Ref 9b03f6df88a8d9dbda3f7893cdd84e3a3c70da17
+","[' test/unit/css.js | 26 +++++++++++++++++++-------\n', ' 1 file changed, 19 insertions(+), 7 deletions(-)\n']",1.0,19.0,7.0,1,2,0,2,0,0,2,0,0,0
+4da7d552982d8ab7b18c2ceca9786d5023930f6,stephen@netweb.com.au,Sun Jan 25 14:43:05 2015 +1100,Build,"    Build: remove deprecated JSHint options
+    
+    JSHint no longer supports `onevar`, `smarttabs` or `trailing` options.
+    
+    Closes gh-2029
+","[' .jshintrc      | 5 +----\n', ' src/.jshintrc  | 3 ---\n', ' test/.jshintrc | 3 ---\n', ' 3 files changed, 1 insertion(+), 10 deletions(-)\n']",3.0,1.0,10.0,3,4,0,4,0,0,0,1,0,0
+380028ec4a6a77401b867a51de26a3cb8e8d311,markelog@gmail.com,Tue Feb 17 10:09:54 2015 +0300,Core,"    Core: change jQuery.each and jQuery#each signatures
+    
+    Fixes gh-2090
+    Closes gh-2097
+","[' src/core.js | 41 ++++++++++-------------------------------\n', ' 1 file changed, 10 insertions(+), 31 deletions(-)\n']",1.0,10.0,31.0,1,2,0,2,0,0,0,0,0,0
+356281bed643bb3d56ad02f52580a0e20dc0237,markelog@gmail.com,Tue Feb 17 10:45:30 2015 +0300,Tests,"    Tests: make top of the HTML suite compliant with style guide
+    
+    See http://contribute.jquery.org/style-guide/html/
+    
+    Closes gh-2098
+","[' test/index.html | 12 +++++-------\n', ' 1 file changed, 5 insertions(+), 7 deletions(-)\n']",1.0,5.0,7.0,0,2,0,2,0,0,1,0,0,0
+b6aeae52d4c53a53468678ccd45e9dda9665004,markelog@gmail.com,Sun Feb 15 02:22:09 2015 +0300,Build,"    Build: fix broken assertions caused by QUnit update
+    
+    QUnit update broke couple traversing and manipulation tests, since new qunit
+    added another form to the test-suite while some of
+    jQuery selectors weren't specific
+    
+    Ref 2d5c5d213f09fa0205d07a2d60a36581058cc40a
+","[' test/unit/manipulation.js | 16 ++++++++--------\n', ' test/unit/traversing.js   |  2 +-\n', ' 2 files changed, 9 insertions(+), 9 deletions(-)\n']",2.0,9.0,9.0,2,3,0,3,0,0,2,1,0,0
+cb6c4d1d6552c7e54df16a36b171858bdf0553f,markelog@gmail.com,Fri Feb 13 21:50:24 2015 +0300,Core,"    Core: simplify ""each"" stylesheet iteration test
+    
+    Closes gh-2089
+","[' test/unit/core.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,0,0,0
+d5c5d213f09fa0205d07a2d60a36581058cc40a,joern.zaefferer@gmail.com,Mon Jan 26 19:24:59 2015 +0100,Build,"    Build: Update QUnit to latest (1.17.1)
+    
+    Closes gh-2038
+","[' external/qunit/LICENSE.txt |   3 +-\n', ' external/qunit/qunit.css   |  26 +++++--\n', ' external/qunit/qunit.js    | 178 +++++++++++++++++++++++++++++----------------\n', ' package.json               |   3 +-\n', ' 4 files changed, 141 insertions(+), 69 deletions(-)\n']",4.0,141.0,69.0,4,5,0,5,0,0,0,1,0,0
+ba45fcc15c894cad591d93cbb88010df5f235fe,timmywillisn@gmail.com,Fri Jan 30 12:46:48 2015 -0800,Release,"    Release: push dist to same remote as project
+","[' build/release/dist.js | 5 ++---\n', ' 1 file changed, 2 insertions(+), 3 deletions(-)\n']",1.0,2.0,3.0,1,2,0,2,0,0,0,0,0,0
+76c7812366e7e45ea29969db72d90261ef87af5,timmywillisn@gmail.com,Fri Jan 30 12:22:25 2015 -0800,Release,"    Release: remove sourcemap comment from all copies of minified file
+    
+    Fixes gh-1707
+","[' Gruntfile.js             |  2 +-\n', ' build/release/cdn.js     |  6 ------\n', ' build/tasks/sourcemap.js | 13 +++++++++++++\n', ' package.json             |  3 +--\n', ' 4 files changed, 15 insertions(+), 9 deletions(-)\n']",4.0,15.0,9.0,4,5,0,5,0,0,0,0,0,0
+0673dfedb9ad07d8e68f28a54453b975c412c33,timmywillisn@gmail.com,Thu Jan 29 16:21:39 2015 -0800,Release,"    Release: fix CDN archive creation
+    
+    Fixes gh-1940
+","[' build/release.js     |  6 +++--\n', ' build/release/cdn.js | 75 +++++++++++++++++++++++++++++++---------------------\n', ' 2 files changed, 49 insertions(+), 32 deletions(-)\n']",2.0,49.0,32.0,2,3,0,3,0,0,0,0,0,0
+ae998b5449f35dc71e87e360aee5bd0022e7c8e,timmywillisn@gmail.com,Thu Jan 29 15:36:48 2015 -0800,Release,"    Release: dist can be run during a test
+","[' build/release.js      | 6 ------\n', ' build/release/dist.js | 4 ++--\n', ' 2 files changed, 2 insertions(+), 8 deletions(-)\n']",2.0,2.0,8.0,2,3,0,3,0,0,1,0,0,0
+1224f5fef4336cd47cb26be74f9758096f7f956,timmywillisn@gmail.com,Thu Jan 29 12:25:57 2015 -0800,Release,"    Release: bower.json is actually generated from scratch
+","[' build/release.js | 4 ----\n', ' 1 file changed, 4 deletions(-)\n']",1.0,4.0,0,1,2,0,2,0,0,0,0,0,0
+6eca143c2dd857b9e3d1c446a467fed16e903d2,timmywillisn@gmail.com,Wed Jan 28 11:37:29 2015 -0800,Release,"    Release: Distribute files to distribution repo
+    
+    Fixes gh-1869
+    Fixes gh-1673
+    Fixes gh-2045
+","[' bower.json                           |  21 -----\n', ' build/release.js                     | 163 +++++++----------------------------\n', ' build/release/cdn.js                 | 106 +++++++++++++++++++++++\n', ' build/release/dist.js                | 113 ++++++++++++++++++++++++\n', ' build/{ => release}/ensure-sizzle.js |   5 +-\n', ' build/{ => release}/release-notes.js |   0\n', ' package.json                         |   2 -\n', ' 7 files changed, 251 insertions(+), 159 deletions(-)\n']",7.0,251.0,159.0,7,8,0,8,0,0,0,0,0,0
+1f4f8e3f30e67e677a2aa167b9e894d46d5b81e,m.goleb@gmail.com,Sun Jan 25 01:27:08 2015 +0100,Build,"    Build: Speed up the Travis build
+    
+    Run Travis tests on a container infrastructure to make it start faster.
+    
+    See http://docs.travis-ci.com/user/workers/container-based-infrastructure/
+    
+    Closes gh-2027
+","[' .travis.yml | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,1,1,2,0,0
+905dcd8f33e99275e29b0333e7b255559197c81,timmywillisn@gmail.com,Mon Jan 19 12:02:13 2015 -0500,Release,"    Release: update AUTHORS.txt
+","[' AUTHORS.txt | 7 +++++++\n', ' 1 file changed, 7 insertions(+)\n']",1.0,7.0,0,1,2,0,2,0,0,0,0,0,0
+116914dcac32868c2c822366785e3dd2ccc69d4,krinklemail@gmail.com,Wed Jan 7 20:12:49 2015 +0000,Core,"    Core: Return empty array instead of null for parseHTML("""")
+    
+    Fixes gh-1997
+    Close gh-1998
+","[' src/core/parseHTML.js |  4 ++--\n', ' test/unit/core.js     | 13 +++++++++----\n', ' 2 files changed, 11 insertions(+), 6 deletions(-)\n']",2.0,11.0,6.0,2,3,0,3,0,0,0,0,0,0
+34f13025aeb59a7d5893ce62efafa0b066a4934,leonardo.braga@gmail.com,Sun Jan 4 17:48:35 2015 -0500,Core,"    Core: add support to tag-hyphenated elements
+    
+    Ref #1987
+","[' src/core/var/rsingleTag.js |  2 +-\n', ' test/unit/core.js          | 13 +++++++++++++\n', ' 2 files changed, 14 insertions(+), 1 deletion(-)\n']",2.0,14.0,1.0,2,3,0,3,0,0,0,0,0,0
+4133ffafa6ac43b3aa22bc4edb4444b09f5250c,dave.methvin@gmail.com,Sun Jan 11 22:24:02 2015 -0500,Build,"    Build: Sanctify the component name status of Wrap
+","[' package.json | 3 ++-\n', ' 1 file changed, 2 insertions(+), 1 deletion(-)\n']",1.0,2.0,1.0,1,2,0,2,0,0,0,1,0,0
+ea8c32863af31fb5cfc184e8d513bbae35583e8,dave.methvin@gmail.com,Thu Jan 8 13:35:28 2015 -0500,Core,"    Core: Remove deprecated context and selector properties
+    
+    Fixes gh-1908
+    Closes gh-2000
+","[' src/core.js                  |  4 ----\n', ' src/core/init.js             | 12 ++----------\n', ' src/traversing/findFilter.js |  5 +----\n', ' test/unit/core.js            | 45 +-------------------------------------------\n', ' test/unit/offset.js          |  6 +++---\n', ' 5 files changed, 7 insertions(+), 65 deletions(-)\n']",5.0,7.0,65.0,5,6,0,6,0,0,0,0,0,0
+b928bde7e7b85357fef3fedd450b04c03e965d7,richard.gibson@gmail.com,Mon Dec 29 21:07:03 2014 -0500,Build,"    Build: Rearrange grunt/npm tasks into a build/dist/test pattern
+    
+    Ref 76df9e4e389d80bff410a9e5f08b848de1d21a2f
+    Closes gh-1980
+","[' Gruntfile.js                   | 26 +++++++-------------------\n', ' build/tasks/node_smoke_test.js | 16 ++++++++++++++++\n', ' package.json                   |  2 +-\n', ' 3 files changed, 24 insertions(+), 20 deletions(-)\n']",3.0,24.0,20.0,3,4,1,4,0,0,1,2,0,0
+3aa87f3bf4284763405f3eb8affff296e55ba4f,richard.gibson@gmail.com,Wed Dec 31 18:31:27 2014 -0500,Core,"    Core: Standardize indexOf comparisons
+    
+    not present: `< 0`
+    present: `> -1`
+    at index: `=== N`
+    
+    Closes gh-1984
+","[' src/ajax/jsonp.js            | 3 ++-\n', ' src/ajax/load.js             | 2 +-\n', ' src/attributes/classes.js    | 4 ++--\n', ' src/attributes/val.js        | 4 ++--\n', ' src/data.js                  | 2 +-\n', ' src/event.js                 | 4 ++--\n', ' src/manipulation.js          | 2 +-\n', ' src/traversing/findFilter.js | 2 +-\n', ' 8 files changed, 12 insertions(+), 11 deletions(-)\n']",8.0,12.0,11.0,8,9,0,9,0,0,0,0,0,0
+c9d018889944da3d60cac135dc38dfcc37ac14a,richard.gibson@gmail.com,Sun Dec 7 01:46:25 2014 -0500,Build,"    Build: Specify valid components for commit messages
+    
+    Closes gh-1909
+","[' package.json | 25 +++++++++++++++++++++++++\n', ' 1 file changed, 25 insertions(+)\n']",1.0,25.0,0,1,2,0,2,0,0,0,1,0,0
+50e0f2c3651d64d40931a16733b015f56409c63,dave.methvin@gmail.com,Fri Jan 9 16:39:41 2015 -0500,Docs,"    Docs: Fix README uppercase
+","[' README.md | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,1,0,0,0,0
+3779bc3254159f5a99e8204e69a0f0b9e191f6f,dave.methvin@gmail.com,Tue Jan 6 22:15:53 2015 -0500,Docs,"    Docs: Clarify custom build instructions
+    
+    Closes gh-1854
+","[' README.md | 6 +++---\n', ' 1 file changed, 3 insertions(+), 3 deletions(-)\n']",1.0,3.0,3.0,1,2,0,2,0,1,0,1,0,0
+34ed46eee12c92cb050a53eb62daf9e1258caf9,dave.methvin@gmail.com,Tue Jan 6 21:59:14 2015 -0500,Release,"    Release: Remove copying of jquery-latest files
+","[' build/release.js | 47 ++++++++++++++++++-----------------------------\n', ' 1 file changed, 18 insertions(+), 29 deletions(-)\n']",1.0,18.0,29.0,1,2,0,2,0,0,0,0,0,0
+6e1b6b8d49812239b5712d65922ff94c60f7b02,coloma@westminster.ac.uk,Thu Jan 1 19:34:48 2015 +0000,Build,"    Build: Remove dates from copyright notice
+    
+    Closes gh-1983
+","[' Gruntfile.js | 3 +--\n', ' LICENSE.txt  | 3 +--\n', ' src/intro.js | 2 +-\n', ' 3 files changed, 3 insertions(+), 5 deletions(-)\n']",3.0,3.0,5.0,3,4,0,4,0,0,0,1,0,0
+6df9e4e389d80bff410a9e5f08b848de1d21a2f,m.goleb@gmail.com,Thu Sep 11 15:18:34 2014 -0500,Build,"    Build: Don't assume the browser environment; smoke test on Node w/ jsdom
+    
+    Fixes gh-1950
+    Closes gh-1949
+","[' Gruntfile.js                | 17 ++++++++++++++++-\n', ' package.json                |  3 ++-\n', ' src/.jshintrc               |  8 ++++++--\n', ' src/ajax.js                 |  4 +++-\n', ' src/ajax/parseXML.js        |  2 +-\n', ' src/ajax/script.js          |  3 ++-\n', ' src/ajax/var/location.js    |  3 +++\n', ' src/ajax/xhr.js             |  2 +-\n', ' src/attributes/support.js   |  3 ++-\n', ' src/core.js                 |  6 ++----\n', ' src/core/init.js            |  3 ++-\n', ' src/core/parseHTML.js       |  3 ++-\n', ' src/core/ready.js           |  3 ++-\n', ' src/core/support.js         |  8 +++++++-\n', ' src/css/defaultDisplay.js   |  3 ++-\n', ' src/css/support.js          | 13 +++++++------\n', ' src/effects.js              |  3 ++-\n', ' src/event.js                |  3 ++-\n', ' src/manipulation/support.js |  3 ++-\n', ' src/offset.js               | 10 +++++-----\n', ' src/selector-native.js      | 17 +++++++++--------\n', ' src/var/document.js         |  3 +++\n', ' src/var/documentElement.js  |  5 +++++\n', ' 23 files changed, 88 insertions(+), 40 deletions(-)\n']",23.0,88.0,40.0,23,24,0,24,0,0,1,1,0,0
+6c97abb744bfe8c67ab9158aecdb5bb1c05e47b,timmywillisn@gmail.com,Wed Dec 17 11:17:41 2014 -0500,Build,"    Build: Sizzle version labels must start with a dash
+","[' build/ensure-sizzle.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+1017047fc85cf634d9c7726901c250708f58731,timmywillisn@gmail.com,Wed Dec 17 10:42:23 2014 -0500,Build,"    Build: update node dependencies
+","[' package.json | 16 ++++++++--------\n', ' 1 file changed, 8 insertions(+), 8 deletions(-)\n']",1.0,8.0,8.0,1,2,0,2,0,0,0,1,0,0
+8ac753192d5490295a46b60f278c030d958bf6d,timmywillisn@gmail.com,Wed Dec 17 10:35:59 2014 -0500,Build,"    Build: account for version labels in Sizzle versions
+    
+    Fixes gh-1939
+","[' build/ensure-sizzle.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+fe468f29c4cbe1a457d0feb17dec90dcfd7c280,timmywillisn@gmail.com,Wed Dec 10 09:48:55 2014 -0500,Core,"    Core: re-introduce createHTMLDocument in parseHTML; Safari 8 left out
+    
+    Close gh-1505
+","[' src/core/parseHTML.js | 14 +++++++++++---\n', ' src/core/support.js   | 12 ++++++++++++\n', ' test/data/testinit.js |  2 +-\n', ' test/unit/core.js     | 18 +++++++++++++++++-\n', ' test/unit/support.js  | 27 ++++++++++++++++++++++++++-\n', ' 5 files changed, 67 insertions(+), 6 deletions(-)\n']",5.0,67.0,6.0,5,6,1,6,0,0,0,0,0,0
+77983173e18724a883e02ad3a84661e18e6cf4a,timmywillisn@gmail.com,Tue Dec 9 18:00:06 2014 -0500,Core,"    Core: revert addition of createHTMLDocument. Thanks, Safari 8.
+    
+    - Safari 8 has issues when the HTML string contains forms.
+      Closing tags are not respected.
+","[' src/core/parseHTML.js |  4 +---\n', ' test/unit/core.js     | 14 --------------\n', ' 2 files changed, 1 insertion(+), 17 deletions(-)\n']",2.0,1.0,17.0,2,3,0,3,0,0,0,0,0,0
+1c7d7fb7530e1af950b41d13dd956820d5c6908,timmywillisn@gmail.com,Tue Dec 9 16:37:30 2014 -0500,Core,"    Core: pass empty string to createHTMLDocument to appease IE
+","[' src/core/parseHTML.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,0,0,0
+9232825aa87b941dd2418a6860b64017dfec0ae,timmywillisn@gmail.com,Tue Dec 9 15:57:12 2014 -0500,Core,"    Core: remove unnecessary support test for createHTMLDocument
+","[' src/core.js           |  2 +-\n', ' src/core/parseHTML.js |  7 ++-----\n', ' src/core/support.js   |  8 --------\n', ' test/unit/core.js     | 24 ++++++++++--------------\n', ' test/unit/support.js  |  8 --------\n', ' 5 files changed, 13 insertions(+), 36 deletions(-)\n']",5.0,13.0,36.0,5,6,0,6,0,0,1,0,0,0
+051609df35ef5e478c79c76534c03e4b46100bf,timmywillisn@gmail.com,Tue Dec 9 15:39:24 2014 -0500,Build,"    Build: fix tests in AMD mode
+","[' build/tasks/build.js  | 13 +++++--------\n', ' src/core/parseHTML.js |  2 ++\n', ' src/core/support.js   |  4 +++-\n', ' src/exports/global.js |  6 ------\n', ' src/jquery.js         |  5 ++---\n', ' src/outro.js          |  1 +\n', ' test/data/testinit.js |  4 +++-\n', ' test/unit/core.js     | 29 ++++++++++++++++-------------\n', ' 8 files changed, 32 insertions(+), 32 deletions(-)\n']",8.0,32.0,32.0,8,9,1,9,0,0,1,1,0,0
+8c24608210c9a9a264a38746628ebc26823f59b,mail@frederic-hemberger.de,Tue Dec 9 15:13:46 2014 -0500,Core,"    Core: use document.implemenation.createHTMLDocument in jQuery.parseHTML
+    
+    Close gh-1505
+","[' src/core.js           |  2 +-\n', ' src/core/parseHTML.js |  8 ++++++--\n', ' src/core/support.js   |  6 ++++++\n', ' test/unit/core.js     | 18 ++++++++++++++++++\n', ' test/unit/support.js  |  8 ++++++++\n', ' 5 files changed, 39 insertions(+), 3 deletions(-)\n']",5.0,39.0,3.0,5,6,0,6,0,1,0,0,0,0
+eda11cdd6a69ec2ef4e9c1ed12b82a79910fda5,dano.husar@gmail.com,Fri Feb 7 10:30:13 2014 +0000,Core,"    Core: Simplify and speed up .each
+    
+    Closes gh-1510
+","[' src/core.js | 19 +++++--------------\n', ' 1 file changed, 5 insertions(+), 14 deletions(-)\n']",1.0,5.0,14.0,1,2,0,2,0,0,0,0,0,0
+06caebb3f3bc542904a94846e778aa8d71c0575,richard.gibson@gmail.com,Sat Dec 6 13:30:31 2014 -0500,Tests,"    Tests: Tilt at a few style guide windmills
+    
+    Ref 3c13f4c6297566a71102c2362347987f6d6a636e
+","[' test/unit/dimensions.js | 88 ++++++++++++++++++++++++-------------------------\n', ' 1 file changed, 43 insertions(+), 45 deletions(-)\n']",1.0,43.0,45.0,1,2,0,2,0,0,1,0,0,0
+c13f4c6297566a71102c2362347987f6d6a636e,richard.gibson@gmail.com,Sat Dec 6 13:23:40 2014 -0500,Tests,"    Tests: Accommodate page changes from the QUnit HTML reporter
+    
+    Ref 6748ba349650353c7bed6eec201a3192f6b2cae1
+","[' test/unit/dimensions.js | 41 ++++++++++++++++++++---------------------\n', ' 1 file changed, 20 insertions(+), 21 deletions(-)\n']",1.0,20.0,21.0,1,2,0,2,0,0,1,0,0,0
+6276a307ce2f554b63a05ed8451155f01711c29,richard.gibson@gmail.com,Fri Dec 5 12:28:40 2014 -0500,Tests,"    Tests: Minor updates for QUnit 1.16 compatibility
+    
+    More to come later.
+    
+    (cherry picked from commit f6f8848fbe477fa93fd27ac7f10885dd6e97f633)
+","[' test/data/testrunner.js |  7 +++----\n', ' test/unit/attributes.js |  2 +-\n', ' test/unit/data.js       |  4 ++--\n', ' test/unit/dimensions.js | 12 ++++++------\n', ' test/unit/effects.js    | 22 ++++++++++++----------\n', ' 5 files changed, 24 insertions(+), 23 deletions(-)\n']",5.0,24.0,23.0,5,6,1,6,0,0,1,0,0,0
+748ba349650353c7bed6eec201a3192f6b2cae1,richard.gibson@gmail.com,Fri Dec 5 09:49:02 2014 -0500,Tests,"    Tests: Update QUnit
+","[' external/qunit/qunit.css |   41 +-\n', ' external/qunit/qunit.js  | 2939 +++++++++++++++++++++++++++-------------------\n', ' package.json             |    2 +-\n', ' 3 files changed, 1770 insertions(+), 1212 deletions(-)\n']",3.0,1770.0,1212.0,3,4,0,4,0,0,1,0,0,0
+c1b556d98da597b0490f204e3561f656987f17c,davidcorbacho@gmail.com,Thu May 1 13:21:34 2014 +0300,Build,"    Build: Remove empty define({}) from build output
+    
+    Fixes gh-1768
+    Closes gh-1569
+","[' build/tasks/build.js | 4 +++-\n', ' 1 file changed, 3 insertions(+), 1 deletion(-)\n']",1.0,3.0,1.0,1,2,0,2,0,0,0,2,0,0
+0022c81ce4a07a232afd3c580b0977555a2daec,dave.methvin@gmail.com,Wed Dec 3 14:51:24 2014 -0500,Core,"    Core: Throw an error on $(""#"") rather than returning 0-length collection
+    
+    Closes gh-1682
+    
+    Thanks @goob for the issue report!
+","[' src/core/init.js  | 3 ++-\n', ' test/unit/core.js | 9 +++++++--\n', ' 2 files changed, 9 insertions(+), 3 deletions(-)\n']",2.0,9.0,3.0,2,3,0,3,0,0,0,0,0,0
+d6beac3958da79671344fd11b9a3fe9b85f88e1,markelog@gmail.com,Mon Nov 10 13:20:06 2014 +0300,Docs,"    Docs: correct grunt command in README.md
+    
+    Fixes gh-1850
+","[' README.md | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,1,0,0,0,0
+c4b914a05e1e6dbf13f916897b5d6a472ea0380,markelog@gmail.com,Fri Nov 7 12:30:18 2014 +0600,Build,"    Build: Fix various typos
+    
+    Thanks @jamesgpearce, @vlajos, @imyousuf
+    Closes gh-1828
+    Closes gh-1830
+    Closes gh-1844
+","[' build/tasks/build.js  | 2 +-\n', ' test/unit/data.js     | 4 ++--\n', ' test/unit/selector.js | 6 +++---\n', ' 3 files changed, 6 insertions(+), 6 deletions(-)\n']",3.0,6.0,6.0,3,4,0,4,0,0,0,1,0,0
+58fd6cea9e82f7bfebce07ba6ecf0d107e8a53c,timmywillisn@gmail.com,Mon Nov 3 12:34:45 2014 -0500,Docs,"    Docs: 1.x-master branch -> compat branch; 2.x branch -> master branch
+","[' CONTRIBUTING.md     | 2 +-\n', ' README.md           | 4 ++--\n', ' src/manipulation.js | 1 -\n', ' 3 files changed, 3 insertions(+), 4 deletions(-)\n']",3.0,3.0,4.0,3,4,0,4,0,1,0,0,0,0
+a607c5673fa36f9818f19e349871600a2938b1e,timmywillisn@gmail.com,Mon Nov 3 12:29:16 2014 -0500,Build,"    Build: update version to 3.0.0-pre
+","[' bower.json   | 2 +-\n', ' package.json | 2 +-\n', ' 2 files changed, 2 insertions(+), 2 deletions(-)\n']",2.0,2.0,2.0,2,3,0,3,0,0,0,1,0,0
+bc1ddc5cc96e509e0fadb0c1e3a70927de6ed1c,joern.zaefferer@gmail.com,Wed Oct 22 17:57:23 2014 +0200,Build,"    Build: Upgrade to commitplease 2.0.0
+    
+    commitplease now accepts ""[tmp]:"" and similar to temporary commits,
+    useful while updating pull requests that are squashed later.
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+5a609f7663c4348ab7f1acbc9e566ec20bb717c,ChrisAntaki@gmail.com,Fri Jul 25 15:23:54 2014 -0700,Build,"    Build: Moved JSHint directives to .jshintrc file
+    
+    Closes gh-1595
+","[' src/.jshintrc         | 3 ++-\n', ' src/exports/global.js | 3 ---\n', ' 2 files changed, 2 insertions(+), 4 deletions(-)\n']",2.0,2.0,4.0,2,3,0,3,0,0,0,1,0,0
+9838b6cab6f2e508f3e9692f32918c72b1a504b,ChrisAntaki@gmail.com,Fri Jul 25 12:21:22 2014 -0700,Core,"    Core: Drop strundefined variable
+","[' src/attributes/attr.js    |  5 ++---\n', ' src/attributes/classes.js |  5 ++---\n', ' src/core/init.js          |  2 +-\n', ' src/event.js              |  5 ++---\n', ' src/exports/global.js     | 10 ++++++----\n', ' src/offset.js             |  5 ++---\n', ' src/var/strundefined.js   |  3 ---\n', ' 7 files changed, 15 insertions(+), 20 deletions(-)\n']",7.0,15.0,20.0,7,8,0,8,0,0,0,0,0,0
+69a27c70204c7d233eac3cd91a383e9b5759a2f,timmywillisn@gmail.com,Thu Jul 17 11:15:19 2014 -0700,Build,"    Build: update source map options for the new grunt jshint
+","[' Gruntfile.js | 4 ++--\n', ' package.json | 2 +-\n', ' 2 files changed, 3 insertions(+), 3 deletions(-)\n']",2.0,3.0,3.0,2,3,0,3,0,0,0,1,0,0
+869a1ef8a031342e817a2c063179a787ff57239,timmywillisn@gmail.com,Thu Jul 17 10:25:59 2014 -0700,Build,"    Build: update grunt-jscs-checker and pass with the new rules
+","[' Gruntfile.js                               | 32 +++++++++++----\n', ' build/release-notes.js                     |  3 +-\n', ' build/release.js                           |  4 +-\n', ' build/tasks/build.js                       | 36 ++++++++++++-----\n', ' package.json                               |  2 +-\n', ' src/ajax.js                                | 23 +++++++----\n', ' src/ajax/jsonp.js                          |  4 +-\n', ' src/ajax/script.js                         |  3 +-\n', ' src/ajax/xhr.js                            | 10 ++++-\n', ' src/attributes/attr.js                     |  4 +-\n', ' src/attributes/classes.js                  | 18 ++++++---\n', ' src/attributes/prop.js                     |  7 ++--\n', ' src/attributes/val.js                      |  9 +++--\n', ' src/callbacks.js                           |  4 +-\n', ' src/core.js                                |  7 +++-\n', ' src/core/init.js                           |  5 ++-\n', ' src/core/parseHTML.js                      |  3 +-\n', ' src/core/ready.js                          |  6 ++-\n', ' src/css.js                                 | 46 ++++++++++++++-------\n', ' src/css/curCSS.js                          |  6 ++-\n', ' src/css/defaultDisplay.js                  | 15 ++++---\n', ' src/css/var/isHidden.js                    |  3 +-\n', ' src/data.js                                | 42 +++++++++----------\n', ' src/data/var/{data_priv.js => dataPriv.js} |  0\n', ' src/data/var/{data_user.js => dataUser.js} |  0\n', ' src/deferred.js                            | 11 +++--\n', ' src/dimensions.js                          |  4 +-\n', ' src/effects.js                             | 29 +++++++------\n', ' src/effects/Tween.js                       |  4 +-\n', ' src/event.js                               | 65 ++++++++++++++++++------------\n', ' src/event/ajax.js                          |  9 ++++-\n', ' src/event/alias.js                         |  7 +++-\n', ' src/manipulation.js                        | 40 +++++++++---------\n', ' src/offset.js                              |  6 ++-\n', ' src/queue.js                               | 14 +++----\n', ' src/selector-native.js                     | 18 +++++----\n', ' src/serialize.js                           |  7 +++-\n', ' test/data/testinit.js                      |  6 ++-\n', ' test/data/testrunner.js                    | 27 +++++++++----\n', ' 39 files changed, 352 insertions(+), 187 deletions(-)\n']",39.0,352.0,187.0,39,40,2,40,0,0,0,1,0,0
+e3a0ceafa2c7c78902d0eab07d21b793deb5366,timmywillisn@gmail.com,Thu Jul 17 10:24:37 2014 -0700,Build,"    Build: update node dependencies barring jscs
+","[' package.json | 10 +++++-----\n', ' 1 file changed, 5 insertions(+), 5 deletions(-)\n']",1.0,5.0,5.0,1,2,0,2,0,0,0,1,0,0
+356948ed4ee13af218af74c56c8a91ee9523828,timmywillisn@gmail.com,Thu Jul 17 09:03:29 2014 -0700,Build,"    Build: update front-end dependencies
+","[' external/requirejs/require.js | 96 +++++++++++++++++++++++--------------------\n', ' external/sinon/LICENSE.txt    |  2 +-\n', ' external/sinon/fake_timers.js | 28 ++++++++++++-\n', ' 3 files changed, 79 insertions(+), 47 deletions(-)\n']",3.0,79.0,47.0,3,4,0,4,0,0,0,1,0,0
+1949f43711b5808d42378bafb6728b40b1738d6,timmywillisn@gmail.com,Thu Jul 17 09:02:59 2014 -0700,Build,"    Build: drop bower; use npm for front-end deps
+    
+    Fixes #15186
+    Closes gh-1620
+","[' .bowerrc               |  3 ---\n', ' .gitignore             |  1 -\n', ' Gruntfile.js           | 10 ++++------\n', ' bower.json             |  6 ------\n', ' build/ensure-sizzle.js | 19 +++++++++++++++----\n', ' package.json           | 10 +++++++---\n', ' 6 files changed, 26 insertions(+), 23 deletions(-)\n']",6.0,26.0,23.0,5,7,0,7,0,0,0,1,0,0
+fb719e5aa885232c5347576e9f9e1e341a7ba15,krinklemail@gmail.com,Tue Jun 24 12:52:15 2014 +0200,Core,"    Core: Consistently use local reference to access()
+    
+    Ref 3b53b75160606610cc8f87404f89fc9e10441c4b
+    Closes gh-1605
+","[' src/core/access.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,0,0,0
+cca4f041b4c98dc9cb127ea3a2a7f40d2db4796,timmywillisn@gmail.com,Tue Jul 1 16:50:27 2014 -0400,Build,"    Build: update Sizzle to 2.0.0
+","[' Gruntfile.js                       | 2 +-\n', ' bower.json                         | 2 +-\n', ' external/sizzle/dist/sizzle.js     | 6 +++---\n', ' external/sizzle/dist/sizzle.min.js | 2 +-\n', ' 4 files changed, 6 insertions(+), 6 deletions(-)\n']",4.0,6.0,6.0,4,5,0,5,0,0,0,1,0,0
+f776e5ff91c48891f02d1ca3ba31132477d3972,scott.gonzalez@gmail.com,Tue May 27 15:03:12 2014 -0400,Build,"    Build: Update license
+    
+    Closes gh-1587
+","[' MIT-LICENSE.txt => LICENSE.txt | 20 ++++++++++++++++++--\n', ' package.json                   |  2 +-\n', ' 2 files changed, 19 insertions(+), 3 deletions(-)\n']",2.0,19.0,3.0,2,3,0,3,0,0,0,1,0,0
+12e78c47fc3e550dabbb44055e5bf7877871bff,timmywillisn@gmail.com,Wed Jun 25 13:51:39 2014 -0400,Build,"    Build: update grunt-bowercopy
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+0b23e2b71eb7dd19b6435c6e94980275dd3990d,timmywillisn@gmail.com,Wed Jun 25 13:43:09 2014 -0400,Build,"    Build: update Sizzle to 1.11.1 and include license
+","[' Gruntfile.js                        |  1 +\n', ' bower.json                          |  2 +-\n', ' external/sizzle/MIT-LICENSE.txt     | 21 ++++++++++++++++\n', ' external/sizzle/dist/sizzle.js      | 48 ++++++++++++++-----------------------\n', ' external/sizzle/dist/sizzle.min.js  |  6 ++---\n', ' external/sizzle/dist/sizzle.min.map |  2 +-\n', ' 6 files changed, 45 insertions(+), 35 deletions(-)\n']",6.0,45.0,35.0,6,7,0,7,0,0,0,1,0,0
+5f8e15fd73256ec02397d7bf93893e38afc9bc9,timmywillisn@gmail.com,Tue Jun 24 11:17:44 2014 -0400,Build,"    Build: ignore test dependencies for npm install
+","[' .npmignore | 4 ++++\n', ' 1 file changed, 4 insertions(+)\n']",1.0,4.0,0,0,2,0,2,0,0,1,1,0,0
+5d9d88dce65b89a1d7d12b41ad254d5017a92a8,scott.gonzalez@gmail.com,Tue Jun 10 15:32:25 2014 -0400,Build,"    Build: Move all external libraries to external directory
+    
+    Closes gh-1593
+","[' .jscsrc                                      |  2 +-\n', ' .jshintignore                                |  3 +--\n', ' Gruntfile.js                                 | 26 +++++++++++++-------------\n', ' build/ensure-sizzle.js                       |  2 +-\n', ' build/tasks/build.js                         |  2 +-\n', ' external/qunit/MIT-LICENSE.txt               | 21 +++++++++++++++++++++\n', ' {test/libs => external}/qunit/qunit.css      |  0\n', ' {test/libs => external}/qunit/qunit.js       |  0\n', ' {test/libs => external/requirejs}/require.js |  0\n', ' external/sinon/LICENSE.txt                   | 27 +++++++++++++++++++++++++++\n', ' {test/libs => external}/sinon/fake_timers.js |  0\n', ' {src => external}/sizzle/dist/sizzle.js      |  0\n', ' {src => external}/sizzle/dist/sizzle.min.js  |  0\n', ' {src => external}/sizzle/dist/sizzle.min.map |  0\n', ' test/index.html                              |  8 ++++----\n', ' test/jquery.js                               |  2 +-\n', ' 16 files changed, 70 insertions(+), 23 deletions(-)\n']",16.0,70.0,23.0,15,17,0,17,0,0,0,1,0,0
+d113104e980179e9eb4d092df0b1ab37cdc6fa5,scott.gonzalez@gmail.com,Tue Jun 10 15:13:03 2014 -0400,Build,"    Build: Remove unused Sizzle test files
+","[' Gruntfile.js                         |    6 +-\n', ' src/sizzle/test/data/empty.js        |    0\n', ' src/sizzle/test/data/mixed_sort.html |   22 -\n', ' src/sizzle/test/data/testinit.js     |  136 -\n', ' src/sizzle/test/index.html           |  242 -\n', ' src/sizzle/test/jquery.js            | 9597 ----------------------------------\n', ' src/sizzle/test/unit/extending.js    |   95 -\n', ' src/sizzle/test/unit/selector.js     | 1149 ----\n', ' src/sizzle/test/unit/utilities.js    |  169 -\n', ' 9 files changed, 1 insertion(+), 11415 deletions(-)\n']",9.0,1.0,11415.0,7,10,8,10,0,0,1,1,0,0
+23e82c09f9078cc16f0df170e7a8bddea33523e,scott.gonzalez@gmail.com,Tue Jun 10 15:58:28 2014 -0400,Build,"    Build: Upgrade to grunt-bowercopy 1.0.0
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+9b76064d9400295a383291ab6e821e259b67832,markelog@gmail.com,Mon Jun 16 03:01:53 2014 +0400,Build,"    Build: Update commitplease dev dependency
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+bdbb6fd431a3f598b581079b0ca37c399d369d4,markelog@gmail.com,Sat Jun 14 20:31:08 2014 +0400,Build,"    Build: Move test to appropriate module
+","[' test/unit/ajax.js | 4 ++++\n', ' test/unit/core.js | 6 ------\n', ' 2 files changed, 4 insertions(+), 6 deletions(-)\n']",2.0,4.0,6.0,2,3,0,3,0,0,1,1,0,0
+f9dcfb0c4238d405af92cbd4ac27e0a36c6ff0c,richard.gibson@gmail.com,Sat Jun 7 14:33:36 2014 -0400,Tests,"    Tests: Clean up isNumeric tests
+    (cherry picked from commit d05f4bda1cc0b1ef76dce41a53c17f75c105a377)
+","[' test/unit/core.js | 89 ++++++++++++++++++++++++++-----------------------------\n', ' 1 file changed, 42 insertions(+), 47 deletions(-)\n']",1.0,42.0,47.0,1,2,0,2,0,0,2,0,0,0
+1192af8726bcd25da58aba64b20d89e919230b9,richard.gibson@gmail.com,Sat Jun 7 14:22:49 2014 -0400,Core,"    Core: Work around loss of precision from parseFloat
+    
+    Fixes #15100
+    (cherry picked from commit b6e99eb43c35a3cd048c5c56d31c7e871f299a77)
+","[' src/core.js       | 3 ++-\n', ' test/unit/core.js | 3 ++-\n', ' 2 files changed, 4 insertions(+), 2 deletions(-)\n']",2.0,4.0,2.0,2,3,0,3,0,0,0,0,0,0
+d931068d30b6a516b883cf7f420606de21eab68,timmywillisn@gmail.com,Fri May 23 12:45:51 2014 -0400,Release,"    Release: ensure Sizzle is the latest tag
+    
+    Fixes #14915
+","[' build/ensure-sizzle.js | 40 ++++++++++++++++++++++++++++++++++++++++\n', ' build/release.js       |  8 ++++++++\n', ' package.json           |  1 +\n', ' 3 files changed, 49 insertions(+)\n']",3.0,49.0,0,3,4,0,4,0,0,0,0,0,0
+80700c75f2d4920ebdd81b6122fa0c4f65723b1,timmywillisn@gmail.com,Fri May 23 12:45:19 2014 -0400,Build,"    Build: run jshint and jscs on release scripts
+","[' Gruntfile.js           | 4 ++--\n', ' build/release-notes.js | 3 +--\n', ' 2 files changed, 3 insertions(+), 4 deletions(-)\n']",2.0,3.0,4.0,2,3,0,3,0,0,0,1,0,0
+7cbab51e20d39c0f13ea5ee890bb7f2a9817b41,timmywillisn@gmail.com,Fri May 23 13:00:55 2014 -0400,Build,"    Build: update AUTHORS.txt
+","[' AUTHORS.txt | 3 ++-\n', ' 1 file changed, 2 insertions(+), 1 deletion(-)\n']",1.0,2.0,1.0,1,2,0,2,0,0,0,1,0,0
+a148f158f40b474841ad7a60cc39c5868cf420c,m.goleb@gmail.com,Fri May 2 16:03:52 2014 +0200,Core,"    Core: Correct the number of expected tests
+","[' test/unit/core.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,0,0,0
+9d4a48ff67188214bc28ec1a4d138c5997ce171,poppinlp@gmail.com,Thu May 1 19:37:23 2014 +0800,Core,"    Core: Remove repeated test
+    
+    Closes gh-1570
+","[' test/unit/core.js | 1 -\n', ' 1 file changed, 1 deletion(-)\n']",1.0,1.0,0,1,2,0,2,0,0,1,0,0,0
+68f3dd84693629768b40e7b5cf4c60e0c57c4d4,dave.methvin@gmail.com,Thu May 1 13:15:13 2014 -0400,Build,"    Build: Updating the master version to 2.1.2-pre.
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+bace100a3ad51287cd2864eeb03ddebb381d44f,markelog@gmail.com,Thu Apr 24 23:38:38 2014 +0400,Build,"    Build: Spaces vs tabs
+    
+    * Use tabs instead of spaces in jscs config
+    
+    * Always use spaces in package.json (really hope this is temporary)
+","[' .jscsrc      | 4 ++--\n', ' package.json | 2 +-\n', ' 2 files changed, 3 insertions(+), 3 deletions(-)\n']",2.0,3.0,3.0,2,3,0,3,0,0,0,1,0,0
+4ddc4a44ba0f3f55829bf544f19c36404064ffc,dave.methvin@gmail.com,Wed Apr 23 12:02:55 2014 -0400,Build,"    Build: Add ""browser"" keyword for npm
+","[' package.json | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,0,1,0,0
+514dca501fd383a9cdb6b42cce7c71fdad1ee38,markelog@gmail.com,Wed Apr 23 20:02:06 2014 +0400,Build,"    Build: Remove json check for jscs config
+","[' Gruntfile.js | 4 ----\n', ' 1 file changed, 4 deletions(-)\n']",1.0,4.0,0,1,2,0,2,0,0,0,1,0,0
+bd2830636350469a7e232e046f41e95383962a3,scott.gonzalez@gmail.com,Thu Apr 17 15:10:17 2014 -0400,Build,"    Build: Update version from pre to -pre
+    
+    Ref jquery/jquery-release#61
+    Fixes #15020
+    Closes gh-1561
+","[' package.json | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,0,1,0,0
+0131da70ed0144c36af3494e2f843f62d740b1a,m.goleb@gmail.com,Tue Apr 15 16:38:23 2014 +0200,Build,"    Build: Remove Sizzle from run names passed to the testswarm task
+","[' Gruntfile.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,0,1,1,0,0
+7283d738ec4c2d9d87cb16c32a3209cab567ed1,markelog@gmail.com,Tue Apr 15 18:08:18 2014 +0400,Build,"    Build: Update jscsrc
+    
+    * Update ""grunt-jscs-checker"" package
+    
+    * Use "".jscsrc"" file instead of old "".jscs.json""
+    
+    * Use jquery preset instead of explicitly defining all the jscs rules
+","[' .jscs.json   | 23 -----------------------\n', ' .jscsrc      |  5 +++++\n', ' package.json |  2 +-\n', ' 3 files changed, 6 insertions(+), 24 deletions(-)\n']",3.0,6.0,24.0,3,4,0,4,0,0,0,1,0,0
+5dfcc50ed37805fb83d5b67e15254caed0872e5,markelog@gmail.com,Tue Apr 15 18:06:18 2014 +0400,Build,"    Build: Fix code style issue
+    
+    Remove needless empty line character
+","[' test/data/testrunner.js | 1 -\n', ' 1 file changed, 1 deletion(-)\n']",1.0,1.0,0,1,2,1,2,1,0,0,1,0,0
+3b89ba0820882bd4ce4404b7e7c819e7b506de5,markelog@gmail.com,Fri Apr 4 22:31:38 2014 +0400,Tests,"    Tests: Fix failing ajax tests in oldIE
+    
+    (cherry-picked from the 71780965072b1271018f2cf360e82fbe31f4987e)
+    
+    Picked up so tests from the 1.x-master would be more similar to this branch
+","[' test/data/test.html                |  2 +-\n', ' test/data/test.php                 |  4 ++--\n', ' test/data/{test.js => testbar.php} |  2 +-\n', ' test/unit/ajax.js                  | 22 +++++++++++++---------\n', ' test/unit/manipulation.js          |  2 +-\n', ' 5 files changed, 18 insertions(+), 14 deletions(-)\n']",5.0,18.0,14.0,3,6,3,6,0,0,3,0,0,0
+dedd3185ea1e9853a2ce26ef3051c63201b4533,markelog@gmail.com,Sat Apr 5 18:23:03 2014 +0400,Tests,"    Tests: Bring back some of the clean-up logic
+","[' test/data/testrunner.js | 11 +++++++++++\n', ' 1 file changed, 11 insertions(+)\n']",1.0,11.0,0,1,2,1,2,0,0,1,0,0,0
+f14bea2c29fb9c1e1cf48da7f700c963e35f693,markelog@gmail.com,Thu Feb 27 03:33:15 2014 +0400,Tests,"    Tests: Remove unused variables
+","[' test/unit/selector.js | 4 ++--\n', ' 1 file changed, 2 insertions(+), 2 deletions(-)\n']",1.0,2.0,2.0,1,2,0,2,0,0,1,0,0,0
+0ea65edf7466afc11823a914b175bd835d5b228,markelog@gmail.com,Thu Feb 27 03:32:02 2014 +0400,Tests,"    Tests: Copy some Sizzle combinators tests
+","[' test/unit/selector.js | 41 +++++++++++++++++++++++++++++++++++++++++\n', ' 1 file changed, 41 insertions(+)\n']",1.0,41.0,0,1,2,0,2,0,0,2,0,0,0
+084ab24bc269af22e0cfd4af77a7a17eb39729a,markelog@gmail.com,Thu Feb 27 03:23:10 2014 +0400,Tests,"    Tests: Add more tests for Sizzle attributes
+","[' test/unit/selector.js | 92 +++++++++++++++++++++++++++++++++++++++++++++++++--\n', ' 1 file changed, 89 insertions(+), 3 deletions(-)\n']",1.0,89.0,3.0,1,2,0,2,0,0,2,0,0,0
+7af36676b89a15ad0571cbf0d2a7d8b93470e58,markelog@gmail.com,Thu Feb 27 03:13:26 2014 +0400,Tests,"    Tests: Add test for selectors with commas
+","[' test/unit/selector.js | 12 ++++++++++++\n', ' 1 file changed, 12 insertions(+)\n']",1.0,12.0,0,1,2,0,2,0,0,2,0,0,0
+115d4c92d024ed42c286dc013258ecf684fd6b4,markelog@gmail.com,Thu Feb 27 03:01:48 2014 +0400,Tests,"    Tests: Copy Sizzle.uniqueSort tests
+","[' test/unit/selector.js | 79 +++++++++++++++++++++++++++++++++++++++++++++++++++\n', ' 1 file changed, 79 insertions(+)\n']",1.0,79.0,0,1,2,0,2,0,0,2,0,0,0
+63d1da7cd106d9d12b93154c0423b244e491c3b,markelog@gmail.com,Thu Feb 27 03:01:07 2014 +0400,Tests,"    Tests: Copy Sizzle.contains tests
+","[' test/unit/selector.js | 26 ++++++++++++++++++++++++++\n', ' 1 file changed, 26 insertions(+)\n']",1.0,26.0,0,1,2,0,2,0,0,2,0,0,0
+1aa237ee11c731ee92ad6cf7cf958e80f15d057,markelog@gmail.com,Mon Feb 24 22:05:16 2014 +0400,Tests,"    Tests: Move some of the Sizzle tests to selector
+","[' test/unit/selector.js | 93 +++++++++++++++++++++++++++++++++++++++++++++++++++\n', ' 1 file changed, 93 insertions(+)\n']",1.0,93.0,0,1,2,0,2,0,0,2,0,0,0
+475e31d32544c275ee79155b223322f132f3f1a,markelog@gmail.com,Tue Feb 18 21:52:48 2014 +0400,Tests,"    Tests: Do global clean up in teardown function
+","[' test/data/testrunner.js | 2 ++\n', ' 1 file changed, 2 insertions(+)\n']",1.0,2.0,0,1,2,1,2,0,0,1,0,0,0
+d546aba748aeac09886921ebc1a5fcaa3778bf8,markelog@gmail.com,Tue Feb 18 21:50:42 2014 +0400,Tests,"    Tests: Improve jsonp tests
+    
+    Since global variable for callback always would be equal to undefined value
+    it better to check for boolean instead
+","[' test/unit/ajax.js | 4 ++--\n', ' 1 file changed, 2 insertions(+), 2 deletions(-)\n']",1.0,2.0,2.0,1,2,0,2,0,0,2,0,0,0
+bbbe965b8408e145ebe4b3ffd183b169c29b75b,markelog@gmail.com,Tue Feb 18 21:46:00 2014 +0400,Tests,"    Tests: Correct logic of a broken assertion
+","[' test/unit/attributes.js | 5 +++--\n', ' 1 file changed, 3 insertions(+), 2 deletions(-)\n']",1.0,3.0,2.0,1,2,0,2,0,0,1,0,0,0
+d79b99874a5f52f0b83ca11dd45a7302adebdae,markelog@gmail.com,Tue Feb 18 20:34:49 2014 +0400,Build,"    Build: Add lint task
+","[' Gruntfile.js | 4 ++--\n', ' 1 file changed, 2 insertions(+), 2 deletions(-)\n']",1.0,2.0,2.0,1,2,0,2,0,0,0,1,0,0
+dee2983ab211bc9b1bdbf372b0ac002f7debb03,markelog@gmail.com,Tue Feb 18 20:32:17 2014 +0400,Build,"    Build: Use jscs to check test helpers
+    
+    Also fix issues found by jscs
+","[' Gruntfile.js            | 3 +++\n', ' test/data/testinit.js   | 1 -\n', ' test/data/testrunner.js | 1 -\n', ' 3 files changed, 3 insertions(+), 2 deletions(-)\n']",3.0,3.0,2.0,3,4,2,4,0,0,1,1,0,0
+e5d1caf7ad8f02d727bdd5ef9dfed9ff463c8ea,markelog@gmail.com,Tue Feb 18 20:13:48 2014 +0400,Tests,"    Tests: More improvments for testrunner
+    
+    Conform to style guide and simplify it
+","[' test/data/testinit.js   | 37 +++++++++++++++----------------\n', ' test/data/testrunner.js | 58 ++++++++++++++++---------------------------------\n', ' 2 files changed, 36 insertions(+), 59 deletions(-)\n']",2.0,36.0,59.0,2,3,2,3,0,0,2,0,0,0
+2cff8b1a38fc45f1a6f6ddb92d089b739e7f5f5,markelog@gmail.com,Tue Feb 18 19:49:24 2014 +0400,Tests,"    Tests: Remove Sizzle intergration tests
+    
+    Fixes #14818
+","[' test/data/testinit.js   |  67 ++++++++++--------------\n', ' test/data/testrunner.js | 134 ------------------------------------------------\n', ' 2 files changed, 27 insertions(+), 174 deletions(-)\n']",2.0,27.0,174.0,2,3,2,3,0,0,2,0,0,0
+7c9facc357b4d2d98844cda4c26bb2e560c0cc8,markelog@gmail.com,Mon Jan 27 23:43:27 2014 +0400,Tests,"    Tests: Simplify globals cleanup
+","[' test/data/testrunner.js | 19 +++++++++----------\n', ' 1 file changed, 9 insertions(+), 10 deletions(-)\n']",1.0,9.0,10.0,1,2,1,2,0,0,1,0,0,0
+149726485ff41afcfd2d12cb3041fe268cc909d,markelog@gmail.com,Mon Jan 27 23:32:46 2014 +0400,Tests,"    Tests: Remove QUnit start hook
+","[' test/data/testrunner.js | 12 +-----------\n', ' 1 file changed, 1 insertion(+), 11 deletions(-)\n']",1.0,1.0,11.0,1,2,1,2,0,0,1,0,0,0
+0b606d2bdd6cddeace765a50f727a33201e621d,markelog@gmail.com,Mon Jan 27 23:27:32 2014 +0400,Tests,"    Tests: Remove uselss ""keys"" helper
+","[' test/data/testrunner.js | 16 +---------------\n', ' 1 file changed, 1 insertion(+), 15 deletions(-)\n']",1.0,1.0,15.0,1,2,1,2,0,0,1,0,0,0
+26628a2bb20abae0e0515394efdd621452267b1,markelog@gmail.com,Mon Jan 27 23:26:27 2014 +0400,Tests,"    Tests: Simplify ""testTimeout"" option
+","[' test/data/testrunner.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,1,2,0,0,2,0,0,0
+0568b07d8dcd94c3b8a27c0cf5747235c6bf93c,m.goleb@gmail.com,Tue Apr 15 11:47:52 2014 +0200,Build,"    Build: set default testswarm timeout to 15 minutes
+    
+    We're not testing on IE6-7 anymore.
+","[' build/tasks/testswarm.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,1,2,0,0,2,1,0,0
+869891a97eae93699cc239274e73e53daedf781,m.goleb@gmail.com,Tue Apr 15 11:34:02 2014 +0200,Build,"    Build: use browserSets from config file; allow to override
+","[' build/tasks/testswarm.js | 15 ++++++++++-----\n', ' 1 file changed, 10 insertions(+), 5 deletions(-)\n']",1.0,10.0,5.0,1,2,1,2,0,0,0,1,0,0
+9d735ab4662f45c3b65ea1200fa0d3e2b671111,m.goleb@gmail.com,Fri Apr 4 11:38:15 2014 +0200,Build,"    Build: change .gitattributes; use system line ends for non-JS files
+","[' .gitattributes | 7 +++++--\n', ' 1 file changed, 5 insertions(+), 2 deletions(-)\n']",1.0,5.0,2.0,1,2,0,2,0,0,0,1,0,0
+265cdac3d84b7bb4f8013ef10adaa5a9968fb1c,scott.gonzalez@gmail.com,Tue Mar 18 11:48:21 2014 -0400,Build,"    Build: Update release script for new jquery-release API
+    
+    Closes gh-1544
+","[' build/release.js | 13 ++++++-------\n', ' package.json     |  2 --\n', ' 2 files changed, 6 insertions(+), 9 deletions(-)\n']",2.0,6.0,9.0,2,3,0,3,0,0,0,1,0,0
+a0086b55a158d8a4347f94254878d6dc5dd90ed,benjytrys@gmail.com,Tue Mar 18 17:15:58 2014 +0800,Core,"    Core: Fix comments for .get() method
+    
+    Closes gh-1547
+","[' AUTHORS.txt | 2 ++\n', ' src/core.js | 4 ++--\n', ' 2 files changed, 4 insertions(+), 2 deletions(-)\n']",2.0,4.0,2.0,2,3,0,3,0,0,0,0,0,0
+ad6e7e93e62a27e6ef803fbf46623bca732750f,dave.methvin@gmail.com,Thu Mar 20 09:00:22 2014 -0400,Tests,"    Tests: Remove obsolete speed directory
+    
+    Closes gh-1551
+","[' speed/benchmark.js         |   15 -\n', ' speed/benchmarker.css      |   65 -\n', ' speed/benchmarker.js       |  181 --\n', ' speed/closest.html         |   39 -\n', ' speed/css.html             |   82 -\n', ' speed/event.html           |   58 -\n', ' speed/filter.html          |  183 --\n', ' speed/find.html            |  179 --\n', ' speed/index.html           |   72 -\n', ' speed/jquery-basis.js      | 6238 --------------------------------------------\n', ' speed/slice.vs.concat.html |   47 -\n', ' 11 files changed, 7159 deletions(-)\n']",11.0,7159.0,0,5,12,0,12,0,0,1,0,0,0
+3c1ce9c243e04f80e2093e20ffe16bbade93985,joern.zaefferer@gmail.com,Fri Feb 21 12:53:36 2014 +0100,Build,"    Build: Add commitplease for commit msg checking
+    
+    Closes gh-1523
+","[' package.json | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,0,1,0,0
+10aa3aac5223c250327d00c500ceb9c7a18b7f9,m.goleb@gmail.com,Wed Mar 19 02:29:04 2014 +0100,Core,"    Core: Change the sleep time in dont_return.php from 100s to 30s
+    
+    Half a minute is more than enough for the test to finish even in the slowest
+    browsers and in case of starving the PHP FPM process pool, one has to wait
+    for only half a minute to try again.
+","[' test/data/core/dont_return.php | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,0,2,0,2,0,0,1,0,0,0
+5074944b0b27f50ffe2ca9f96348b8d0cd5c82c,m.goleb@gmail.com,Tue Mar 18 16:50:04 2014 +0100,Core,"    Core: Change the sleep time in dont_return.php to a sane value
+    
+    PHP sleep function accepts time in seconds, not milliseconds; the previous
+    value was starving the PHP FPM process pool.
+","[' test/data/core/dont_return.php | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,0,2,0,2,0,0,0,0,0,0
+1e9bb9e61a79a1d0c4300cc31eac7ff61107085,m.goleb@gmail.com,Tue Mar 18 11:55:06 2014 +0100,Build,"    Build: Change the timeout for the weekly job from 4h to 1h
+","[' build/tasks/testswarm.js | 8 ++++----\n', ' 1 file changed, 4 insertions(+), 4 deletions(-)\n']",1.0,4.0,4.0,1,2,1,2,0,0,0,1,0,0
+51578eb3676f67cccd8a91a582c2225bc970cac,m.goleb@gmail.com,Mon Mar 17 18:13:00 2014 +0100,Core,"    Core: Blacklist the ready test on async-loaded jQuery in iOS7
+    
+    Fixes #14882
+","[' test/unit/core.js | 13 +++++++++----\n', ' 1 file changed, 9 insertions(+), 4 deletions(-)\n']",1.0,9.0,4.0,1,2,0,2,0,0,1,0,0,0
+a951a3184fc02551bfcb8381cdac28298432419,m.goleb@gmail.com,Sun Mar 16 04:09:12 2014 +0100,Build,"    Build: Refactor testswarm Grunt task options
+    
+    Add a possibility to specify the project name. Infer browserSets & timeout
+    out of it instead of defining it in the Jenkins configuration.
+","[' build/tasks/testswarm.js | 18 +++++++++++-------\n', ' 1 file changed, 11 insertions(+), 7 deletions(-)\n']",1.0,11.0,7.0,1,2,1,2,0,0,1,1,0,0
+54d242db457e3191e3ca1f2a366f6c981a12fbc,m.goleb@gmail.com,Thu Mar 13 03:26:27 2014 +0100,Core,"    Core: Bump timeouts to stabilize doc ready test
+    
+    The ""document ready when jQuery loaded asynchronously"" test fails all the time
+    in iOS7 and sometimes in other browsers. Bumping the timeouts *might* help
+    these other browsers to be less flakey here.
+","[' test/data/core/dont_return.php    | 2 +-\n', ' test/data/core/dynamic_ready.html | 2 +-\n', ' 2 files changed, 2 insertions(+), 2 deletions(-)\n']",2.0,2.0,2.0,0,3,0,3,0,2,2,0,0,0
+2c515c6717efe46685b43215208aa4e5648fbc8,joern.zaefferer@gmail.com,Wed Mar 12 11:08:16 2014 +0100,Build,"    Build: Fix testswarm task, use API correctly
+","[' build/tasks/testswarm.js | 9 ++++-----\n', ' 1 file changed, 4 insertions(+), 5 deletions(-)\n']",1.0,4.0,5.0,1,2,1,2,0,0,1,1,0,0
+81dbc4ed82bc38b1ac5f6a8242e044232ea1594,m.goleb@gmail.com,Tue Mar 11 21:12:39 2014 +0100,Build,"    Build: Allow to specify timeout in the testswarm task
+","[' build/tasks/testswarm.js | 10 +++-------\n', ' 1 file changed, 3 insertions(+), 7 deletions(-)\n']",1.0,3.0,7.0,1,2,1,2,0,0,1,1,0,0
+4872941f9de78e7436e58ac1f03a4b2d5aa34e8,m.goleb@gmail.com,Mon Mar 10 20:37:11 2014 +0100,Build,"    Build: Make it possible to change browserSets in the testswarm task
+","[' build/tasks/testswarm.js | 8 ++++++--\n', ' 1 file changed, 6 insertions(+), 2 deletions(-)\n']",1.0,6.0,2.0,1,2,1,2,0,0,1,1,1,0
+84f77a930aa322bcc277762303370d7a2a4667a,timmywillisn@gmail.com,Fri Mar 7 09:55:26 2014 -0500,Build,"    Build: Fix AMD option for custom builds
+    
+    Fixes #14859
+","[' build/tasks/build.js | 18 ++++++++++++------\n', ' 1 file changed, 12 insertions(+), 6 deletions(-)\n']",1.0,12.0,6.0,1,2,0,2,0,0,0,2,0,0
+df1aad6a1c9376c2a477eba26ee992113ed1c23,dave.methvin@gmail.com,Mon Mar 3 22:04:23 2014 -0500,Core,"    Core: Do not run window.onready when ready
+    
+    Fixes #14802
+","[' src/core/ready.js           |  5 +++--\n', ' test/data/core/onready.html | 24 ++++++++++++++++++++++++\n', ' test/unit/core.js           |  7 +++++++\n', ' 3 files changed, 34 insertions(+), 2 deletions(-)\n']",3.0,34.0,2.0,2,4,0,4,0,0,0,0,0,0
+0efa1f5b44046aab6bcc8423322a41923faa290,dave.methvin@gmail.com,Mon Mar 3 22:18:50 2014 -0500,Core,"    Core: Arrays like [42] should fail .isNumeric()
+    
+    Fixes #14179
+","[' src/core.js       | 2 +-\n', ' test/unit/core.js | 4 +++-\n', ' 2 files changed, 4 insertions(+), 2 deletions(-)\n']",2.0,4.0,2.0,2,3,0,3,0,0,0,0,0,0
+79913c71b63da721fa2f118cdce150effbf773e,m.goleb@gmail.com,Tue Mar 4 23:08:35 2014 +0100,Core,"    Core: Remove native String#trim usage to save size
+    
+    Fixes #14794
+","[' src/core.js     | 22 ++++++----------------\n', ' src/var/trim.js |  3 ---\n', ' 2 files changed, 6 insertions(+), 19 deletions(-)\n']",2.0,6.0,19.0,2,3,0,3,0,0,0,0,0,0
+da283d0e4d59074ae98af0fdc2951e6c109d5fd,m.goleb@gmail.com,Thu Feb 13 14:48:58 2014 -0800,Core,"    Core: Fix trim in Android<4.1
+","[' src/core.js | 22 +++++++++++++++++++---\n', ' 1 file changed, 19 insertions(+), 3 deletions(-)\n']",1.0,19.0,3.0,1,2,0,2,0,0,0,0,0,0
+792e40fbc2b46346bc518483ac31772c55ebb12,waldron.rick@gmail.com,Tue Feb 11 10:59:14 2014 -0800,Tests,"    Tests: remove all the empty line whitespace
+","[' test/unit/manipulation.js | 48 +++++++++++++++++++++++------------------------\n', ' test/unit/wrap.js         |  8 ++++----\n', ' 2 files changed, 28 insertions(+), 28 deletions(-)\n']",2.0,28.0,28.0,2,3,0,3,0,0,1,0,0,0
+fcb0f6826c682c038508caf6d3fb1021d58266f,m.goleb@gmail.com,Wed Feb 5 15:54:23 2014 +0100,Docs,"    Docs: Change raises to throws in README test assertions
+","[' README.md | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,0,2,0,1,1,0,0,0
+5b21c6ec2790d0d051cdfe95d73148d7c385d68,m.goleb@gmail.com,Sun Feb 2 22:44:13 2014 +0100,Build,"    Build: Upgrade QUnit to 1.14.0
+","[' bower.json                |    2 +-\n', ' test/.jshintrc            |    2 +-\n', ' test/libs/qunit/qunit.css |   79 +-\n', ' test/libs/qunit/qunit.js  | 2628 +++++++++++++++++++++++----------------------\n', ' test/unit/core.js         |   28 +-\n', ' test/unit/effects.js      |    2 +-\n', ' test/unit/manipulation.js |    2 +-\n', ' 7 files changed, 1406 insertions(+), 1337 deletions(-)\n']",7.0,1406.0,1337.0,7,8,0,8,0,0,0,1,0,0
+d4e25e991898bf07ce82fe4ab3d60c32b4a5fc9,m.goleb@gmail.com,Sun Feb 2 22:17:23 2014 +0100,Build,"    Build: Switch to explicit dependencies versions in bower.json
+","[' bower.json                     |   6 +-\n', ' test/libs/require.js           | 204 ++++++++++++++++++++++-------------------\n', ' test/libs/sinon/fake_timers.js |  42 ++++++++-\n', ' 3 files changed, 150 insertions(+), 102 deletions(-)\n']",3.0,150.0,102.0,3,4,0,4,0,0,0,1,0,0
+dccf62c81b5fbecc3a0431a8927ed1d30806fc6,waldron.rick@gmail.com,Sun Feb 2 15:36:14 2014 -0500,Core,"    Core: Remove special case try/catch in isPlainObject
+    
+    Fixes #14746
+","[' src/core.js | 12 ++----------\n', ' 1 file changed, 2 insertions(+), 10 deletions(-)\n']",1.0,2.0,10.0,1,2,0,2,0,0,0,0,0,0
+3e31f478e1d88d056aa52f6575d200fe3dcf047,m.goleb@gmail.com,Mon Jan 27 22:01:15 2014 +0100,Build,"    Build: Specify browserSets for TestSwarm directly
+","[' build/tasks/testswarm.js | 2 +-\n', ' 1 file changed, 1 insertion(+), 1 deletion(-)\n']",1.0,1.0,1.0,1,2,1,2,0,0,1,1,0,0
+88d99ad278c2c9dc16c68f86bddc4df99dcd928,m.goleb@gmail.com,Thu Jan 23 05:43:58 2014 +0100,Tests,"    Tests: Blacklist beforeunload test in iOS
+    
+    iOS has the window.onbeforeunload field but doesn't support the beforeunload
+    handler making it impossible to feature-detect the support.
+    
+    Fixes #14717
+    Closes gh-1496
+","[' test/unit/event.js | 5 ++++-\n', ' 1 file changed, 4 insertions(+), 1 deletion(-)\n']",1.0,4.0,1.0,1,2,0,2,0,0,2,0,1,0
+41fc68d9b89d39f8c71ae9f810b72798ff3e9ac,m.goleb@gmail.com,Sun Jan 26 04:02:20 2014 +0100,Build,"    Build: Remove obsolete UglifyJS workaround
+","[' build/tasks/dist.js | 7 -------\n', ' 1 file changed, 7 deletions(-)\n']",1.0,7.0,0,1,2,0,2,0,0,0,1,0,0
+63243d085c797e53a965620c439277284eada59,m.goleb@gmail.com,Sun Jan 26 04:01:57 2014 +0100,Build,"    Build: Upgrade npm devDependencies
+","[' package.json | 16 ++++++++--------\n', ' 1 file changed, 8 insertions(+), 8 deletions(-)\n']",1.0,8.0,8.0,1,2,0,2,0,0,0,1,0,0
+e7702ac59889177b0dd622d3b5503004abf0258,timmywillisn@gmail.com,Thu Jan 23 15:45:23 2014 -0500,Release,"    Release: Instantiate a zip archiver, run archivers async
+","[' build/release.js | 19 ++++++++++---------\n', ' 1 file changed, 10 insertions(+), 9 deletions(-)\n']",1.0,10.0,9.0,1,2,0,2,0,0,0,0,0,0
+f3f458974fe0bdccfe9042c9503fd2d03e2f6ff,m.goleb@gmail.com,Wed Jan 22 21:49:10 2014 +0100,Tests,"    Tests: fix Safari userAgent detection
+","[' test/unit/support.js | 6 +++---\n', ' 1 file changed, 3 insertions(+), 3 deletions(-)\n']",1.0,3.0,3.0,1,2,0,2,0,0,1,0,0,0
+11becbb692f7707443eb2582543dfe96e8319e6,m.goleb@gmail.com,Tue Jan 21 12:02:09 2014 +0100,Tests,"    Tests: Blacklist one effects test in Chrome 31
+    
+    Chrome 31 reports incorrect offsetWidth on a table cell with fixed width.
+    This is fixed in Chrome 32 so let’s just skip the failing test in Chrome 31.
+    See https://code.google.com/p/chromium/issues/detail?id=290399
+","[' test/unit/effects.js | 20 +++++++++++++++++---\n', ' 1 file changed, 17 insertions(+), 3 deletions(-)\n']",1.0,17.0,3.0,1,2,0,2,1,0,3,0,0,0
+2250b0f4c157745b8cd8ac1247c6084882c500f,markelog@gmail.com,Thu Jan 16 07:04:14 2014 +0400,Tests,"    Tests: Fix code style issues
+","[' test/unit/attributes.js | 8 ++++----\n', ' 1 file changed, 4 insertions(+), 4 deletions(-)\n']",1.0,4.0,4.0,1,2,0,2,1,0,1,0,0,0
+59ac9c155a9ecee03e635dde1661be7081322f3,markelog@gmail.com,Thu Jan 16 06:58:54 2014 +0400,Tests,"    Tests: Add assertion for the jQuery#val method
+","[' test/unit/attributes.js | 9 +++++++--\n', ' 1 file changed, 7 insertions(+), 2 deletions(-)\n']",1.0,7.0,2.0,1,2,0,2,0,0,1,0,0,0
+8c122a73a843a0d117d4f962cc94fda6f553086,markelog@gmail.com,Tue Jan 14 21:48:42 2014 +0400,Tests,"    Tests: Remove one of the checks for memory leak
+    
+    This check is redundant since jQuery.fragments object does not exist anymore
+","[' test/data/testrunner.js | 12 ------------\n', ' 1 file changed, 12 deletions(-)\n']",1.0,12.0,0,1,2,1,2,0,0,1,0,0,0
+0ea8071b44c23e7915300eacc9ed958fbe4eaf5,joern.zaefferer@gmail.com,Fri Jan 10 13:45:01 2014 +0100,Release,"    Release: Publish to npm
+    
+    Closes gh-1479
+","[' build/release.js | 1 +\n', ' 1 file changed, 1 insertion(+)\n']",1.0,1.0,0,1,2,0,2,0,0,0,0,0,0
+bff3bf7d72383c1458004d4aae454b61caa400f,dave.methvin@gmail.com,Thu Jan 9 22:36:07 2014 -0500,Tests,"    Tests: Remove html5 shiv
+","[' test/index.html | 7 -------\n', ' 1 file changed, 7 deletions(-)\n']",1.0,7.0,0,0,2,0,2,0,0,1,0,0,0
+118f58c465286d538404669d09026b882b2149e,dave.methvin@gmail.com,Thu Jan 9 20:51:21 2014 -0500,Build,"    Build: Happy New Year! Thanks @marlonlandaverde
+","[' Gruntfile.js    | 2 +-\n', ' MIT-LICENSE.txt | 2 +-\n', ' src/intro.js    | 2 +-\n', ' 3 files changed, 3 insertions(+), 3 deletions(-)\n']",3.0,3.0,3.0,3,4,0,4,0,0,0,1,0,0
+801c3a29a3c9a0d43f36c1d844f7cc7c24b3376,m.goleb@gmail.com,Mon Jan 6 21:04:20 2014 +0100,Docs,"    Docs: Link to the browser support page in CONTRIBUTING.md
+    
+    Instead of duplicating the supported browsers matrix, just link to
+    the browser support page on jquery.com.
+","[' CONTRIBUTING.md | 10 +++-------\n', ' 1 file changed, 3 insertions(+), 7 deletions(-)\n']",1.0,3.0,7.0,1,2,0,2,0,1,0,0,0,0
+37e9ced6164074c32df429bb1fa4c30361aa711,christopherjonesqed@gmail.com,Wed Dec 11 11:34:05 2013 -0500,Tests,"    Tests: Avoid use of QUnit.reset() in tests by splitting them
+    
+    Fix #14040
+    Close gh-1457
+","[' AUTHORS.txt               |   1 +\n', ' test/data/testrunner.js   |  18 +-\n', ' test/unit/attributes.js   |  23 +-\n', ' test/unit/core.js         |   2 -\n', ' test/unit/css.js          |  13 +-\n', ' test/unit/effects.js      |   2 -\n', ' test/unit/manipulation.js | 625 +++++++++++++++++++++++++++++++++-------------\n', ' test/unit/wrap.js         |  86 +++++--\n', ' 8 files changed, 545 insertions(+), 225 deletions(-)\n']",8.0,545.0,225.0,8,9,1,9,0,0,2,0,0,0
+e8a91c205723f11cd00c8834f348a649ab15926,timmywillisn@gmail.com,Thu Dec 19 15:31:36 2013 -0500,Build,"    Build: add build option for setting the AMD name.
+    
+    Fixes #14016.
+","[' README.md            | 22 +++++++++++++++++++---\n', ' build/tasks/build.js | 11 +++++++++--\n', ' 2 files changed, 28 insertions(+), 5 deletions(-)\n']",2.0,28.0,5.0,2,3,0,3,0,0,0,2,0,0
+6f474e699f95a90f95228bd525490151acc0451,timmywillisn@gmail.com,Thu Dec 19 15:00:06 2013 -0500,Build,"    Build: Add the ability to remove global exposure.
+    
+    Ref #14016
+","[' README.md             |  1 +\n', ' build/tasks/build.js  |  7 +++++++\n', ' src/core.js           | 18 ------------------\n', ' src/exports/global.js | 29 +++++++++++++++++++++++++++++\n', ' src/jquery.js         |  8 +++-----\n', ' 5 files changed, 40 insertions(+), 23 deletions(-)\n']",5.0,40.0,23.0,5,6,0,6,0,0,0,1,0,0
+deee6af72bfcf328fa09a28a1e68159cc58513f,m.goleb@gmail.com,Wed Dec 18 15:23:27 2013 +0100,Build,"    Build: Upgrade to grunt-contrib-jshint 0.7.1 and squash subtasks
+    
+    grunt-contrib-jshint 0.7.1 allows the jshintrc option to be set to true to have
+    it read the appropriate config file based on the file being checked. The only
+    place where we can’t use it is the check for dist/jquery.js that has the onevar
+    option removed.
+    
+    Fixes #14504
+","[' Gruntfile.js | 21 ++++++---------------\n', ' package.json |  2 +-\n', ' 2 files changed, 7 insertions(+), 16 deletions(-)\n']",2.0,7.0,16.0,2,3,0,3,0,0,0,1,0,0
+d7315051193212fca6e7d64a3de87d96977c418,m.goleb@gmail.com,Fri Nov 15 15:55:59 2013 +0100,Build,"    Build: Use absolute paths in .gitignore and .npmignore.
+    
+    .gitignore/.npmignore treat all its paths as relative to *every*
+    directory in the repository. In most cases that’s not what’s desired.
+","[' .gitignore |  8 ++++----\n', ' .npmignore | 12 +++++++-----\n', ' 2 files changed, 11 insertions(+), 9 deletions(-)\n']",2.0,11.0,9.0,1,3,0,3,0,0,0,1,0,0
+643ac77fbd7508651639a41eced5338c1738c12,joern.zaefferer@gmail.com,Wed Jun 5 15:58:33 2013 +0200,Build,"    Build: Update testswarm task to node-testswarm 1.x API
+","[' Gruntfile.js | 39 +++++++++++++++++++++++++--------------\n', ' package.json |  2 +-\n', ' 2 files changed, 26 insertions(+), 15 deletions(-)\n']",2.0,26.0,15.0,2,3,0,3,0,0,2,1,0,0
