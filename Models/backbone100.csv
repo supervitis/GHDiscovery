@@ -1,0 +1,101 @@
+,activity,predicted,predicted2
+4719659298ca50a8c7a19889d90ed8f5c54687d6,"Fixes #841, adding upgrading jquery, classname --> class in the docs.",Docs,doc
+7e8653905124d878827dc588b3d5e3881090c78e,Merge branch 'master' of github.com,Docs,doc
+c84c0f7a63125a739ba413d189c74d35b2b5691c,Shim for AMD underscore test dependency to export _ object,Tests,test
+b993441e5e521a03b7cfa86d9a4c741e3c1dd708,"Tiny spelling error, no functional changes.",Core,src
+232fb0d40bf2d1ec951cd5da95072b2aa43e17a4,"change ""overriden"" to ""overridden"" in two places.",Core,src
+934aba4c6e94ce619cdb7104d8c3491df3d817eb,hasChanged/set should use the same comparison,Core,src
+84fc093a2619a8f2f34107f620743e316c3983bd,Allow Collection.at to accept negative indexes,Core,src
+cb8a12fe162ee28e8d8cd2a7f24ad81bf22a6f27,Merge pull request #1129 from r00k/allow-content-of-0-in-make,Core,src
+1675e76cb77a461cf1a609e83349385f4cf5af8a,Merge branch 'master' of github.com,Docs,doc
+c644866b4fe6586503f382a4b3d08007548e75e2,Merge branch 'zepto' of https,Core,src
+4138b581950426993d86fe2ed3de5b3ce7f11f20,Merge pull request #430 from reconbot/master,Tests,test
+4286e0c5ecb01c9a2f8ec7383dddc90f3c3f58a4,"Fix #1403 - Trigger ""sync"" unconditionally.",Core,src
+ae903628645954921f4fb1d221d7bad4499b8163,Merge pull request #2058 from gsamokovarov/patch-5,Core,src
+0cdc525961d3fa98e810ffae6bcc8e3838e36d93,Fixed escapeHTML function,Core,src
+7b51c224bc0c10fcc968e6ace3f8fc1b19159215,Merge pull request #1836 from Ore4444/patch-1,Core,src
+517624db111cbf3e392a73ae91e590a0cd73c77d,Merge pull request #2681 from carldanley/master,Docs,doc
+dba0faad09d40818fb85dcf84c1e7b97543d3108,Collection#invoke should collect arguments,Core,src
+9c55b4b3498329eb413bafc737fc1a711fafda98,finished with the simple case for models ... hurrah,Core,src
+716764dc24ec5929abc9ce12e7704a2fa7f11e8e,Add alternative help channels to README,Core,src
+d7e3d5bf4ad8ebf8482c873d3742a7b21580a59e,Updated to apply on the 0.5.0 branch,Core,src
+05089f659595fd2c6514a6fd3fc77fbbc6431f41,Fixing documentation for Collection#fetch,Docs,doc
+4d70b87185db58b3011fd07cee998cfce85e1765,Declare variable when it's used,Core,src
+78b55f7e0ff3eaf68841d19ff4a995da52d4fd02,also tested noevents and eventsAPI code branches,Tests,test
+744dbafaf8699050d43f53376dfd555d30794010,Fix #2554 - adding clarification about route behavior,Core,src
+96b20d070751f6ef5e5434c119cc6caef1bad080,Merge pull request #3710 from elgubenis/patch-2,Core,src
+d04b0f793b95ea1e4c50ac30b76bf65b8630be91,"Revert ""Fix fetch success callback to not reset model/collection if HTTP ""304 Not Modified"" is received.""",Core,src
+4ab05ad5ff7791504ffafe703f0d8c96e66169d1,check for onpopstate in window instead of window.onpopstate,Core,src
+7ff4b3a212d50bc24d7826dd8c6a4b1116d0743c,Merge pull request #3602 from megawac/globs,Core,src
+3fa14be5a15554c4c02fd31270f0e1bd61203031,one more bound routes example for the road...,Core,src
+a79f7ac830c0931076b1184378aa5218b710328a,History#atRoot handles params without path.,Core,src
+5ef230402b171cf9171f39fdf1f81c92d1be2cb3,Merge pull request #3606 from ogonkov/patch-1,Core,src
+60b9cc1d186ad0496b317f8bf46d634d137f495b,Merge pull request #2985 from caseywebdev/generate-id,Core,src
+783ecf70db30f0cc80299e917a3261cebb961b10,Fix #1801 - Add documentation for disabling hash based routing.,Docs,doc
+c66650ab9065ca0ce520c1839c7184cb1bd4041f,Merge branch 'master' of https,Core,src
+dcac2b586d3c46c677d63d2efdd91c79ac052c40,Merge pull request #3921 from jdalton/changelog,Core,src
+cd11702167608d5e92fc78b4f7931ca89ff0da29,Un-golf #changedAttributes,Core,src
+e97c58f547ac8067b5bf74f08ba38daf95bd8bfd,Change name to setDomLibrary,Core,src
+a2fc65b9798d1a5d0dcb43b5c50483640f5187c5,Implements the JavaScript Iterable protocol.,Core,src
+a2f0468595399ebb2d949a6caa214535d22a26f1,merging in fixes for models in multiple collections ...,Core,src
+29cb71ce374f46ece06d144ca9653d4b53a3f96a,Fix #1798 correct Model#fetch documentation,Docs,doc
+3560062c11a7919688c861c2b4c5dd86ff3e13c5,removing redundant assignment in Events#trigger,Core,src
+e58e6f0e413ff28eed8c63b907cb7dfff8952854,Fix issue with atRoot matching.,Core,src
+b05deb5fb5f34fb33e020c6487d3d935eaa38f90,fix #871 - calling set with 'attributes' property,Core,src
+4b6ad311bdb25f188f803e2c2b2b0f3ea24b3fd5,Document using [] for empty Collections with options,Docs,doc
+4463e9bbfcbe336ac2cbe4033d22a4a023201c06,build latest version and compile docs,Build,doc
+93967561d9f46c1c0b2685460a9db7d7f6a6d44e,"Refactor, account for double-parse bug in `update`",Core,src
+cdce2ec30f93e85c2c48cfa0bd93b85ee8769254,DRY-ing up setElement() a bit.,Core,src
+931338ea14ae5e6f87b4e22b545354f19b58bef4,"Fixing Collection#create success callback, passing the model parameter through.",Core,src
+3952cde5d09d6bffbc3a9cc44b8292886252c6cf,Merge pull request #1 from wookiehangover/issue1342,Tests,test
+6796ca06c502d59b1120ea7b38728d9f7047e551,Comment eventsApi refactor,Core,src
+037b3f529c82d86a58e47d215e50249da3895493,Fix #1511 - Add a comment explaining performance concerns in `trigger`.,Core,src
+bc59f5338c563d5ad808d29e71a5acf1ded96bab,Merge pull request #3220 from megawac/rawgit-docs,Docs,doc
+5b49aae75f79c08be057ac0d961cfe00da660219,Handle newlines in route params.,Core,src
+a6a926d1aabaa330d3767eaf0c0368ed808b7622,Merge pull request #3855 from akre54/noglobals,Tests,test
+79b4b4f68e77ca4e8172a4fa8be6f17eb6284a6e,Merge pull request #2903 from clayzermk1/master,Docs,doc
+03c1c70f3fbd8d0f2b5bc5befa299d60733db2da,linting test/bindable,Tests,test
+e589f924d81a185b9aaf0a890e751c2c4b48a7d4,Merge pull request #2572 from braddunbar/no-hash-fallback,Core,src
+8bec722281117b400cbfd82322bfd18a27308c3e,Move Collection#sortedIndex definition,Core,src
+09d376237be4036ae59a054030a2cd4bf926cea3,_createContext is side-effect only,Core,tools
+4c5e2375bde4c73d1cbbfb3109c4159ebb0ef1a8,"Bitwise declared bitdumb, revisions ensued",Core,src
+4dd506c3d466983c1247d44df2b78db3b981483b,more descriptive variable name,Core,src
+e841851d56f4f3b3f604e2d5ae780291d4dfae13,Fix global `i` leak in `change`,Core,src
+ec061250319671685ecb5766d6301f213642673a,Merge pull request #1579 from ngauthier/master,Core,src
+c39ddd0c16ef1c7b372dc37cdc7d283d686e01aa,"Better hash-to-pushState upgrades, via replaceState.",Core,src
+e5ee5503fd388b7fd6efccef829545e0af7b047b,"Adding Backbone.Router.setLocation, alongside saveLocation, to both save and route at once.",Core,src
+12a6fa4b0fbc27a6753a5e8df9a1439df1f6ab36,Adding a note about the need to upgrade Underscore.js,Core,src
+196626931e08c98fdfca86766da632b06f38d85e,fixed indentation,Core,src
+b86cfebdb1dae9f4fe2db5597caafa2aca9041e6,more documentation on upgrading and change events.,Docs,doc
+dfeea846323536059763d12bf3db0a13c1895202,Adding the Khan Academy as an example app.,Core,src
+0a662d6974b187d598568641fe4f3459842eaa6f,Fix #2656 - Trailing slash on root.,Core,src
+6bb43c1b81c3890548baa23dfefbc7859105e698,"fixes #244 -- allow View#events to be defined as a function, making it easier to call super.",Core,src
+4b4c58f495884ded351b1e3f042044e565ade97e,Merge pull request #3678 from jdalton/not-any-more,Core,src
+66d57adb51f1f1a7a29f3d18ac6e820e3abb0d3e,Add comment about overriding _createElement,Core,src
+810c535dc076b5366b1e19145682506d7659534e,Only sort when a model is changed or added,Core,tools
+99eea63c4d36bd57b59e62a06685aa0e651a834e,Merge pull request #2381 from wookiehangover/master,Tests,test
+68292f8c78df52b9d8e5a5a3137bbefecca69a45,Merge pull request #3626 from jridgewell/model-changedAttributes-style,Core,src
+16eb3f3d87d547616946d0532425c9e8130d4ff3,Minor doc typos,Docs,doc
+21fa0aa6a276fcced53fba384d926c13aa00d6a9,"change hashStrip regex to strip bang as well, so hash-bang urls will work transparently",Core,src
+6fb8e7af33d960cf65fc872ae7541a6b7c60d0d7,Query string now parsed if Backbone.qs defined,Core,src
+f12518ec5c57da6c4b0cc457ae2710d098c306f3,bumping to 0.9.10,Core,src
+ad2ae8e162106c174ddf1b798d39d352511b853b,Pass Collection#fetch options along to refresh,Core,src
+9c681906a45d4ec553b1dbe92ae30e7fd3942b53,Tests,Tests,test
+8429118984af34d8728af3a44cce5979316dcd88,ignore favicon.ico in bower package,Core,src
+245acb08213c5cbdac8c6f860cdf6883c9720fc8,removed unused var,Core,src
+01014168004a490f2c89fc6b190a659de1ff8bd6,cleanup oldIE sniff code and iframe creation per @jdalton,Core,src
+7af332917518ba46152467cc9b81c72bf8b51687,Ensure a search test fails when appropriate.,Tests,test
+884e4eee55994f9e6f4ff5777d6d30592ff31663,Fixes #1931 -- document Backbone mixing in Events,Docs,doc
+be1f2a87c5a66fe8e6733b28869ba5c772969cc7,Add ESLint rule,Core,src
+cdceabe6c469a827333f4611327e3aa9f4edc899,"shorter defaults in model ctor, shorter extends in history",Core,src
+edafdebaab14a196bd353eaf99cedbf187aecdfa,Merge pull request #898 from ckorhonen/master,Docs,doc
+4104cada6675bf41deba2540e607255ad6e50088,Merge pull request #3819 from captbaritone/semicolons,Tests,test
+321e2f227252ea17650bd8e9694caf6a3e08eb50,Merge pull request #3127 from alexanderGugel/patch-1,Core,src
+6d880672d11b484793ae3779445400e45dcc5150,Merge pull request #1493 from braddunbar/consistency,Core,src
+cdce75ef76c3171d8474676060fe29e8c247f6e5,fix wrong test,Tests,test
+5b8f794272a63355b230a9fd960783906581077f,Remove the redundant documentation bits,Docs,doc
+a72700921f654407f6cccc3fbbd82cffcdf45493,Add favicon to test/index.html,Tests,test
+f4cc17e990eac3224350d263e75c623aa1c0a87b,Fixed typo,Core,src
+315d67b6024a82cdfb3e5be2e120c3d2aaadfaea,Merge pull request #1119 from braddunbar/collection-model,Core,src
+54c4d7cd47ac93adee24335d6710df764603a026,adds documentation for the automatic nested collection option on models,Docs,doc
+617fc7d056d4b0e2c472b807b62726acc6385485,Merge pull request #887 from nhajratw/master,Core,src
