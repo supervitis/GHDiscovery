@@ -1,0 +1,101 @@
+,activity,predicted,predicted2,EREN,MIRELLA,SANJA
+18e29a898af3fb2d412320ab0c784dfc46bf2a06,cleaner approach to applying transforms to slides container,Core,src,Core,core,development
+03c3031cb4de22f2cd8070547c2bb8085d435c69,cleanup classes when backgrounds are synced,Core,src,Core,core,development
+c9b179fd856415de42b8a60c650b988cbca39f69,pdf hacks,Core,src,Core,core,development
+e08d0572bd41dd18f813e9992bf76699f6b95398,Another instance of,Core,src,Docs,docs,development
+f28b380fac76583c1572c82abc229b49f54dc2fc,prevent auto-sliding in notes frames #1004,Core,src,Core,core,development
+853efe504356b7607330cb7e81a2a22ec1ed5a78,"for contenteditable elements, don't let arrow keys work",Core,src,Core,core,development
+0b6585bd44fe86344408d9d3ab8d3c17e254738a,prevent exception when initializing with no slides #1678 #1679,Core,src,Core,core,development
+b6e85816e594171853625b006f966d91f3fcc9e9,typo,Core,src,Docs,docs,documentation
+aaa03dc2c79bf4101c5eb7c4903fe157c6ec6278,fix incorrect directory reference,Core,src,Build,build,development
+f5574e173bfb6b682361b73f009b51eee4d3a8c3,"version 1.3 is stable, upgrade to 1.4",Core,src,Core,core,development
+9b00001870247cc2e4b253de9470ea34146eb2fb,Changed #reveal to .reveal in print.css,Core,src,Core,core,development
+896e0b7010fd12573167e0b9dc45c7177b8db490,removed history comment in js,Core,src,Core,core,development
+0f79903a10bcbad5d77bce13392f84b1caef40d8,Fix IE10 vertical slide perspective,Core,src,Core,core,development
+732ed921ebc693d29988c73ba1f28a986dd8f143,Implemented correct Previous and Next navigation for both mouse scroll and wireless presenter.,Core,src,Core,core,development
+7055c54b799a966d313ab87d221a207e9d04bac8,rebuild styles,Core,src,Core,build,development
+38577cceb6d7a05be8000fb509b2931a50b296e3,Merge branch 'master' of https,Core,src,Build,build,merge
+3ad0d6adc026c620af1b2eaadabd2ce2c338e2f1,tests for lazy loading,Core,test,Test,test,test
+49e0749bc637a87aa43e77bc2f12f55b8039b1ea,readme tweaks for auto-sliding,Core,src,Docs,docs,documentation
+562d3b0238f69029fad912c067b5d4555f09e3ae,Merge branch 'davidbanham-master' into dev,Core,src,Build,build,merge
+57844ad827523be8ca8992837a5a591c472d77a7,listen for touch + click on all devices except android,Core,src,Test,test,test
+19188205de20c6c7e219c01482e897a880e42a7b,add pdf-ready event; dispatched when the presentation is laid out and ready to print,Core,src,Core,core,development
+7d6cc9f3ec6218a6b29eede430ca41c84ad23b63,Merge branch 'master' of github.com,Core,src,Build,build,merge
+775d510c2f979181c2194c8705c4b25118dc3144,Merge pull request #1756 from jmpp/better-data-trim,Core,src,Build,build,merge
+9f1c5a0ceae03b281b6f35b33412fd8dd1860eee,Merge branch 'upgrade-to-grunt-0.4' of https,Core,src,Build,build,merge
+f84e025d38be24d7800d51bb8b117570c10568c2,Merge remote-tracking branch 'upstream/master',Core,src,Build,build,merge
+75845a92c3a134e79853e00efa66585313c127d4,Merge branch 'dev' of https,Core,src,Build,build,merge
+c5c0290cca523cd049032942bd0f62dcbc3cfb4e,Merge branch 'patch-1' of https,Core,src,Build,build,merge
+ec76f4790ce5a9c1248bfab9e0d26eb56eccef79,speaker layouts in server side notes plugin,Core,src,Core,core,development
+69bf9b51ec441fa4f7924d53f3e620a203bff83d,include slide number color in theme template,Core,src,Core,core,development
+68139e64e958b9edaf38a57839a7de74a80d277d,Merge branch 'master' of github.com,Core,src,Build,build,merge
+faecabd568946dba80c9b9e3ede05cf66adf634a,adjusted shadow on headers,Core,src,Core,core,development
+969885a7dc5ec7dda0ff6b8bcb4096288f945bc0,ignore delta=0 mousewheel event,Core,src,Core,core,development
+c99f138fbb71688c7ff02121e9ef856fe4781627,Merge pull request #1234 from lememora/master,Core,src,Build,build,merge
+ca4098145ee57c3f865703c43c4b8b9d64a76b2d,bump up z-index of notes in pdf,Core,src,Core,core,development
+dd08b86a0fbc330ba7c8631bc630bda3f7d9982b,don't show auto slide controls if there's only one slide,Core,tools,Core,core,development
+c39f5fc0b0ba4f32854b5e58c71beda6fb295270,Oops. Delete console output.,Core,src,Core,core,development
+705d5a012cc36d61a59823ea8966d5bfbf34f5b2,define normal font widths in all themes to make sure things look the same after #691,Core,src,Core,core,development
+6ba1a4b7809cf9df4589c7d92ef9844925767041,Merge branch 'list-themes' of https,Core,src,Build,build,merge
+691099c6a25861405f067d3b1f7c669c4642a535,rough support for vertical centering #70,Core,src,Core,core,development
+ddc9e2b5e7c8d8fd43323068ae0061738955c4be,Merge pull request #1357 from davidbanham/master,Core,src,Docs,docs,documentation
+1c2f4a2e9243d43abf1f6606cfba079daa7d72f7,deserialize state values,Core,src,Core,core,development
+1916d2f64adcf3a02ddeee06206b5e586167d0fa,added example from @pamelafox,Core,src,Core,core,development
+0e7bc4091ec7a870805f040e342732388db99560,Minor updates,Core,src,Core,core,development
+d42839a1a3f91350227f4e022dd56d7f2d00e00e,updated readme,Core,src,Docs,docs,documentation
+7dd2a10b345ff4f78bcbf25c756bb35c050ba680,remove extra whitespace in css,Core,src,Core,core,development
+6447b59ac51c3f399ae061ecb4e9275fc165f967,ready flag on .reveal container,Core,src,Docs,docs,documentation
+f345326a4edd0ccb506071c407cd268a6bfa6610,re-arrange readme,Core,src,Docs,docs,documentation
+c21e6bbfedd62128ea1c023498317894c6f9a01d,fix vertical centering of slide in ios chrome (closes #289),Core,src,Core,core,development
+35462a424c4899747aa2079101372c66ac14d211,remove mention of deprecated transitions #1390,Core,src,Core,core,development
+b4815a3a831cab4775b18b9e78711d25a7531f51,remember last visited vertical slide (closes #225),Core,src,Core,core,development
+fcb6ea8385487194f257b9d556f9c98d0ec73301,prevent pages from overflowing when printing to pdf,Core,src,Core,core,development
+5a7ac78d4b7a75c29f8aedb00f66028d16bef729,lazy load iframe in demo,Core,tools,Core,core,development
+9c96a56e3330b75ca3b3205c79b2c4c1f74edd25,adjust check for focused text inputs,Core,src,Core,core,development
+18795c161f2ea7d01fdadb9cca4d95c52e76d3db,add config option for disabling all fragments,Core,src,Core,core,development
+73b69eb13dc15734fd4ce0ad9aabe0a9c5f053b9,reduce overview depth on small screens,Core,src,Core,core,development
+9b2f62496c85ff91c46e8ae676b40c50884fa8a9,Make header margin an overridable setting.,Core,src,Core,core,development
+2a8646543476bf39475606aa9d5aef622675f302,tweak to pdf print isntructions,Core,src,Core,test,test
+2ed1d6fb5dd7aa24918342197554fd7a6fbf6797,fix looped view distance calculation,Core,src,Core,core,development
+d5e1f7e493fac61fcda5641397dacc0e079a74da,print styles (closes #19),Core,src,Core,core,development
+1c16148c09e96742bd4cb728589654ed43103867,set 'hidden' attribute on all slides except the present (#457),Core,src,Core,core,development
+f837343f9f1ea7c7de6e032139af6c01278464df,remove hard line breaks now that slide width is relative,Core,src,Core,core,development
+a149de8ddcd2ca7529050afe05a68ad02ec7519f,Links to transitions & themes stay in presentation,Core,src,Core,core,development
+022d8ca27d0eca6b559045888781d2159a5e602f,readme tweaks,Core,src,Core,core,development
+7fe762c2f3d53e1a7dc457f8269105208230f399,-0,Core,src,Core,core,development
+a5750f03c086b0aaafc669682b295adc49150903,merge conflict,Core,src,Build,build,merge
+09de278be0b969409b9967ea4a3d9c06d25fe4c6,Merge remote-tracking branch 'upstream/master',Core,src,Build,build,merge
+e4e5cc10836f458adab8fea7b45a05a8eaa30990,Merge pull request #1740 from christinakayastha/feature/printing-remove-slide-number,Core,src,Build,build,merge
+d62093c228f13ed10a21eb7055872b97c9f2ef78,include dev flag in version,Core,src,Build,build,merge
+f5155ed2a100c1f2de0ce207a7b3d370574237bc,upgrade to 2.5.0,Core,src,Build,core,development
+49cfd05022b42041dd15d30e119c3a7fdcc5e88d,fix css syntax error,Core,src,Core,core,development
+137ddf54722464fad6b726e21b98cfc0580050ec,isSliding > isAutoSliding,Core,src,Core,core,development
+32865b43f8fd9cbf00733c59f171c11c39d8c93c,Put the timing code back in.,Core,src,Test,test,development
+7c7776a942b68c338c585e7538c5d692e5916b42,added missing comma on the configuration example,Core,src,Core,core,development
+b0ed09d744e9ab6acf8cd14fba5e59b152bab09f,added font license,Core,src,Core,core,development
+27f48f644039baddabf4de9a0f168779a81e0305,"significantly smaller js file header, added minified js",Core,src,Docs,docs,documentation
+9e78fe3ee215beb426ae7f44eb729a9be8bfddf6,Merge branch 'dev' of github.com,Core,src,Build,build,merge
+40c4db1e04113f317048e8e97479b4fb3e3eb863,always use lowercase reveal.js,Core,src,Core,core,development
+d3ebbf1be72dc1ea17c7c6e48f8c362feb4deb94,Only call embedded content bits if the slide actually changed.,Core,src,Core,core,development
+7094f44eb9668f43046836936d1a925fc8698e49,merge conflicts w preview & backgrounds,Core,src,Build,build,merge
+32736a791c3e56298e3359d58d9a5561eaa82a47,auto play/pause html5 media when entering/leaving slide (#388),Core,src,Core,core,development
+b6c7cda90819ba518c69cb56c7edd02acb7a6d72,ci fix attempt 2,Core,src,Core,core,development
+713702a0ab81d1756a30e6c14ae49afd42135541,Reduce required Node.js version to 4.0.0.,Core,src,Core,core,development
+a245a87e381b81168e730a6b4bf3d224b8931606,Merge pull request #1138 from denehyg/background-video-loop,Core,src,Build,build,merge
+3a8bcb174ab536b778191f5c20f7bd5b5415acca,Merge pull request #691 from fghaas/section-fontweight,Core,src,Build,build,development
+90b301d0a03b8b23ce755c31ec6dac15cf69dc49,Enable passing options for parsing Markdown.,Core,src,Core,core,development
+ba6bec22c45033ae59ea878b928ab1985e0f1f81,use home and end key,Core,tools,Core,core,development
+922677ac66d6a40eba23e5f9ac3fc10d9145b203,fix notes regex #1522 #1392,Core,src,Core,core,development
+3e42929f9024acb0e3557c48b3ed5ad6ffcc0072,"check for 0 division, stops parallax failing if only the single horizontal slide and multiple vertical",Core,src,Core,core,development
+0748b683350b2bd633090f51a8e97b154671d2c8,renamed .remaining-height to .stretch #244 #490 #561,Core,src,Core,core,development
+a144134b42c15964f469cf4499859268f52ccb46,Merge branch 'dev' of github.com,Core,src,Build,build,merge
+e6e80283f24f773ee8d0a5364634a06f081a1410,Update README.md,Core,src,Build,core,development
+0069e3ad14fda52c6ad2413c31131fd9e50800c3,CSS,Core,src,Core,core,development
+97b66d1fe052d7df2ee9d4f304fb9c58bf43e2cc,apply @knownasilya's first slide detection fix to dev branch #671,Core,src,Core,core,development
+2869f8a4ee23b061d293f927742a8daa1495246b,Add fullscreen mode,Core,src,Core,core,development
+2d21d128c5f0b1bf403d055de932e0d45a5c33b1,Merge branch 'master' of github.com,Core,src,Build,build,merge
+939da8834e5c3cc53ff80ebe894502f4e2d6a193,have notes page only listen to one socket,Core,tools,Core,core,development
+929933ce9d57eac7cefca11e76dc7aaf33f03a78,Add travis.yml for CI build,Build,build,Core,core,development
+a22d00ab25b13b82d19890428f124b4ed3759f92,server side notes plugin now supports input via data-notes attribute,Core,src,Test,test,test
+a91d40191984679276a0549f5d8adc20005bc8d2,add default table styles (closes #62),Core,src,Core,core,development
+e460b2bd4b07652a489d60ce879548f22900c7cc,Merge pull request #1747 from spencermathews/feature/readme-defaults-fix,Core,src,Build,build,merge
