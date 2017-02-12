@@ -1,101 +1,101 @@
 ,activity,predicted,predicted2
-148a0f59082d531c3297169a143d89bb13642d7d,put the appendage of the .less extension through the file manager so that behaviour can be over-ridden. Fixes #2235,Core,src
-a31f71d364eecc17eafcea4f9aaaf9a31839d717,import.js init,Core,src
-59a165ba332c62b7bbb4493db545ccd5540fd058,"Refactor out the processing of the import, ready to be done asyncronously",Core,src
-1036c568020c94addc9e60506803f56ca4f789b6,(dist) version bump,Core,src
-8019439eb4f52476bdfd4ae3665ee1ace500afcf,Pass env with toCSS in function call evaluation; Add tests; Fixes #957,Tests,test
-6d78b3f04fcde1ed95ee3cf89a19e95120634be3,Fixed issue #322 by changing the keyword regex to allow numbers in any but the first character.,Core,src
-da7de8f518dcc26f5ff370aced14839235b2c986,"move extend fully into visitor, bringing back functionality and fixes #1165",Core,src
-a58bb76e4c5a769c3a9c1c6d419315a2442626fd,"polish ""root func"" error handling",Core,src
-37c3b099c3d41fc1482728ddf358876ad5194098,"interpolation includes unit, but not quote. Use unit function to get old functionality. Fixes #782",Core,src
-c326a4e18365e6c741b09d3a3c48a6c9c4498bee,(dist) build 1.0.15,Build,build
-fd1182bd697c86005761f9bb3cd8bccc53a11b65,Added `length` function (#1542). Added scalar value handling for `extract` and `length` (#1576).,Core,src
-65404cb5062cf25bcd9150bc953b3f5f079f1091,Allows stylesheets to cache even with modifyVars,Core,src
-13635e746222e5d7a438ce2727efc8488011bedf,ability to insert uppercase color names,Core,src
-163a8c465711ef30ae46efa21ff5a56f25ea5ad6,Merge pull request #2420 from bassjobsen/patch-10,Core,src
-7cc986e361456ea2ed26589425077b22d7d0442a,Add browser field,Core,src
-1199ce41b094def9b90edb56afcf8761d2294521,Make rhino error support better,Core,src
-0b30fe48c9bf180694586261ee667a5710646d4d,tweaks to bin/lessc,Core,src
-04d2d3ab68af05c9c00e45418931236f315be416,make mixins behave like closures,Core,src
-93a0a0bebfb6272747d2735c55e2b6dd0ac7d319,removed trace code from rule.js,Core,src
-028f3c79be58de5e9c26b12986e3cc92fe441abc,Bubbling of directives.,Core,src
-6ff68041de291f09753ef50f1c6d9b2b1f40b976,Set object id and initiate parent_ids array,Core,src
-461b3704fcbed694c3a63ba476191386ec727c43,Add semi-colons to error function,Core,src
-feed74f3bd032f25bae6456005fcb312544ddcb4,Fallback url() value for data-uri function should be quoted.,Core,src
-8a135bd89ba9bbddfc2efce40d338c19949fd725,Merge pull request #2643 from SomMeri/shorthand-color-interpolated-into-selector-1481,Core,src
-94f70f71218c4b7f89e29d8a70893c8fea735534,fixed issue #795,Core,src
-c2d61e75de95916ada0588f5e4c75f82b49466f6,Merge branch 'master' of https,Core,src
-2bac8184c570afb7a71e7c0e429da59a5a39bfff,(dist) require() goes in its own file,Core,tools
-657972cc4122fc940c7a59c69ea78da8e17d074f,Update my name.,Core,src
-d3852cf46344657881e61122f46a201bf6b00eb9,bin/ init,Core,src
-0d61ea64497a77d667fd683d94d6f4fe450b0845,media test now passes,Tests,test
-39c603a558ffaa76497ba6645935c6d1a5287ad1,Merge pull request #2512 from rjgotten/directive-selectors,Core,src
-8bbc221e823e7a60c1f9ea16b7bb6917bcbbe0b9,Merge pull request #11 from dhaber/rhino-issue3,Tests,test
-900daaca59715f6ebe2c179e7b2a548b0c3847a5,Alpha release,Core,src
-7ad43291f5896110e34284e3f47261ac4335e414,1.7.2 release,Core,src
-16c4f88b7f9e0857598cb24834b9a60003d9715f,small optimisation/fix todo,Core,src
-3235042f0f808aa87304df1caff67400b830f406,1.4.2 release,Tests,src
-dd1ebe83dcd364c9b1e728ad473fa5843fe56beb,Merge pull request #2267 from am11/master,Core,src
-0d94e2dd016ef3f14b65302293a41a6bc97f5329,Add failing test for svg-gradient in nested mixin,Tests,test
-e3168e343460539556a86023833d1a033e013cba,add some more failing tests,Tests,test
-98df50e016e24ea6b568e13ae6bb8e7698a1ec1a,removed debugger statement mistakenly left out.,Core,src
-17385490f43fd74233438336b078e1fd17a4439f,final changelog changes for 1.7.0,Core,tools
-0dfb2416d112759af6543c2b27336005feba6a9d,Better output for the warning when file size exceeds,Core,src
-6b126a150280b1ceb09a05b2010e6b6166e574a3,Add missing info for 1.7.1,Core,src
-8fc964dc3449437bbfdc7f078cc9566cfacf2834,Merge remote-tracking branch 'origin/master' into 2_0_0,Tests,test
-dfa3f6abfbdf4b5210b3a32f322c50c66d8ff780,Merge pull request #2100 from joscha/patch-1,Core,src
-f76ad35d849529597e5e8a309c23433ffcb43da3,Use SVGs for all readme badges,Core,src
-e040eff3e964ae14ed7a1e3716fb022a66466ee6,Add back in test core js files,Tests,test
-c330c3a4a8b14a525ae2bd57a00ea1e1e305cb2d,Added guards checking to namespaces. Issue #1418.,Core,src
-f76f6984a9cc25f7091ec94f235a008450f9e93d,functional browser based parsing + css node creation,Core,src
-4d5c404dd9a2248a5ce50b5ef1b5492f3620cc23,HSV support for #1143,Core,src
-0d98d2401ac2164b233df6dbe7ec5b289e77847e,(api) custom port == development mode,Core,src
-c75bb15b2a0779098a00554890676d7acb774a0d,"Set CSS text after style element is added to DOM, to fix crash on IE < 9.",Core,src
-7a151e279e4069bcbb365e12a8f92a7c2cfab70e,Merge pull request #2182 from seven-phases-max/fix-1973,Core,src
-470af20f641c9b5389475733dfe341aa4c180fba,Make sourcemap generation a bit faster,Core,src
-4c50608860a251ae59d373fe1365db987c1a1bf1,Merge pull request #492 from fat/operation-comments,Core,src
-6089b660178d81111a0f30666b40c65eef7d391f,Updating request dependency,Core,src
-6fd2a5751cc8313481913bcb1623bf6c50089df8,v2.4.0 release,Core,src
-d436b83c06239d50394cba275f2535adf68db6f4,put the built-in cache on the less object,Core,src
-f020aae77998fd8e4a9a3a4526ef6e16767ef790,Make less more protocol agnostic. Fixes #428 and Fixes #742 and Fixes #706,Core,src
-7396e3438e149fcd0feca78fd053eea129923a11,"Added documentation for the -rp, --rootpath option.",Docs,doc
-93d6b0876eb36a530cf74f37e6aa663b5c5d8b0a,Merge pull request #2123 from SomMeri/import-into-media-1645,Core,src
-e753a7eba2d9d2084caeda73b0a3585a4e3d6f59,Created separate test case for #2162,Tests,test
-186f898a8e4e4d6124c86189faca59c74f62ff0f,(new) mix function (StanAngeloff),Core,src
-a5b653af707747eff93efd4f23b2ebcb0f23af26,Actually pass ieCompat into evalEnv for lessc.,Core,src
-bd31c7a4c3bbc3d6d66ae5424c90eb2355924c19,Fixed issue cloudhead/less.js#1272,Core,src
-8774a436f6cb1067ab835a96a4704d4ccc7abb71,Merge pull request #800 from SpadarShut/master,Core,src
-be2de926eff71f571ccb4622014ddbf65f06cf2c,CLI,Core,src
+964b991423478e6b85bce25a3aeec084b3986836,Reviews changes,Core,src
+d4c84c3f95dc977fb8764a179f82b3189bc374b7,"Fix missing , from previous commit",Core,src
+c20cc598c5e416d673f6e625afe5e1177e09a90c,added diff-dependency for easier test-debugging,Core,test
+3bb4a1086653329243e8f959cadc540514de403d,Fix,Core,src
+ee11dfb0b12eba54c2331191f7006dcc05958b02,1.5.0 beta 3 release,Core,src
+51ead0869136d6cb6779d2a5caee15f60e342a66,Merge pull request #2445 from bassjobsen/svg-gradient,Core,src
+80e8b42e9af7da6f6afdd4719e5cd92d41238207,remove @media code from tree.Directive,Core,src
+83a47139f8230d6af23340709d078f711ce84856,bumped version to 1.0.1,Core,src
+36371a3007c5cce5ca21a953597dcdcca2ce6422,fix refresh()'s timer output,Core,src
+16ad5bee0ba80d5f7db40efcb2c0ec175bc14faf,Fixed inner quotes,Core,src
+b55b596740fb9004c6b86d9348a07c854ad1a01e,move transform out of the parser,Core,src
+4a49c636961fa2727d980e00cefc330ea75a59e2,Merge https,Tests,test
+0e883957cc1ae38a1f4a0976557929ae8a74e778,tests for import malformed,Tests,test
+b60c296e6ea9f5ddab897474992fd2b02a2aa6ae,"throw a ParseError, instead of just an Error",Core,src
+1cbda8b72f7bb9cc5d50f41787d8bc5b88dc46aa,fixed benchmark.less,Core,src
+ddc7ba98459e44e831891d7943ebd54313578198,allow empty directives. fixes #2377,Core,src
+d6bd0e9e4f1f330915834e050cab209697e77d1b,Test against latest Node 4 and 6,Tests,test
+5e13673674d32a60664361dddb51638ef2594c02,Merge branch 'master' of https,Core,src
+d7f79be40dcacf32940c9c848a0e0f9b7ef27cbd,"Always copy/create BOM tests, even if they already exist.",Tests,test
+28172d50f7afae259e82d69ba7b84ff35b70f222,support windows line endings in browser tests,Core,test
+efc1ff41a39c2fc9cdcbdf517e0ac6bc2b94eb40,Merge branch 'master' of https,Core,src
+ee4e23e15c5ecd5376169919e961c6c362fd0547,fixed merging of interleaved properties,Core,src
+b77b02091aa01609412f6b4d5e43d88002623d82,"Improved min/max function, 2 new Built in function",Core,src
+d26f16ae2d85f7cc25b63325d35b29d0a6612308,Merge pull request #2241 from Justineo/patch-1,Core,src
+f467219dc37552a773a72026428ca423fa3bf9f3,(dist) version bump,Core,src
+ac8cff4a6a51e256b87e674af6645514530bb26c,Clean up,Core,src
+2c1172df21dad1d2358809728719f58051c678ad,Support non-JSON script attributes,Core,src
+ba5c8189cda68b8a064d44bd707c4e59a92c5152,Fixed line/column numbers in math expr/ops error messages. Updated tests.,Core,test
+9dcc7eb953a34ef9a94a4f51a6de3e4843705446,moved to apache license,Core,src
+e1f3d4472cd092c0c4eb4467f745a2c5ad18cb40,Merge pull request #1907 from XhmikosR/patch-1,Core,src
+3dbd1e9790ba0dd5bc37f2e83efb124ffa2e6d6a,Merge branch '1.5.0-wip',Core,src
+a128801d141b50b699fc2f687942f724aea53bc2,Merge pull request #2313 from vsn4ik/patch-1,Core,src
+2de86bd901c858a06170019fedda2d827f230865,Support for IE's ARGB syntax (#aarrggbb),Core,src
+35d58f239221edacb6384e95757f405c62b9ab3c,start abstracting out the file loader,Core,src
+440d08153aaecd62265fe6f7f961c1287d51a57f,CLI,Core,src
+29a894231a9eea1198ba97b1c46650792a202911,"fix error message when no filename, also try to print stack",Core,src
+70045e9c4bbb019bc5eb1e989f93c0eb94141866,(minor) formatting,Core,src
+10296d294794d6f0cd8b29d07afabe7e8b33ebf9,Merge pull request #2217 from seven-phases-max/2_0_0,Core,src
+4399c9c9658e5c189745943d43c6d9453a0ded8f,make strings behave like other nodes.,Core,src
+94ef7cba5edda35c9424ca79e090a05921f43ac6,small compatibility fix for prototype.js,Core,src
+622a521b11ede8be8930b438aa4ed9d6bfb376d9,"optional relative amounts for color functions, see#975",Core,src
 c35b6d733e048a3344ce95f5f225ee815a12f014,Add browser specific url tests,Tests,test
-70b6684f873c8a06d6e7f644b4b39263a1016fdd,(dist) version bump,Core,src
-bf1823f1096ce57766854d2d6481c3dc6988cdbe,Removed Shorthand and Ratio parsers; Fixed some issues with paren depth state; Adjusted tests to pass on new output,Tests,test
-03a718363739fc1430bfaa908fcbcd529337512e,add tests and fix log to console feature,Tests,test
-479827b02f520f7842679c99c1579139436726d4,add banner option. Fixes #1735,Core,src
-08e613709e93eed8d36b08574f3df9cd1bdb3ebd,"Improved min/max function, 2 new Built in function",Core,src
-9951823b90e12fdc7a928661dc8fb3159943c8bf,(doc) install instructions,Docs,doc
-f4105114f03db0b09c7c34ea226375a2007d4ede,lessc,Core,src
-a8802fc8ac2a8cc4aa98ffebdfd843e9c094ba6c,Make parse error handler more robust,Core,src
-7c2ac614cb0f4b41018d699cf89e88ed143d4a30,get spec passing,Core,src
-7f34acd6d17f73ef8bc2e8bd8f4518ef5561ded9,move visitors to a different namespace,Core,src
-84908b0038459175bcf25f0967ed16c0066b5c3c,Updated .gitignore (for emacs),Core,src
-bdc8564ffee609f0a945950f994f19bcb3ed946e,fixed readme,Core,src
-07837a83a7b982ed5c9c13271ebd6453cc4b886c,refactored variable lookup,Core,src
-d82b39c2db13aeff80b34688d0e6fa05d38c0f74,1.6.2 release,Tests,src
-d9f163ead6dc82d11b3c0a5ac6028c221ae7da94,Merge branch 'master' of https,Core,src
-70870dd9dd3a2ff583c694237ba815823af6fd38,Fix unit test for import-once so that tests pass. Previous test commit had bad assumptions,Tests,test
-543fb96a0338ee29b1ee70d66cea6537b5d4f9e0,parse alpha in call() instead,Core,src
-00d7ec1477d8a01fb988cdc1716ade3ebb3a4d16,update dev dependencies,Core,src
-c1095a7218d69d71507a9109475c377ed9175c81,alpha build,Build,build
-77dbc98321c506eb7111f21c5024050abd303ea9,tidy up and fix ff/ie11,Core,src
-4dd5a4b8e880088b327a918cfeb251dcdfd50df8,Merge pull request #1737 from seven-phases-max/clamped-rgba-output,Core,src
-c804ed2ef163c16e9bf67d2f33fc7cdf966282dc,simplified code-gen loop,Core,src
-999af91bb38ee1480ea4a3a24e12ee25c34e8a40,set less.hasFinished to refresh() promise,Core,src
-f79f3b5f10462623bc3d00c6bcf983986da937bb,(dist) version bump,Core,src
-023dd62c88d82741a265995e6cd91d37931bceb5,Make copy of options before each test set.,Tests,test
-1d67c5b382574827eeb029046da664b2fd618479,improve error-reporting,Core,src
-6afd04c05f87a0e2f15d4d0275596522700fa250,Added issing grunt-contrib-* dependencies.,Core,src
-63109417c740d3e7d4c06b03463c9a97f359b10d,small fixes to sourcemaps,Core,src
-5995bb935b246c1641f4ce44d4f9e402b167da85,(dist) make 1.0.13,Core,src
-4633f7cc4cdb8abb1c02f0f4224160a4bce41015,Fix unit comparing after merge,Core,src
-f6cf5f245c6202587623d856f71f5e93106a566a,Fix bin/lessc to use less.js and callback-style,Core,src
-ac3a92dd30d828ddfac608a6c20b45155c6be1ee,add clamping to hsl and hsla functions,Core,src
+178696d14165e49e0c9e25c9e15ca31267b1df8f,Allow any casing for functions. Fixes #1168,Core,src
+1692e2f639efce078e82612459991293c1762425,Merge branch 'master' of https,Core,src
+494c5f268108b1f684d81a49b396cf259fe25fd6,"extend options, algin with decided syntax",Core,src
+06aa30403888c72edba6c6d2b5d1c9be94638742,get tests passing in chrome in sauce,Tests,test
+76ac1ddda6c58ee88eb240ff9885992502773818,revert bower.json,Core,src
+8fe40338170b71bb7561f2589f85dc95195be0cd,Fixes small typo in command prompt usage text,Core,src
+b10928720ff71446a579304cf4c953a4a6e97502,Merge branch 'tests' of https,Tests,test
+4251946e83772c7c18942d664cf0bb90d5dd57f1,Merge pull request #2955 from maxbrunsfeld/less-imports-of-files-named-css,Core,src
+c6cf6a8a6a06bcf47d87656f7ee6253e8ec1d0eb,Moved @font-face property merge test into urls.less and re-enabled,Tests,test
+4417ef62c6d94354bbcb12bfada8734c82b62788,(dist) build 1.1.2,Build,build
+b2aa23e88e65a4b94ffe382f621eb2c3b6a8e778,Fix IE8 error test,Core,test
+a3c0049d4c89af4160b19274c6940249d1b42e2f,"Add Gruntfile with tasks/target configurations, and commands for running tasks.",Core,src
+0bc82a46e7469679b6b640757390ac6b2a06ee13,Merge pull request #1804 from cettox/master,Core,src
+abb5375acb0358987ee9d77b64251bfd9c247e52,Fix JSLint and JSCS errors,Core,src
+94a6501adee79db3aa91d2b62cd066db784d7be1,Merge branch 'master' of https,Core,src
+c330c3a4a8b14a525ae2bd57a00ea1e1e305cb2d,Added guards checking to namespaces. Issue #1418.,Core,src
+8437d0766d40af226c3f3e5dd6eb35ba5482c870,remove short lived `@import-once`  in favour of `@import` (default is once) and `@import (multiple)` for multiple,Core,src
+c730829d1d609f250b522775fa1745537f6b77a4,"Fix one issue with media queries and detached rulesets, one to go",Core,src
+fb81856a6156305b16ab8adb2062af330020c343,tests – update tests to reflect changes,Tests,test
+ee9eefd94f47e037231392d5ee66edd0f77af8de,Fix some more browser tests,Core,test
+ccfd4e209d8ffd8c414674b3c539741950713c2e,Merge branch 'master' of https,Core,src
+663868f18c157b47b13aac2906adddc50b2a3c23,fix error reporting with no stack,Core,src
+70d610f87749589092c3f2f436c0483d9228a93a,support https and 301 redirects in imports. fixes #1103,Core,src
+8284ce5fe052a67a7f52739bfda1a63823a00889,Added CSS3 specific relative length units,Core,src
+87e209ed8a739ecdf94f1fd15a8667e5e8fb184d,"less.js now works in firefox, safari and chrome",Core,src
+8727d7281168afa41c1f376fa45c7bed9cb4c3d7,Remove ipad sauce test since it often fails,Core,test
+73f3fc4468808daa81e09b067047c5b150b83abb,typo fixes,Core,src
+223ce7332483c85e17c36727c5bf15182149bdad,Update license year in README.md,Core,src
+4972d476a4dae0dee92c13161b7b0bb3406671eb,Merge pull request #2423 from SomMeri/extend-on-parent-selector-v1-2206,Core,src
+edca7f4cfa97c81e5664ec8ea13a904c9bdf469c,2.3.1 release,Core,src
+fa035ad5e951eab2350e7aa3d9fdabb51f891277,Merge branch 'patch-7' of https,Core,src
+1b204fe230fbd1791d6a11a23e2afaa9cc3d2c78,Merge pull request #2117 from SomMeri/import-charset-ordering-2013-1954,Core,src
+9de877523b65fd5a77e6ef373821ee79bc4d1233,Merge pull request #2517 from seven-phases-max/fix-naked-url-import,Core,src
+74766691cc20b028892155ed2c879e9693540def,Support for /deep/ selector. Fixes #2023,Core,src
+13635e746222e5d7a438ce2727efc8488011bedf,ability to insert uppercase color names,Core,src
+ce4a7bc0e9468f9cda0b9f8f2132475111f6165b,Undefined source map should result in an empty map file. #2430,Core,src
+eff69f5b77575dcd3fe8605c4575d67162e1df0c,bug,Core,src
+2ff9ae521e85cc67db16e08a903230749c9f76b6,Allow circular references and ignore them when they become circular,Core,src
+c17d939ea705ed9eeab6114963d0ac2c689f24da,Allow multiple extends for more declarative multiple inheritance,Core,src
+e0dff5308c33e53a6d7e962018bd071ebf5627ab,"Bubble import only above other non comment, non charset rules. Fixes #2440",Core,src
+aaedf965646fdc002d16efed36388e014abfd90a,Add an --include-path option to lessc.,Core,src
+29eb4263fe63cc47961ea7dd6fa2ef8d30d02c6a,support safari extension. Fixes #2358,Core,src
+aab9c1b24ff26ff1c2438a387f2503a7dd639033,Fix jshint errors after merge and add jshint to makefile,Core,src
+7f5cf067d2390eae5c723c742380419947b979bc,Merge pull request #347 from idris/patch-1,Core,src
+cf5d3050eaaaa7a9e62e56cb0a38980999bfadaf,Merge pull request #496 from wfreeman/master,Build,build
+68bf9db89fe6c789fa17c01e530fe7615471176b,Remove copyright from licence so we only have one,Core,tools
+6705f8e50172b3168ffe036d53ad3c4fbb45d66f,"cleanup browser.js, make ajax synch by default, with option to turn off",Core,src
+b5d8c958d066e56b8ba7e5a59f71053dc11794a6,Merge branch 'master' of https,Core,src
+ddf1a45e5eb572d72255acfe36cd8b03ec0d3141,continue moving node functionality into the environment interface. function names need making consistent etc.,Core,src
+a4d4d55693b205ffc4ab4f025508e503bf6a9e97,Evaluate function calls properly.,Tests,test
+290d7a055cc0f7f4ac277a675d375299f3028371,organise the import node a bit better. eval the node before fetching,Core,src
+3945027c5218ad357f5f1699fc3b3dfb038d6a20,Merge branch 'master' of https,Core,src
+bf952c1ef15f45b7b42de6318e5db164d691175f,Merge pull request #1866 from seven-phases-max/fix-1852,Core,src
+a78f358d6638c15d1f0907958ad20d6ba439f215,Merge pull request #1537 from radium-v/patch-1,Core,src
+7726f9849386ad3c3914df691c53aa01a1beca05,"improve error reporting, provide a one line call-stack",Core,src
+b2b8043cc97addcc0d12dfb91e25e7056d00ed30,2.2.0 Release,Core,src
+10586f0a92dfa723def0e5dfb9ef1a2832c634bd,make node available in tree,Core,src
+3b94d516922b18244e592fa9548d49ae51ebaf77,(doc) removed old comment which doesn't apply,Docs,doc

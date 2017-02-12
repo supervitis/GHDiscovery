@@ -1,101 +1,101 @@
 ,activity,predicted,predicted2
-4719659298ca50a8c7a19889d90ed8f5c54687d6,"Fixes #841, adding upgrading jquery, classname --> class in the docs.",Docs,doc
-7e8653905124d878827dc588b3d5e3881090c78e,Merge branch 'master' of github.com,Docs,doc
-c84c0f7a63125a739ba413d189c74d35b2b5691c,Shim for AMD underscore test dependency to export _ object,Tests,test
-b993441e5e521a03b7cfa86d9a4c741e3c1dd708,"Tiny spelling error, no functional changes.",Core,src
-232fb0d40bf2d1ec951cd5da95072b2aa43e17a4,"change ""overriden"" to ""overridden"" in two places.",Core,src
-934aba4c6e94ce619cdb7104d8c3491df3d817eb,hasChanged/set should use the same comparison,Core,src
-84fc093a2619a8f2f34107f620743e316c3983bd,Allow Collection.at to accept negative indexes,Core,src
-cb8a12fe162ee28e8d8cd2a7f24ad81bf22a6f27,Merge pull request #1129 from r00k/allow-content-of-0-in-make,Core,src
-1675e76cb77a461cf1a609e83349385f4cf5af8a,Merge branch 'master' of github.com,Docs,doc
-c644866b4fe6586503f382a4b3d08007548e75e2,Merge branch 'zepto' of https,Core,src
-4138b581950426993d86fe2ed3de5b3ce7f11f20,Merge pull request #430 from reconbot/master,Tests,test
-4286e0c5ecb01c9a2f8ec7383dddc90f3c3f58a4,"Fix #1403 - Trigger ""sync"" unconditionally.",Core,src
-ae903628645954921f4fb1d221d7bad4499b8163,Merge pull request #2058 from gsamokovarov/patch-5,Core,src
-0cdc525961d3fa98e810ffae6bcc8e3838e36d93,Fixed escapeHTML function,Core,src
-7b51c224bc0c10fcc968e6ace3f8fc1b19159215,Merge pull request #1836 from Ore4444/patch-1,Core,src
-517624db111cbf3e392a73ae91e590a0cd73c77d,Merge pull request #2681 from carldanley/master,Docs,doc
-dba0faad09d40818fb85dcf84c1e7b97543d3108,Collection#invoke should collect arguments,Core,src
-9c55b4b3498329eb413bafc737fc1a711fafda98,finished with the simple case for models ... hurrah,Core,src
-716764dc24ec5929abc9ce12e7704a2fa7f11e8e,Add alternative help channels to README,Core,src
-d7e3d5bf4ad8ebf8482c873d3742a7b21580a59e,Updated to apply on the 0.5.0 branch,Core,src
-05089f659595fd2c6514a6fd3fc77fbbc6431f41,Fixing documentation for Collection#fetch,Docs,doc
-4d70b87185db58b3011fd07cee998cfce85e1765,Declare variable when it's used,Core,src
-78b55f7e0ff3eaf68841d19ff4a995da52d4fd02,also tested noevents and eventsAPI code branches,Tests,test
-744dbafaf8699050d43f53376dfd555d30794010,Fix #2554 - adding clarification about route behavior,Core,src
-96b20d070751f6ef5e5434c119cc6caef1bad080,Merge pull request #3710 from elgubenis/patch-2,Core,src
-d04b0f793b95ea1e4c50ac30b76bf65b8630be91,"Revert ""Fix fetch success callback to not reset model/collection if HTTP ""304 Not Modified"" is received.""",Core,src
-4ab05ad5ff7791504ffafe703f0d8c96e66169d1,check for onpopstate in window instead of window.onpopstate,Core,src
-7ff4b3a212d50bc24d7826dd8c6a4b1116d0743c,Merge pull request #3602 from megawac/globs,Core,src
-3fa14be5a15554c4c02fd31270f0e1bd61203031,one more bound routes example for the road...,Core,src
-a79f7ac830c0931076b1184378aa5218b710328a,History#atRoot handles params without path.,Core,src
+34355e09f9069f1dfb2783d378cb56bde16a09ff,Merging master,Core,src
+c396adb2dde5265a6a76e8affc75d5bf47d0ab4a,save with non-model success,Core,src
+5573ef72caba989a44ed4094f584b6878fa65e03,"Add comment, remove anchors.",Core,src
+75666b08c91bfc399e878023f82dc1fbb14ce883,add `has` method to collection,Core,src
+4c56e50b1100eff6fdef8df3f7736a836d9c732b,Remove lingering comments on silent changes.,Core,src
+d5751d503e016c595e08690556368d41de6ab140,Improved description.,Core,src
+51387ebc363bb8a7e2974941e97083a8bad5bdc3,getValue for View,Core,src
+f752362cfb9db8abe4e2fb054a68cdfe5ca7c1b9,Merge pull request #3431 from yokangy/patch-1,Core,src
+13d87a3d354af1eba2f5559dd7d0ee2b55287760,Merge pull request #3797 from jdalton/msedge,Core,src
+1dbe3ddf2f757b0f1a23e22ca5986b6e4a3fda90,Merge pull request #3152 from braddunbar/ie6,Core,src
+2bb28cddc0084c30237839989737754f8c0c32f7,Merge pull request #1886 from gsamokovarov/patch-4,Tests,test
+197861c00d31d7209be63dd87edbf75d18348605,Merge pull request #865 from braddunbar/add-remove-docs,Docs,doc
+5bc65ff3fcfbd676c84edfc00f4c49330ba83f43,Merge pull request #3997 from zotherstupidguy/master,Core,src
+2450b70af84e1cd15d779c04bef64b7e6413d511,Test that `listenToOnce` is only called once,Core,tools
+41f64c7f1a8a6086a28cd28f3120ef390f85f137,Refactor a test for simplicity.,Tests,test
+fa6092be79223ee2297b1a9046d0d0319fa470a2,fixing comment.,Core,src
+a96079453484f19304994d59e6ca0da57f6b871c,Merge pull request #1024 from braddunbar/locals,Core,src
+60d67dc4c9d57d8c1d1d2ea74d5e6ad28b32a699,Merge pull request #3583 from kuychaco/patch-1,Docs,doc
+5f129678eb4e2d78b4f65eacf8e383606606f968,documentation for `changed`,Docs,doc
+df3366d4925a7d648a2b3de9d2c786108ae1d32c,Stop testing IE8 in sauce (#4008),Tests,test
+64e2d0a6ea37d6e2f1c571814816fb6f3fb605d7,Merge pull request #1696 from braddunbar/pushstate-transition,Core,src
+f71bc0d53bd7de0d540dd7dac5eb49a8daf68c73,fix setting of id for todo model,Core,src
+dca02ecab7736e708b3abbbb3236d0aa2a910fb7,Fixes #1053 -- updating comment to reflect changed style of validate(),Core,src
+4f2c63cfa2551ec8181356fce4a953d3f26295ac,gitignore bower_components,Core,src
+478ef5c4b4edbfd4868c3acf4a262d109cedea46,Merge pull request #736 from braddunbar/nested-set,Core,src
+6ac7704c3059c0341894b912619c6fe29b5c1f9a,Fix same mutation problem with existing/non-existing mix of models,Core,src
+e88d34dd184c302f867a95e087527ab1120f935e,Tweak a bit.,Core,src
+cb7090db7709c6545e9857a6cc66cda00d729fa2,"fixes #838 -- allow View#attributes to be defined as a function, as well as a value.",Core,src
+bdf0999479d78073d49961c332ea2f464123965e,Merge pull request #3524 from braddunbar/phantom-pathname,Core,src
+51d076c9bef6bda543e01fcec5533c38b4f994cc,"listen for invalid, not error",Core,src
+567e0a3c2ddc6b2e66ee1258bfb7dd3b9ce1bbb6,"Fix for adding models with custom set methods to collections, issue #539",Core,src
+b6ab27adc8b0726bd571c62d8fcf96e0399bb81e,point to CoffeeScript.org for installation instructions,Core,src
+68220af813fb904e71557d2ced8e09531df6b043,Tweak View#el docs further.,Docs,doc
+872607ded4461aa6b82a81d806c8b5c118baf77a,Ignore other unecessary bower files,Core,src
+8da1ff0a9d35ee25311ad7f9d52c6ef62c1e336e,Merge branch 'master' of github.com,Docs,doc
+d1b4779741547b0020fde44fbed3e9e0e74b8308,Merge pull request #3632 from jridgewell/view-style,Core,src
+76bc9faf45e2617a95876c832fc562a84d9ff11d,Fix #1494 - Clarify documentation for `off`.,Docs,doc
+a173ebfe201c805aa50be58d899311441cb93f38,Merge pull request #2655 from eastbayjake/master,Core,src
+02d42348b755303e2555a71b0b31fd6b5e5fae9a,Add Events#oneTimeListenTo,Core,src
 5ef230402b171cf9171f39fdf1f81c92d1be2cb3,Merge pull request #3606 from ogonkov/patch-1,Core,src
-60b9cc1d186ad0496b317f8bf46d634d137f495b,Merge pull request #2985 from caseywebdev/generate-id,Core,src
-783ecf70db30f0cc80299e917a3261cebb961b10,Fix #1801 - Add documentation for disabling hash based routing.,Docs,doc
-c66650ab9065ca0ce520c1839c7184cb1bd4041f,Merge branch 'master' of https,Core,src
-dcac2b586d3c46c677d63d2efdd91c79ac052c40,Merge pull request #3921 from jdalton/changelog,Core,src
-cd11702167608d5e92fc78b4f7931ca89ff0da29,Un-golf #changedAttributes,Core,src
-e97c58f547ac8067b5bf74f08ba38daf95bd8bfd,Change name to setDomLibrary,Core,src
-a2fc65b9798d1a5d0dcb43b5c50483640f5187c5,Implements the JavaScript Iterable protocol.,Core,src
-a2f0468595399ebb2d949a6caa214535d22a26f1,merging in fixes for models in multiple collections ...,Core,src
-29cb71ce374f46ece06d144ca9653d4b53a3f96a,Fix #1798 correct Model#fetch documentation,Docs,doc
-3560062c11a7919688c861c2b4c5dd86ff3e13c5,removing redundant assignment in Events#trigger,Core,src
-e58e6f0e413ff28eed8c63b907cb7dfff8952854,Fix issue with atRoot matching.,Core,src
-b05deb5fb5f34fb33e020c6487d3d935eaa38f90,fix #871 - calling set with 'attributes' property,Core,src
-4b6ad311bdb25f188f803e2c2b2b0f3ea24b3fd5,Document using [] for empty Collections with options,Docs,doc
-4463e9bbfcbe336ac2cbe4033d22a4a023201c06,build latest version and compile docs,Build,doc
-93967561d9f46c1c0b2685460a9db7d7f6a6d44e,"Refactor, account for double-parse bug in `update`",Core,src
-cdce2ec30f93e85c2c48cfa0bd93b85ee8769254,DRY-ing up setElement() a bit.,Core,src
-931338ea14ae5e6f87b4e22b545354f19b58bef4,"Fixing Collection#create success callback, passing the model parameter through.",Core,src
-3952cde5d09d6bffbc3a9cc44b8292886252c6cf,Merge pull request #1 from wookiehangover/issue1342,Tests,test
-6796ca06c502d59b1120ea7b38728d9f7047e551,Comment eventsApi refactor,Core,src
-037b3f529c82d86a58e47d215e50249da3895493,Fix #1511 - Add a comment explaining performance concerns in `trigger`.,Core,src
-bc59f5338c563d5ad808d29e71a5acf1ded96bab,Merge pull request #3220 from megawac/rawgit-docs,Docs,doc
-5b49aae75f79c08be057ac0d961cfe00da660219,Handle newlines in route params.,Core,src
-a6a926d1aabaa330d3767eaf0c0368ed808b7622,Merge pull request #3855 from akre54/noglobals,Tests,test
-79b4b4f68e77ca4e8172a4fa8be6f17eb6284a6e,Merge pull request #2903 from clayzermk1/master,Docs,doc
-03c1c70f3fbd8d0f2b5bc5befa299d60733db2da,linting test/bindable,Tests,test
-e589f924d81a185b9aaf0a890e751c2c4b48a7d4,Merge pull request #2572 from braddunbar/no-hash-fallback,Core,src
-8bec722281117b400cbfd82322bfd18a27308c3e,Move Collection#sortedIndex definition,Core,src
-09d376237be4036ae59a054030a2cd4bf926cea3,_createContext is side-effect only,Core,tools
-4c5e2375bde4c73d1cbbfb3109c4159ebb0ef1a8,"Bitwise declared bitdumb, revisions ensued",Core,src
-4dd506c3d466983c1247d44df2b78db3b981483b,more descriptive variable name,Core,src
-e841851d56f4f3b3f604e2d5ae780291d4dfae13,Fix global `i` leak in `change`,Core,src
-ec061250319671685ecb5766d6301f213642673a,Merge pull request #1579 from ngauthier/master,Core,src
-c39ddd0c16ef1c7b372dc37cdc7d283d686e01aa,"Better hash-to-pushState upgrades, via replaceState.",Core,src
-e5ee5503fd388b7fd6efccef829545e0af7b047b,"Adding Backbone.Router.setLocation, alongside saveLocation, to both save and route at once.",Core,src
-12a6fa4b0fbc27a6753a5e8df9a1439df1f6ab36,Adding a note about the need to upgrade Underscore.js,Core,src
-196626931e08c98fdfca86766da632b06f38d85e,fixed indentation,Core,src
-b86cfebdb1dae9f4fe2db5597caafa2aca9041e6,more documentation on upgrading and change events.,Docs,doc
-dfeea846323536059763d12bf3db0a13c1895202,Adding the Khan Academy as an example app.,Core,src
-0a662d6974b187d598568641fe4f3459842eaa6f,Fix #2656 - Trailing slash on root.,Core,src
-6bb43c1b81c3890548baa23dfefbc7859105e698,"fixes #244 -- allow View#events to be defined as a function, making it easier to call super.",Core,src
-4b4c58f495884ded351b1e3f042044e565ade97e,Merge pull request #3678 from jdalton/not-any-more,Core,src
-66d57adb51f1f1a7a29f3d18ac6e820e3abb0d3e,Add comment about overriding _createElement,Core,src
-810c535dc076b5366b1e19145682506d7659534e,Only sort when a model is changed or added,Core,tools
-99eea63c4d36bd57b59e62a06685aa0e651a834e,Merge pull request #2381 from wookiehangover/master,Tests,test
+6d07d2f0e2a1e93c4c79bf50e0ca5e627f0ffd87,multiple models with the same ID should be allowed in a collection.,Core,src
+4e8caf447120a951d389eaa373217cdc3a270325,no need for repeated comment on `remove`,Core,src
+9e8fca063e1516dcb077745b72994d9c953ee53b,Merge branch 'master' of https,Core,src
+084e0288e75af984e5462829266749857918d58e,add support and tests for ender jeesh,Tests,test
+a1dea84b34edfef022d42ed1ab4b25c5210ea0fc,touch scrolling the sidebar for ios,Core,src
+bf1ffbeb67b8f43a89eb558e376b3161173c2d1e,nice refactor. removed _add and _remove and moved 'em in to the public API.,Core,src
+632a2b3b67739937cdf7538cb5dfc86e935a8d52,Use defaults in #isValid,Core,src
+d0e27756f287e97c4b99d34a4151a4d913091789,Attributes should remain a safe copy.,Core,src
+59850645e699cff2e3c20e38cbeef72e6445f070,Only sort on `add` when it make sense,Core,tools
+3ae1af6df1b542bfb3e38f2fdfe7a471f2b830a0,Merge pull request #1461 from braddunbar/view-dispose,Core,src
+08a486cb8aa43c061b8bc1cbeec79176a729acf0,Merge pull request #3843 from jridgewell/defaults-prototype-collision,Core,src
+dbf8d978b0cde1eb8c9a98452cd85185c927f446,Explicitly specified return value for findWhere if no model matches. (#4020),Core,src
+0151ae093c235a18326343c7bcbac7ce23d63221,Merge pull request #3910 from captbaritone/eslint-9,Core,src
 68292f8c78df52b9d8e5a5a3137bbefecca69a45,Merge pull request #3626 from jridgewell/model-changedAttributes-style,Core,src
-16eb3f3d87d547616946d0532425c9e8130d4ff3,Minor doc typos,Docs,doc
-21fa0aa6a276fcced53fba384d926c13aa00d6a9,"change hashStrip regex to strip bang as well, so hash-bang urls will work transparently",Core,src
-6fb8e7af33d960cf65fc872ae7541a6b7c60d0d7,Query string now parsed if Backbone.qs defined,Core,src
-f12518ec5c57da6c4b0cc457ae2710d098c306f3,bumping to 0.9.10,Core,src
-ad2ae8e162106c174ddf1b798d39d352511b853b,Pass Collection#fetch options along to refresh,Core,src
-9c681906a45d4ec553b1dbe92ae30e7fd3942b53,Tests,Tests,test
-8429118984af34d8728af3a44cce5979316dcd88,ignore favicon.ico in bower package,Core,src
-245acb08213c5cbdac8c6f860cdf6883c9720fc8,removed unused var,Core,src
-01014168004a490f2c89fc6b190a659de1ff8bd6,cleanup oldIE sniff code and iframe creation per @jdalton,Core,src
-7af332917518ba46152467cc9b81c72bf8b51687,Ensure a search test fails when appropriate.,Tests,test
-884e4eee55994f9e6f4ff5777d6d30592ff31663,Fixes #1931 -- document Backbone mixing in Events,Docs,doc
-be1f2a87c5a66fe8e6733b28869ba5c772969cc7,Add ESLint rule,Core,src
-cdceabe6c469a827333f4611327e3aa9f4edc899,"shorter defaults in model ctor, shorter extends in history",Core,src
-edafdebaab14a196bd353eaf99cedbf187aecdfa,Merge pull request #898 from ckorhonen/master,Docs,doc
-4104cada6675bf41deba2540e607255ad6e50088,Merge pull request #3819 from captbaritone/semicolons,Tests,test
-321e2f227252ea17650bd8e9694caf6a3e08eb50,Merge pull request #3127 from alexanderGugel/patch-1,Core,src
 6d880672d11b484793ae3779445400e45dcc5150,Merge pull request #1493 from braddunbar/consistency,Core,src
-cdce75ef76c3171d8474676060fe29e8c247f6e5,fix wrong test,Tests,test
-5b8f794272a63355b230a9fd960783906581077f,Remove the redundant documentation bits,Docs,doc
-a72700921f654407f6cccc3fbbd82cffcdf45493,Add favicon to test/index.html,Tests,test
-f4cc17e990eac3224350d263e75c623aa1c0a87b,Fixed typo,Core,src
-315d67b6024a82cdfb3e5be2e120c3d2aaadfaea,Merge pull request #1119 from braddunbar/collection-model,Core,src
-54c4d7cd47ac93adee24335d6710df764603a026,adds documentation for the automatic nested collection option on models,Docs,doc
-617fc7d056d4b0e2c472b807b62726acc6385485,Merge pull request #887 from nhajratw/master,Core,src
+8b28f31e9542b2dbbf6aa6126dc1c87fd4cabc07,Merge pull request #3523 from braddunbar/test-scripts,Tests,test
+de44d9ec349904e867104b5e39e939e0ef4740bc,Update to Zepto 0.2,Core,src
+65952402687569aaf28abab305a14680f1f48f16,Merge pull request #3978 from jridgewell/1.3.2-rc,Core,src
+9c297ed6092e75da862f95052b7a7464b9ce5e4a,Test that `listenToOnce` is only called once,Core,tools
+0e7ac5a619a3b59d0cd3eab1e6640518ab385da0,Fix #2438 - Indicate shallow copying.,Core,src
+d202999c929e89274eac3ae625c6b62b4df7cd8d,Merge pull request #3867 from jdalton/coerce,Core,src
+c5c4d272921e4a50589905f3687ecf224c53a4e8,Merge pull request #3449 from braddunbar/split-events,Core,src
+54a4c17343ab0f3cb72e4e13aa15ec4c4f5b65b4,Merge pull request #3407 from brianjscoles/master,Core,src
+53f77901a4ea9c7cf75d3db93ddddf491998d90f,Backbone 1.1.2,Core,src
+c9a634982a8314e2df5ef2a6d7eded0a66d600ac,Upgrade tests to Zepto 0.5,Tests,test
+90cb5662509518746e8e298d58bbddfb9c04dffe,Pass added and removed models to collection update events,Core,src
+a73909804904bbcdd027a78892ba133f9dbc2d22,Merge pull request #879 from braddunbar/set,Core,src
+4e02c9ad090f1006f3c42bed2b71e02dd27a8b1e,Merge pull request #3234 from go-oleg/master,Docs,doc
+7f682a5685cb669d4ac6e90e6a51ded1533c3e09,Put localStorage up to date,Core,src
+e63fdc645644a6df6438c8dd7a933a1e06986341,bumping up the size of the section headers...,Core,src
+bde634fd6dd0d0382c13aca618869c0172fc4dde,Merge pull request #5 from wyuenho/view-native-hooks,Core,src
+f14198433341f025c47300e234db1fbb39fa5228,Merge branch 'master' of github.com,Docs,doc
+6e99a2c3b022e40e4bf4431453d6878a6e976b8e,fixing minor inconsistency in docs,Docs,doc
+85d58a1f7241b521f052524346df511a13a67306,Merge pull request #1371 from braddunbar/emulate-options,Core,src
+6d0a7fd45bc7a4b16b048a2c26126faea1c50d05,Merge pull request #1596 from fancyoung/patch-1.,Core,src
+356664a7357ddb9b4cfcda40e37918d21c0b0dd3,Backbone.js 0.3.2,Core,src
+f60e4854e03e0b25e4b639d48c59eb1ab6688f5a,Merge pull request #1199 from mostly-magic/master,Core,src
+7fcba24db893511a181ae3c166a78e3c392622ee,Merge pull request #1284 from lifesinger/master,Core,src
+7e363dfc8f4950ee2aab1b5c5aeed18dedc67aae,Rails include_root_in_json tips.,Core,src
+282ba68857a6959fdef6a0e2b1f5336cc94dacdd,Clarification on the use of model.id,Core,src
+6916d67c4e332cdf34b75fb63168017daee79295,Remove superfluous sentence.,Core,src
+4b6ad311bdb25f188f803e2c2b2b0f3ea24b3fd5,Document using [] for empty Collections with options,Docs,doc
+9b70a2812a9aea4abbaa7b9740216b52ad473751,Merge pull request #3495 from jmm/jmm/collection-remove,Docs,doc
+af5e8f5c72b5202f79d43415e553403a4195f7e1,Fix #1433 - Do not save invalid models.,Core,src
+829b2c778d17dfa51cf72030fdbde508a2d7abbd,Merge branch 'master' of github.com,Docs,doc
+bd0fbdea4de5d72821a1c7e84b084cdcc8d12055,Merge pull request #3553 from megawac/extend-create,Core,src
+3761d281883ed52b309557a1de5a98b49d81ae9b,fixes #972 by cleaning up a messy conditional,Core,src
+a1b7ac32eb10664e09fe663d66f3e9ab643b8cb7,Adding the isEmpty function into the modelMethods,Core,src
+dbdd49d27d9b586d6290cb1d7f8382993de2e52b,Merge pull request #1154 from tombell/patch-1,Core,src
+b785a593eb42b479c48c1817ef451904ec93f2cf,Remove shadowed `clear` function from todo models.,Core,src
+4f9cf93c21ab56c03179c1d55bbda4f31481ecaa,"adding foursquare as an example app, plus new logo",Core,src
+5886fe4051df366e1e15971fc8df817c57014926,Issue #134. json2.js source link.,Core,src
+e08e19583016100d0aabfa8889fee9a70a1b5b57,Merge pull request #3818 from captbaritone/collection-initialize-null-models,Docs,doc
+fbbb2e675e594f023ca17cf3708bfb07601e8ff2,"Fixes #1843 -- reworks parsing behavior. It now always applies if you define it, and no longer passes xhr. (parsing should be a pure function of the data)",Core,src
+0c08ab8185749bb0ddec4dbafc26db15b4f87457,bail immediately if !this._changed,Core,src
+89e7e6767f006fc214487def7a0c286ed44c2090,Added Backbone.Collection.toJSON. Returns array of model's toJSON,Core,src
+5310996d09a8b5772e0a0810a327575f02d3a42a,Test for unset attributes not being returned by changedAttributes,Tests,test
+1473a3e3c55e177326969104befab3a534c03a7b,Update underscore dependency.,Core,src
+3dbf6dbf391c82555416081913257a2b8250eb75,Merge pull request #1969 from caseywebdev/master,Core,src
+b1ac2e451595f071c9a8551a3226d6ac7e7cd305,Merge pull request #4018 from emileber/mdn-link-fix,Core,src

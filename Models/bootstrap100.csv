@@ -1,101 +1,101 @@
 ,activity,predicted,predicted2
-3c2f82f469be4792e85eb73fd1e3b882dcadd48d,recomment out the moz stuff for progress bars since less can't compile it right now,Core,src
-892f6e35b855211b28a0f68354dec16f94ad2167,Merge branch 'master' of github.com,Core,src
-3ad9febe04c9ded7a1beb6fda578a4db6c444ba8,Edited README.md via GitHub,Core,src
-1759569dbe8d9ebbcfc4bc1b7f87c3fe3e79e4d1,Travis,Core,src
-50df64797c3931b8bf3f289e23b107936663ff41,https,Core,src
-e589cdbfe9421d58f6c3ff4d2820056983df6def,Put that new var to use to match form group addons to form controls,Core,src
-31ab07b32aeabd8df3c7430dbb31d03b474360f5,Merge branch '3.0.0-wip' of github.com,Core,src
-444973e54d56b7d722978ea398f2910fbbfe6b69,Fixes #8605,Core,src
-b9aad573f9400693f6bcbf9af5374a93228dbe6f,Travis,Core,test
-1b8f00b3893cdb503decc87802440df495f4d3cb,Merge pull request #15292 from twbs/customize-icon,Core,src
-57b59fcfd02799915d9bf4fc19f30cfa71b2d66c,Merge pull request #10353 from rwillrich/ignore-files,Docs,doc
-f9db33d7dbc464a71d2143e3dd323fd7db47773b,automatic grunt dist,Core,src
-ddafa9a0bbc9cd89376a642ba9746ec668f6ce21,Attempts to fix #8645,Core,src
-57fe8ac84cda0f6e361b0d6a29e86c3adf87f83d,Fixed minor typo,Core,src
-ed06fd0936ba2c03ecb052eb65a89c5be94b1b8d,Merge pull request #13820 from twbs/bump-load-tasks,Core,src
-a3cba92edd6f778c061ff40dc34a5e939342d31c,rejigger the customizer layout,Core,src
-3b3dbd7229f53eb71759def4eca90dfd7a2699f8,Merge branch '2.0-wip' of https,Docs,doc
-1e9f0ab99ea07bab6b66b4fd36b5814c61b3c0e6,grunt,Core,src
-732e4196fb9dc76ce2250edcdc6c1b45bcbe5d2e,Remove commented out CSS,Core,src
-4b6e1b6754b8732fd71497997a43a5f92f0c8bcf,grunt dist,Core,src
-c9597b1c540c472dea82a7edd91ffb356b0d327f,Fix doc for tooltips and popover method dispose,Docs,doc
-1f329f8f17aa989eabc6e94bdcab93e69ef0e463,the justified nav bug is still present in Safari v7.1,Core,src
-b4895a0d6dc493f17fe9092db4debe44182d42ac,Merge pull request #14336 from michaeljayt/patch-2,Core,src
-245ebda651fcdbc9687c1a436e8bbe3916354da6,nuke the .col,Release,src
-a9b86cbfde788b2ffc066353b4f77c45345c0e78,Merge branch 'pr/11138',Docs,doc
-0cbffb3bcbc60582e90711e0b5ac36e2df51f7d8,Delete glphyicons.less,Core,src
-e21b6459ad162296f94b2d9aeaf8807a153d3c8a,fixes tooltip('toggle'),Core,src
-daa21c36348308367d3616a1374363ebcaaeac0c,start in on new headers,Core,src
-5c803b656ce1dcc2a6335b949b0566a50d74c32d,update docs to match,Docs,doc
-7872ca69bee17010942ca61bed753651446b5f41,Merge pull request #15890 from StevenBlack/headings-media,Docs,doc
-2674210ff06a9ceaaa98263a2cbe2246fcd21111,move the .brand from the parent to the a tag in the topbar; fix the moving text in IE7,Core,src
-416efb853812525a44455616b14edd1b1b7c3ee4,Merge pull request #18783 from twbs/v4-nav-cleanup,Core,src
-210ee6369313b311b879cf1a773ecfd0276f3543,Fixes #8586,Core,src
-cd556cfacd83a30791b9efaeac61caea057cc8b0,remake for version 1.3,Core,src
-6e5a2fedaaa75ea5052e495b04d424eaad4c3622,Nuke .popover-inner from the JS since we nuked it from the CSS/HTML long ago,Core,src
-488360562496fd3be1b647007b24679ab64390d2,Fix bad grunt merge and then G R U N T,Core,src
-0255f47eb3f4967851d014a9ef6fdf49a37dc548,add zindex option for tooltips/popovers and fix modal zindex doc example,Docs,doc
-3d99a4c15e0661df630dbaf7dddb5228cf044fe6,move to examples dir,Tests,src
-c9eb483ca9eb15dac257e10b419645656b370a44,fixes #18320,Core,tools
-65a723b6024e443c9e5f9c2c0a49d2d8cdf69584,Update shrinkwrap.,Core,src
-e381635b1faf7480bcf54618804a62dd4a049a93,Fixes #12593,Core,src
-8410afe0e104459a613f6232ad46334aa8b99fda,Create new stylesheets for optional builds and add them to Gruntfile tasks,Build,build
-4bed09aff8dcd2a225fd09f9603950fc40dea244,grunt,Core,src
-30fe3d9792347c341d24777dbce76078d3113e23,Merge pull request #8 from twbs/scss-lint,Core,src
-a25e78f9c95d389a141c4dd7cee70f267fc75da2,add forms test page for all html5 input types and refactor selectors,Tests,test
-ec05ebc5ed2c2ecf76f0ff7ae38056a0cc72f375,"add small section to navbar docs on text in the component, per #2035",Docs,doc
-d482b712e750cb7bb17e8076fb06752e3627ac4a,fixes #9425,Docs,doc
-e9d6756a1ac76a9db31a41e8e03f663bedc41b70,Fix regression of #10038 introduced by #13772,Core,src
-fe40de181676334c61fe03bb7b0f64cf529bace1,follow up to #18782,Core,src
-268e7d67abb32ed5cfc575c71f03d635672e781c,add mini buttons per #1971,Core,src
-dd9c15273c4aceeada22754ee9a0af2aae7eb8ea,"Add even more  role=""button"" attributes",Tests,src
-960804cea397d5616918341eaec41a384976c20e,mo betta new navbar styles; hook up some changed vars,Core,src
-0f72123c43bad7db4e7ea1c163043c34707e6aa4,move Sauce test browsers list out of Gruntfile into separate file,Core,test
-6d5b5065176a9e46ce71ec5fc16ae4a079e9e636,minor cleanups,Core,src
-54e3a26ddadb7e16b9585fe1a77c6ac9667073fb,fixes #4562,Core,src
-5fdd917918b9470ae3b0ec30ee89c8e20a14c157,improve icon display on narrow devices,Core,src
-c0749df5a467690676d7bc9dad4d44e42715b4ed,Use LF for SVG files too.,Core,src
-15236f517fae038526ad9d906ab2055c32e101e9,Add min-height,Core,src
-689faaf16f255ae5bc37c6e348fd593ae270a103,added a separate npm-specific main file,Core,src
-9e92b74aa3a3d5807d3201ac4ea1778ea120274f,fix ads text,Core,src
-749dc35328862896d613bfe72fc961e490037fad,comma for the guardian angel /cc @cvrebert,Core,src
-fe8061b84ecdda5ea70514fe487e2f46564439e2,more tests for form styles; includes lightening help text,Tests,test
-6ec176eee2f64a4834c0eac5624552770c5d8af7,Update remaining Edge issue URLs in Wall of Browser Bugs,Core,src
-5193f9f607affbb5c01f5215ed19168ce3530ca5,add svg logos to brand guidelines,Core,src
-a5243ad3d0a380c7c40c984f21200ca9932e43b8,Affix,Docs,doc
-a66ccbc562dbdca983fa65a55bfcbe426bcca3dc,split mixin and grunt dist to be sure,Core,src
-af5793e1cd358862cf510a54dda2476b95a26ca8,"fix mobile example sites, remove unused JS from docs index",Docs,doc
-52110fa2c20d101e162179d7caf3a22992234d56,"scope temporal changes to .form-control class, add week input to boot",Core,src
-118e901eb1589b14f5aab9bdb8d2cbf48883a0de,grunt,Core,src
-5da85f8e8b9341ffb0779b98eb7655f0bfab6f22,Follow-up to 9740d8b,Core,src
-6aa15eb01f2e50e394ae172ff41e5bc0583de6da,Support for left-opening dropdown submenus,Core,src
-6c221d65e3b73a8ad0270ee2876260177df68620,Merge branch '2.0.3-wip' of github.com,Docs,doc
-46a524f302ab8bff724ae8d93fe4c5d4beaf1840,Merge pull request #17058 from kkirsche/patch-6,Core,src
-5f35ce2095f03bc97c5200d10615666c86fe345f,".page>{a,span => .page-link}",Core,src
-ba202d77baa35125a521224d9a55ec013fc3ccfa,Merge pull request #3104 from iamnirav/2.0.3-wip,Core,src
-f76c222089551c64f24d54cfb2888db454d0006c,Update examples after grid changes,Core,src
-01361951e695d4313131ba85c9517cbc50000439,address #10343 more directly,Core,src
-c7ffe6edc894b00db16bc4386f421a3d8efadd50,Add space on navbar button,Core,src
-3fb41d240065d40c084ff9cc5c9f856d2d947577,link to Uglify-js repo,Core,src
-30d8eb3ed572f2a91c0d4de1326779dec88cd911,Merge branch 'blakeembrey-dropdown-selectors' into 2.3.0-wip,Core,src
-b67cba2b4d1fe2b7a9685bb5c80eb77ee64e6ab1,make WP8 device-width hack code fully consistent between docs HTML & docs JS,Docs,doc
-a87ea9345beced2cea2009362c9aead9a2510e09,"Add IDs, adjust text",Core,src
-21a7de7a18707a7cec559cb419fac251feea405d,patch highlighting hint,Core,src
-880f43221d0f0820d208afcb05f295c6a0afa27a,tweak Gruntfile.js so it passes jshint,Core,src
-fc96bc8bba0687fb5845bffc72eb048535583499,rebuild doi,Core,src
-5663833bfc3ea815ee9fa82a53e1bd3e3f14f585,Restore .btn-info,Core,src
-d4b1bfd667631f1d96a0b6ec4e734338e5b8811d,grunt,Core,src
-6fb81f155b8e16a16e49b3fb2c0d38d516883f55,more space below links on homepage,Core,src
-2c1c885ed4978900fb2a5e3310a428fd72b89c12,automatic grunt dist,Core,src
-0cb2866409c674f834f8e0f4e204c3c3331abbcd,fix reponsive 1200+ media query to resolve mismatched gutters and negative margins on the row,Core,src
-8d806b0ae5f618065a466cdfc9853020fb72cd9d,Document .alert-dismissible .close restrictions; fixes #14802,Docs,doc
-b5bf4334caed20615e0f2c0ab9753bd83fd4199d,Add aria-pressed=true to example,Core,src
-f6831e4d4f146b97c5a7047f1ae170b4f2dea1d1,Merge pull request #19089 from Quy/patch-5,Core,src
-b9c572184f18a5c228dedd41e3b93b94c8d71b7b,add .btn-xs to .btn-group example,Core,src
-b7ac009a527869dc381b9e4c2272c822d85d2b1c,Remove #8350's reset for number inputs since Normalize fixes those upstream,Core,src
-98df9495cc92bd710a6d55c4d535da7aaf730031,remove dupe border-box,Core,src
-abdf41f5f3ad682e57a60f662e7a6ed56b4e3e54,Add a local jQuery fallback.,Tests,src
-7b06538c911f40c46ae67b0c0df7afdfbcb5d00a,Merge pull request #11723 from stof/patch-1,Core,src
-74a516a9b10affa77e17344753d7aba94e260170,Merge branch 'v4-dev' into v4-modal-footer-btns,Core,src
-9234bb630bd02a306f1f22d06ce33826a40480e6,Bump year in jumbotron example,Core,src
+0780faad45d106fbe8bd0de64e1cdfb3d6117d0e,"make that left/right padding, not top/bottom on navbar",Core,src
+cf45a82068daf283796562acfed099fdaf913126,grunt,Core,src
+e5520f95e2b2306eb03661b112555720924929f8,Merge pull request #16263 from twbs/fix-16090,Core,src
+c34fdd415e864e5e6a64f36a0278b5d43c15d3a2,grunt,Core,src
+8db0cc6fdadb2b08cc4aaff7ef0527f69f271cc1,Merge branch '2.0-wip' of https,Core,src
+c13524e7e0f3d2a62935bbe2cb57c1388e04e052,Fixes #11553,Core,src
+f16ad2253053c3193cf2744e196680c17287e84c,fixes #18188,Core,src
+50d5f60696208c0e242f72d30b928b12300e3831,Merge branch 'progress-brand' of https,Core,src
+ca14b9652cb1d1adb2561fac37db0bb75c3b5838,inform the people that fixed positioning ain't all it's cracked up to be /cc #11888,Core,src
+9f95b592ce2c9b3f141db9b973d0c98568c2c549,Merge pull request #17727 from tomkel/docs-fade-fix-v4,Docs,doc
+4a01acaf6772a9c4f317ae94381376b16109da3d,Merge pull request #11941 from ZDroid/left-plus,Core,src
+66a9ed278e90963fedf95518438c454e22b1e6f4,Fixed couple of formatting errors in modal.md,Core,src
+cd06c5baac64a3663820bc25b393e5b354c64a14,Merge pull request #7704 from twitter/bs3_moar_grid_changes,Core,src
+def7ae7798916f105ba489b617cfa2b4af16afa4,bump version on docs homepage to 2.0.3,Docs,doc
+aab4c95cd259e707c45c814a8a1e91faa0bd489d,Update customizer,Core,src
+247ad23e97534f28038e285b15730bdd890fcb4c,Merge branch 'v4-navbars' of github.com,Core,src
+0a71f171bc63dcfea42fe002bab00454d728fc42,"readd bootstrap.zip, add @inputBorderRadius var to close #2946",Core,src
+1caeca3e01d91261ae0fadd0bc3f24a51e80b22a,Don't ignore every dot file in Bower,Core,src
+657ff31c7448563abc7b11e0cfea971e060a3d3d,Merge branch 'need-to-activate-animated-progressbar' of github.com,Docs,doc
+7522517b47521da731bf7a598d5e5a71721c4c44,derp,Core,src
+d5b57c3c4d69dc9afd2036d9d4c0e10e52121391,Add Wall of Browser Bugs entry for #18504,Core,src
+83c9510da25ccfe3b1b3e84cc65af910645d8182,Merge pull request #14037 from twbs/close-13892,Core,src
+a15a6dfa9642d1f572d3914a2d788c8815842ec7,Merge pull request #11369 from ssorallen/speedier-js-loading,Core,src
+13cc81c50c473c78e96dc8f5c815782afd81d3b9,Update grid docs mention of gutter width value (no more rems for awhile now),Docs,doc
+d839bf961bf2292e55516847a96a2ff231d69582,Merge branch 'master' of https,Core,src
+cfa4ab90f3d8de9dd419a6b30f0ba57c9b9ba518,fix scrollspy for window *and* children,Core,src
+86a5846ada371ea3056e9e1c71581dece141cd0d,Merge pull request #12378 from andrewdisley/patch-1,Core,src
+084291aac7e8873ce975a4b547a9de6ac4630473,Merge pull request #8408 from cvrebert/progress-bar-variant-mixin,Core,src
+11a835f56662f8a93e2f8d27038c683d901a5a72,Merge branch 'master' into equal-height-experiment,Core,src
+1e4540f11bf460bf8f0dd53409951ad0fe14a603,@cvrebert's feedback,Core,src
+d7d6384d397c457a69f1ec1ee8ebaf390334111f,Fix margin-bottom on dropdown (navbar-fixed-bottom).,Core,src
+54cd0f8c2f1aaadefd8447f9ff4cd9bb04fe4e72,rm dummy 'src' attributes of <img>s & squelch validator warning; fixes #11216,Core,src
+1555992e35ddc50e2939fe370c484c2a308a0483,Merge pull request #8187 from imsky/3.0.0-wip,Docs,doc
+c7e45fa4a71a17810d257e7a6dd471dccb427d8f,Added links to Ukrainian translation website,Core,src
+1f31077122258c92bd8195450fc1cfea0e99665b,removes holder.js references from example docs,Docs,doc
+f1ddf7681cfe6d7c91c9523d44ee76c89c3674d6,Merge pull request #8419 from hollensteiner/3.0.0-wip,Core,src
+589242604f06a87c78d0a2c324f532d2caaba3f0,document large and small well classes,Docs,doc
+7c3bda24f0706510bcbb1525a3d07541978c07b6,simplify svg by only using viewbox,Core,tools
+f40ea21a6cd147128c22707de8f75c371d592acf,'js' folder .editorconfig code guide updates,Build,src
+91992ac70a7fe9e9411580d0857132f57be59e5d,Add new border utils,Docs,doc
+16a5f874d09cb5a569288189b6c94c0d27aa0a45,grunt update-shrinkwrap,Core,src
+66be25917a66a2cdb19a297a1ce7e5642357fc06,Docs,Docs,doc
+7711c9d60d0dc7db86ac13b200be856409d1d946,Document Savage cross-browser JS pull request tester bot,Docs,doc
+696fc2e53c0664ef04123167c1dcb1d22ae24d18,Add unit test of aria-expanded to dropdown suite,Tests,test
+1367f70fbc16af76f1d77161bb8f769ff48c0348,Docs,Docs,doc
+652f0565564fcee27a8268208e9119b9e953e4c7,tweak part of license FAQ to reflect Twitter->twbs change,Core,src
+faba6808b7713e8ab72ae5f21eedb3736a5b45ea,Merge branch '3.0.0-wip' of github.com,Core,src
+7633d4c603d916bb2174dd5a6d4063449088caef,Make predefined grid classes conditional,Core,src
+bb8ebe2312e4424a4e40974f0f21dd008064f736,"More subtle grid pattern, adding dropdown arrow, adding dropdown arrow styles to the topbar",Core,src
+e9b04acb92538718f60b205909c385222406a84f,Merge pull request #4384 from andriijas/2.1.0-wip-js-typo-fix,Core,src
+bc1ba8f08bfa073c1f3f58465812e139f032d177,update readme per comments in pr,Core,src
+18be3be3f48d7d813ccc71d4594c836e6dbddb04,grunt,Core,src
+b0da97588e3d1e4d7eb688d16b3e40e0a27459f3,fixes #6982,Core,src
+faedb7fec47388a02e7eb4afa0e7140bb76aa6be,grunt,Core,src
+cac6cfcd845a33334f885a5500ab41252475f566,Merge pull request #15923 from kkirsche/useExplicitVariableDeclaration,Core,src
+3524aa909cd0cef16c9d244bd21da0dfd7b48cf9,make sure to pass child var through,Core,src
+e0b09867c23b421153f10235ec64d484bac6323d,fix spacing in readme,Core,src
+5c76cbea7782bf94cb9f36acc552cf410f2dd4c3,remove now unneeded collapse section,Core,src
+40fddffeec58565eac698de0ed5697fde8a46130,improve button docs,Docs,doc
+66479d8a5f1e0ed6c120c061af6fad057778942c,Add aria-disabled to disabled link example and description,Core,src
+fb1d4a0f04504935eb17d13ac6d1dbb72c70b102,Merge pull request #2267 from dominicbarnes/dl_horizontal,Core,src
+4c21146ce32ebdbea691484c49b2dfdd6b8efb78,Merge pull request #13860 from twbs/fixes_13346,Core,src
+143fef9f95daca088c1a910fccd07f2b520d8b0b,overhaul the docs and css to merge into 2.1.2 since this was against master,Docs,doc
+2d4cf2647ac8b8758647b80b2c21846a72f1054d,Merge pull request #19337 from ameya-pandilwar/fix-19332,Core,src
+5f314dcb85b011d30bbe845e00932a9a550d4e71,remove benefits from homepage html,Core,src
+bf465da2d9ab63c4232a7499664171731bb252be,more than images tbh,Core,src
+8ae625626204c8a63a405a095a74cd457b7796e5,Merge pull request #7866 from marsuboss/patch-3,Core,src
+93a7421f2ce63e9185f5ba655a6f720c84ffa746,.btn-default to .btn-secondary,Tests,src
+a364d89936b52448c106683bbf7b219530fb055e,Merge pull request #1104 from cgunther/dropdown-docs,Docs,doc
+7154e378b241f753491c1aaf4aba310b7f0f179d,use variable for navbar text line-height,Tests,src
+12a0d69454a2831031035d19237d36d38bb2c2a9,fix dropdowns in components docs page,Docs,doc
+a1b0311597fdf79965044e6cb17c1c1acf08b1b6,document jQuery version requirement; fixes #10355,Docs,doc
+46f5a8f478afb2f2089f1fc886d72ecf4d55955c,Merge pull request #15970 from twbs/the-future-is-now-qunit,Core,src
+263e06a021c0ea666db71ce65fe1360e7e8e5baf,rearrange scss lint config to put flex over float,Core,src
+47e06470866b95cc9c5a2885754a169afd74de39,add unit tests for destroy behavior of popover and tooltip,Tests,test
+7ca73b75424606cf4614e808ca0b36eedc03a732,fix margin on .bs-example thumbs,Core,src
+5b03c9ad634499ff00a0248602d9f097c3be5e00,[disabled] =>,Core,src
+c83a9ddbb9cb096c62d72b4d61a4ee546a4ebb21,Merge pull request #20519 from vanillajonathan/patch-2,Core,src
+5b69d3405301ebf9f7047a459f727cbe5f73aedd,use sibling selector instead of pseudo selector,Core,src
+c11f41ba04791a0c408071527994dfb22c91a436,flatten buttons and forms,Core,src
+9195d8e8eb51208e4272e4c7e0851e2695da1a0d,Follow up to #11655,Core,src
+ef8e5853cbfc4f4babacd3527ab3eb0e4b741acc,Fixes #8154,Core,src
+7c637bc51c25827fe6fdb54483785ca57f20d681,"Fixes typos of ""bootstrap""",Core,src
+fb775bae210138bcd9a2dfe78971b72724331e1d,fix sidenav js,Core,src
+cdb25e11ef6f13f095eacbef731cf43902230203,lighter buttons closer to todays versions,Core,src
+521ff5c8a7c87b30de3491bfcefe4dd5f49382c4,add nav to media object and thumbnails,Core,src
+aff291e1ca998591b6615f6bde3e10e1dae2403b,Add .animation() mixin,Core,src
+030a05817451a0c6fbbdc9842570303dbe9a367e,Remove .navbar-inner from navbar tests,Tests,test
+3161acd710029b57080d879738b13c91475149d8,build js,Build,build
+150ca95b19ddbac917be861ceeddfbe87d3e82d3,unlock & bump grunt-jscs-checker to ~0.4.3,Core,src
+8bf48121a0cfeb72f8e1553954327c120a0a4345,Merge pull request #14061 from hnrch02/fix-13656,Core,src
+d36c150569c982a24935bfc90e77e7a59986497b,tweak formatting in Carousel docs for clarity; fixes #13522,Docs,doc
+d2de00f1dfe6cad9272e8176dce055826caed0bb,Merge branch 'kasperp-tab-event',Core,src
+f6271da47bf928700ce2472097069f00a05a2825,"navbar and dropdown fixes, for alignments and for ie7/8 dropdown hidden bugs from #3946",Core,src
+96542f14ab64cdf35b56df55752b28b95dc415c7,fixes #4540,Core,src
+e1be284d0cd0867ca66ab6a9bd2c5d3e0c2b7a44,Extract $modal-dialog-sm-up-margin-y variable,Core,src
+e615ae053c816fa477d158562e20ecaf2609128d,overhaul nav and shit again,Core,src
+a139167489e249345933b1e58cc7c53542abab97,"set width to auto for default navbar container, then override it later for fixed navbars (done all via the #gridSystem mixins)",Core,src
+59d7772daa8d09e13858ad83701bda767db71fc8,Merge pull request #14488 from vsn4ik/gruntfile_copy_task,Core,src
+95655e72754b9450d04108593f60647cf2e2241c,Remove more Glyphicons,Core,src

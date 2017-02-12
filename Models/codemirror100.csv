@@ -1,101 +1,101 @@
 ,activity,predicted,predicted2
-d3e8160274f1b4662ce9f7052651d8e4af836372,Amend previous patch,Core,src
-78aba6492cb31e1b3ab680af47896e1a0b8a2156,[javascript mode] Allow expressions after fat arrow,Core,src
-de575f2609be31897f3ff560c3e83162f3c23137,[sql mode] Add comments with links to supported syntaxes documentation,Docs,doc
-4cedb7e56ad865ac5825a18de2ddae65def32cce,Add lib/codemirror.js to .gitignore,Core,src
-5f738c32163e3eddd36bd7b3877f905618c3530b,less consing in the JS parser,Core,src
-708f68cb338bcf577bef1091a7a101b5953edf50,Fix logic error in onFocus,Core,src
-0c9a2ffd67e00dd30d1d82c4a363215f70c9470a,[oz mode] clean up electric indentation test,Tests,test
-d7326ff7ffa0c0b5a1233b55eaeccf438d306cab,Opera seems to have stopped flipping ctrlKey and metaKey on OS X,Core,src
-9e56052a7a902229bc996fc1c241ddec8a89966e,[sass mode] Fixed bug #2156 and syntax highlighting too,Core,src
-c17d0230e0312c2189d1d0a4d805aaca70a4e2ed,Replace var with let,Core,src
-2e89708faf489216d99aa519ed877f9bed2b2590,[comment addon] Adjust docs for padding,Docs,doc
-a0edb5ba6f5d6ccb289ab6ab2ef2b6b4ad98762b,Don't mess up the display when updateDisplay is given a negative top offset,Core,src
-94cd00644de8435fbba4899239d3b314e2b525ca,Update Python kewords / builtins lists according to official 2.7.2 / 3.2.2 documentation.,Docs,doc
-9a79799b6e304b56210ac5e839d1d292e2d5cd6c,Use precise estimate of left-of-line offset in coordsChar,Core,src
-364f4727eaa065f4bd5fdfd280fe39d641ba5500,HTML,Core,src
-5d853959ca8a6b62e8c4ff9d69703d866695824b,[css mode] Make gss test pass,Tests,test
-26bb8c4dfd6f8b47b396ed9c221d20a82c05a2e9,[sublime keymap] Make Esc behavior conform to Sublime Text,Core,src
-58ce53c1580339375d16e9111791ed5e8e3634b8,Remove all non-ascii text from codemirror.js,Core,src
-84c8c92968174df6d35ce5a3772ca9900d9b4f26,[brainfuck mode] Add,Core,src
-13364623ac9d33a6bd53dc52d055eb04b07e0176,Implement alt-drag rectangle-selection,Core,src
-965321c96fc52545ac5d809abbeab73116d2dafb,Fix problem with autocompletion demo in IE8,Core,src
-e1a80eec0799c0b00a752a049ff2fff81c32c5e2,[vim] Add custom keypress/keydown handlers.,Core,src
-117e25294d91b947099d46a01b71f79773bb567e,"Workaround for an error in getting to insert mode.  It was very difficult to reproduce, and I don't know",Core,tools
-1a21e38351b40a4f57870d1b0df0dc7746af1ac1,Rewrite undo event update code to be sane,Core,deps
-980fc2cbd8c2f062cdece3c17b98eb41390e8b5d,CSS lint addon with https,Core,src
-98bc784b618fa7a464c725823539da08b8de33d6,[indent-fold addon] Fix indentation folding,Core,src
-1f92654dbb6f7235c3d6536c48ac230d9afe085e,Fix bug in release script,Core,src
-f1e7405836be9518c48924871fc02a5c99962a3a,small fix in matchBrackets,Core,src
-def70631ca7a50cfb5bf414c27df4db53f899a15,[webidl mode] Remove unnecessary pos saving,Core,src
-f0cb87d4cde902e2e64b2d66e793ba76327e9367,[vue mode] Fix dependency on Jade→Pug mode,Core,src
-6fd2965e1517d019cf349a1112c307f60fab093e,"[less mode] improve highlighting, indentation",Core,deps
-25ff374958257ec3ec150e11e723016f1849a662,"[emacs mode] Add Alt-C, Alt-U, Alt-L",Core,src
-85956bed14dc8cdfd6610487c08243edf7ac0076,Also give widgets a role attribute of 'presentation',Core,src
-b5feb69fe641ac2601f5410d980c8e22e4039452,revise parser-configuration API to be more sane,Core,src
-50e1abe0b6dc402092f907195c7e2d85220b3dab,Fix setting the theme through setOption,Core,src
-a9dd6472c54ed81201ae59673f919a46497ac15f,Don't clear temporary keymaps on modifier keys,Core,src
-5d529152486169222cfd1d891648d9470f4d45c1,Remove useless (always true) test,Tests,test
-f73ff23d5aa3247e0fc46d3ffde73cf9c900f48d,Fix release script to bump version in correct file,Core,src
-3170029ba36a7c04d78f759cfa153a6d2f38c809,"Make change objects a linked list, in order to be able to represent multiple changes",Core,src
-df8afed39c8b9912ffc2ef1ffe9d66a794b411ad,[closebrackets addon] Fix mutation of shared data,Core,src
-6c05854c47ed3086198116c44a5691f35e30282c,Add Build Status to README.md,Build,build
-bb8f072c7e5840159ba816bae8163b759822d3f5,[forth mode] Add demo page,Core,src
-b192c4b86f0699a8bbf6e9eb1f19d7b97b58340f,Cache token style-to-class mangling,Core,src
-6ef6ef99a78f5f4678024c86e80ab9bed801cc8d,Make sure scrollPosIntoView always returns a coords object,Core,src
+12168b275d6e26b736b9e7d3b478131327fba8fa,[troff mode] Fix MIME type,Core,src
+25278eaf7285e6c770378f56e2aa17c78f35f8e9,[multiselect demo] Update binding list to reflect new Esc binding,Core,src
+e2e96bb793daf3c68272cab7727377681b022306,Move line.className check to buildLineContent,Build,build
+4f43c8ce8780c531b6a1772e1e3eb34dcbfe037f,Add getModeAt method,Core,src
+9ac1e906b00047806c3f373124087f51319c8a57,Sample 50 instead of 10 lines to get more accurate fractional line height,Core,src
+98dd8090fd3eb63db8f50e031709e5c8119a78e3,Fix delayed update of scroll height,Core,src
+180e75271b9562e8f5f59e56590a431d4fe99427,Integrate APL mode,Core,src
+d433e702a5f2ebe393e8724eec3c6966fab80109,Fix problem where horiz scrollbar stayed after long lines were deleted,Core,src
+5befcdce0b7ad0d8dcada5eb1bfc81a5d5b6342e,[javascript mode] Don't terminate regexp on slash inside of square brackets,Core,src
+17176f79cc7d87420c42fda37cb155f6924710da,[util/formatting] Fix a bunch of bugs,Tests,test
+0e41639bebaa0535ab913563d0031d125ab241d4,Kludge for another IE focus issue,Core,src
+51ad9ffe405ad3f12201de1becaea70f6eee68bd,Bump version number post-3.21,Core,src
+3d3686d51600c4785a15d95018421ea108c7b9c5,[the-matrix theme] Integrate,Core,src
+1ba143f4414696988e74ce35b5c0e16559b8190e,"Rename addWidget mode 'fit' to 'near', make it not put widget over specified char",Core,src
+a3a607cd69dc4ebca9dab027b1cc8f2e5b48434b,keep highlighting until an actual unchanged line was found,Core,src
+8bfabc472acf00eaee0d4a099f3b90d8b5dd47a8,[commonlisp mode] Recognize character literal syntax,Core,src
+7b00c30cdb959cf1980ca5f5cbac3cf331b83b08,[ruby mode] Make else and elsif electric,Core,src
+d9b821a9b21b5b1622396b67744d226f57b69d2e,[placeholder addon] Handle swapDoc event,Core,src
+d96f01f63f497a856e2ca20cfdca49dcbcc5ccd9,Counteract idiot frameworks that set box-sizing to border-box,Core,src
+43dc733f3027fae7026296dc57393a26d43966a7,"[xml mode] Allow dots, dashes, and colons in entities",Core,src
+e40fc572f3084a3ba41bc0273d0fd376962d1a6d,use a closure instead of an object for CodeMirror instance,Core,src
+90d7915450f33f03d0d251b6bdda7228289acd41,Update LICENSE,Core,src
+dd873fb73bc10d75f7df70c3e48983b4f4e2c5e8,ro_registers with corrections,Core,src
+52e69f0851f94669673477c71fb2956e0d77d0cb,Remove stray </a> in front page,Core,src
+6e44713cdb6966cde5b76e783697b3ec53a6bc32,Fix distance-tracking in coordsChar on bidi text,Core,src
+78e06acf0d9a04b81bd9aa667a9a98c7413c5e70,"[meta] Add findModeByFileName, several meta improvements",Core,src
+a7868e1519c67bc6e4f74dbd5ef94098003438df,[real-world uses] Add OpenCampus,Core,src
+e9cd523ea1340ce73d6642a6703ea810c498c5f8,Fix addLineClass (and similar) returning null on no-op,Docs,doc
+2a70c1f362906783a3ef2fa37e63eaeb0a3d96cd,[sql mode] fix zeroless float syntax,Core,src
+127850e7106ade846a3a3e528f52414c682a3113,Force display update when measuring during operation redrew a line,Core,src
+df21300d6b83e8dc1922d5efd526658086614383,Set some tests to expect failure on IE7,Tests,test
+c0e878ab7170a587eed9440ee101bac887181c4f,[mscgen mode] doc,Docs,doc
+66870c91aac7562f648e32f36c9d705a7e8540a5,Make CSS mode color hash ids and hex colors differently,Core,src
+21bb154d0939bbd877119609df9626cec7011d79,Add getLineNumber method,Core,src
+94007aacbe84046a1fb898aff065c03ee1ce3fc5,Add cursorScrollMargin option,Core,src
+640016a1850e9a55d4e9e43f66db352ae27bd23e,Add position to runmode callback.,Core,src
+553304eb8a39b1abe9e25e6572402fd743365a06,Move /css/ to /doc/,Docs,doc
+0982655fa717b5ebd43d3e1c9bc35236e48c0867,Mark release 3.22,Core,src
+685be494e1b0c1bf7454fb8f3e2936df12d7b30a,[soy mode] Fix indentation of {switch},Core,src
+341af4cf2b8d9488e85ee4d2e92ff59db6be24d4,[closebrackets addon] Simplify backspace-handling code,Core,src
+7f82421f694e680fda16c05bfbd9c061382949ba,[xml mode] Fix value-less attributes,Core,src
+255d019adb8a62eaad6740a6d81b6e4f80f891f0,[real-world uses] Add alm.tools,Core,src
+03449c69ffebdac0648a3f4d347cddd365522572,[markdown mode] Fix bug with two links or email addresses on same line.,Core,src
+c355154da090b2eaaaf3a5226df17aa9d228a0c7,Work around webkit bugs related to super-long lines,Core,src
+0dc2189b43433e64799731c3265d49879263430a,"Make inputStyle an option, move relevant logic into TextareaInput",Core,src
+60ef248a7739be24a118ece6e439a6e39c76a2b2,Don't immediately focus on click in IE,Core,src
+022bcc7b70bf6e4b71e9643bacfdf2edaed8d297,Add kl1p to real-world uses,Core,src
+ef690441922a5ebf3e1e680e1e39011fe2ccaae7,[markdown mode] Don't call tokenizer of code-block mode at end of line,Core,src
+9673a43df6968437dc2002e0405705f48608c87c,Make output of getHistory JSON-serializable again,Core,src
+225bd97de2088c133f3b626a9aa0ca81884e6ff7,[javascript mode] Properly recognize 'as' in import specs,Core,src
+51a1e7da60a99e019f026a118dc7c98c2b1f9d62,Reposition hidden textarea to work around Chrome IME issue,Core,src
+91b572ef96ecf074eb82164b2011ff359589c872,Mention dependency on searchcursor.js in search demo page,Core,src
+0454225bb0af4290baf9a679a71595d354894962,[rust mode] Handle alt patterns better,Core,src
 bbf49b15219bbcc199bf2116ec76b845b2e0a57a,[php mode] Add a few more atom keywords,Core,src
-08b4d1e27f67fe1d86d2be526a646e82909b295c,[runmode addon] Call blankLine when available,Core,src
-d64948850d2abcf9ca1e51d712ed658ae5b12218,[continuecomment addon] Move to addon/comment (from addon/edit),Core,src
-fc3bb8f34b141f39073f038398c5bd0ded932e49,Kotlin mode,Core,src
-a863096af5598056e0a2376add08252c4d17f8d7,"[vim keymap] added Home, End, PageUp, PageDown, |",Core,src
-34d8dc43ebab5c2e359425bfd69f063cc359c6c3,[smarty mode] Prevent outer mode from getting confused by Smarty tags,Core,src
-2bed2f6f831af8738b1bd1d155a83b1405127e60,Add a margin parameter to scrollIntoView,Core,src
-751fd52c3e16f10739a0df54769b8b44a836b35b,Mark release 5.18.0,Core,src
-d9d3524d93e7a7d8937aed091e2df47943a86109,[python mode] Fix handling of scope end by dedent,Core,src
-0b155e20b668fc66161fcb0ed85626068cfb9fd5,[htmlmixed mode] Remove obsolete property,Core,src
-773b84badfc77e604b83285a5a89f5e6a775f247,[vim] Make unescaping for strings a bit cleaner and more general.,Core,src
-95d1c5bc98394605b01aff28b3431f791c482cec,Drop unused eltText helper function,Core,src
-9021584af5b28b1903d13fc1b44c2e37a31418f7,[vim] Disable default /g for,Core,src
-0271023f20b085a0029aceb1d9e1afdd01574515,[vim] Add,Tests,test
-701b226107b3eded05cb10575c258647854c0352,Add the PEG.js language,Core,src
-88852e7b811994650e73762cb2798329ac362ff9,Add my2ndgeneration to real-world uses,Core,src
-6e56a89142e787e75227027deb1512194d7b646f,Add a closeOnTokenChange option to simpleHint.,Core,src
-8f83bbfb0d827b917f89483490510ba2ef082a2b,Add defaultTextHeight method,Core,src
-4e2d2d160378f14a4ccfaa09daa3b0051fcb2c52,Fix bug in multi-event undo/redo,Core,src
-698c8e530e9461bb38a4f1fcfdbf40d61ce17399,[haxe mode] Allow trailing commas in array literals,Core,src
-d9aa02169db4a8412b7eab3b5e825a6004d8fbeb,Implement text wrapping,Core,src
-b4678badad04305739d9c0ee55413411daec1cc7,Update lib/util/searchcursor.js,Core,src
-1013ebb17f89375e8b3706446629332de2d407f6,[show-hint addon] Allow a specific option to be selected by default,Core,src
-4c7f8f22671a3b9633fc5bb31ea7a1ac1e05044f,Always highlight non-matching brackets,Core,src
-98326d16a1a9fc6e399c9e55bba2f544c1c70731,[matchbrackets addon] Export scanForBracket method,Core,src
-20a833325f8f4d7d80c903912bce048d1fbfd5a8,[vim keymap] Fix IE incompatibilities,Core,src
-376f3ec90d05272459bf0b79d4ff9005a284705e,[sass mode] Make sure indentCount is initialized propertly,Core,src
-599d832b3a77112b918c4864c821c6dc902398e4,try to better handle ctrl-key vs cmd-key on Mac,Core,src
-04554917a8aebee3b10f5a992540bcb0f0648e06,[sql mode] Fix demo page,Core,src
-72c2577b9e055ce3c25553aad8b72fa8ef9b66a9,Extend VIM mode,Core,src
-b235f8d0e0418ceafa091281806a6d9c72d3d113,[less mode] Fix a few more unsafe method calls on .peek(),Core,src
-66a3f0132850d841ca3957568899a6cba280df25,[show-hint addon] Restructure,Core,src
-ee6368d2b8c0731c744f2eea4569964b463f2c2d,[sas mode] Fix and simplify case-insensitive keyword lookup,Core,src
-e60f4b7dd88b71e227f79200932c028ca047d78e,Don't trust bounding client rects for characters,Core,src
-d27967a6180fb19321444896203a6f8fb24aff25,[vim keymap] Implement scroll actions like zz,Core,src
-84dc2d07fa19c237479c1681385a63d64fddcc74,[vim bindings] Make Backspace delete characters,Core,src
-f35feec32c45f79ec9be111124e068190144823a,[show-hint addon] Clean up code that handles custom keymap,Core,src
-56ed3f7c73e112ec704193492d5ee990ea20bc5f,[php mode] Declare defKeywords,Core,src
-3eb4a2999d8142fbfb13f66b1f91384e7db8036b,Make layout adjust better to narrow windows,Core,src
-192fd6494b51609a55d1642a39745d8eeb435e76,Add note about Sublime Text keymap to docs,Docs,doc
-7658b31c14988264d6169d3dea66185132ae94ac,Remove simple-hint addon,Core,src
-dd3e704e79c4f032ce749878a4b77d2cae249478,Cache tab strings,Core,src
-83483ef884d43264e682357e3cb6e6d652d96c65,Mark release 5.14.0,Core,src
-c6ad81e67271b5d44e8167591b71be19dcb5d14b,need a longer test substring for text/x-handlebars-template,Tests,test
-359e8da826d606d612a9c6a43f83ba843200abef,elementary IE support,Core,src
-8f2dd947051674e60c01b9e7d99d1bd9deab84bb,[clojure mode] Count words starting with def or with as 'indenting keywords',Core,src
-a4ec3433e958e96d3bdff33810dafd287a2353fc,"[soy mode] Integrate, fix innerMode",Core,src
-94afd115199793bd3cf619f2bc403afa826c09a4,Update the manual to reflect new keymap situation,Core,src
-20e70382fd3e2f8cc8abeed732abd2399449bc36,Add few more names for numpad keys,Core,src
-f4cd9283eafeee8898ee1170f3dacf1c38efa8b0,ensure cursor is updated when display is changed,Core,src
-86d826aaa294ea34e5a8b990b73f59d81beef2c4,Add a mode-changing demo,Core,src
-10a4a7a8ba69ed8dd3652a61d19c734dc5bc72d6,Fire events for DOM events that the editor handles,Core,src
-ee62a07311da904c1eec8d7661733dbe26ddbae2,[kotlin mode] Minor fixes,Core,src
-5e73f88c5980caebc3fb7076a7ea177a5a39aa2b,Cleanup and document match-highlighter.js,Docs,doc
-c40304701173dbcd14964c028c530f8c26f855d8,"add begin and rescue, add electricChars",Core,src
-6bb8b11860d294782d7c08849dd71b5b9615539a,[javascript mode] Recognize bitwise operators '~' and '^',Core,tools
+162c6073e60fcc6635ba31e8ed7a0d35da68a5e0,[verilog mode] Addressed indentation issue,Core,src
+7218f45a32d9c2641ea422e41c2e3c64eed8bb7d,[themes] Update existing activeline rules to use correct class,Core,src
+6e3f4b7468ec943ea28bf2bcf085c2512f5aac6a,A few more tweaks for iOS compatibility,Core,src
+3d1a0564a16e2bd9b625e3a82f4a8f6815fa7b24,[ruby] Add `until` to indentWords list,Core,src
+0a96f6db65dd710ff8964e2d5759cb80138387a7,More fiddling with editable markers,Core,src
+63f762bfd35cb3ee6c622fb100392b494f6cbcda,[markdown mode] Don't allow backslash-escaping in code fragments,Core,src
+0aeaa3c575e010e1c4045633862c948eeebeecc2,Un-break extra highlighted spaces at the end of selected lines,Core,src
+91e02be407d8ccff5928d2b9ad4f590b803ca321,Work around Webkit bug where sometimes the sizer gets the wrong width,Core,src
+dac3b43f7b85163a5b428ddb77405860a08d51f8,[lint addons] Don't error on missing dependencies,Core,src
+93de4a882a5475159f61362cafefd3892e3f6453,Add RPM changes and spec file modes with appropriate mimetypes.,Core,src
+0ee523d47a6cb9b8f4be16425383435c0fb9745b,Stop 'phantom' after-the-fact drag starts in IE10,Core,src
+36c356cc6166775cbc89756165465172ee423228,Remove trailing whitespace,Core,src
+d1942cc0ab010c34f683fd14c193418646fdedbc,Add npm module badge,Core,src
+d07f7a9c8340a9e2a4943e947fb483733c90c87b,M-x delete-trailing-whitespace (lib/codemirror.js),Core,src
+8d1937488cf0bdf1aad1decde088c292b5249141,Link Java and Scala separately from other C-like languages in mode list,Core,src
+0d8a43a05e331c1cb1881e8f11b970141fde23dd,"[markdown mode] Directly use xml mode, rather than relying on text/html binding",Core,src
+6aff0a6bdd07f3a8dd387b65fadb8682a29d9f14,"Fix charWidth to give accurate, fractional result",Core,src
+e2962a5b0df56c8ee5a4482899d308decf3d7677,Add experimental scrollCursorIntoView event,Core,src
+82752ca5d1e3bac5473de9936d864b58171ab2d8,Bump version number post-3.13,Core,src
+71be4dc37ecd08db0314f968d01b1eafb87fc7f7,[match-highlighter addon] Clean up handling of options,Core,src
+345114a579c8d207c871bf8e02d3cd9582c85049,Add word char unicode range for Korean characters,Core,src
+d07c5471ca649b78366b4c10c3ef698504a454a6,Limit firing of redraws from resize events,Core,src
+3a83dccdfa96e2dc90c3129d281525ff41241255,[markdown mode] Be somewhat more restrictive about HTML open tags,Core,src
+8c00b06b12fcaaec59b36649fb3a672ef6045a9c,[javascript mode] Improve parsing of TypeScript types,Core,src
+cde95c423cd59621b1f7b33a0de04f539fb9888a,Properly take gutter borders and margins into account when sizing gutter markers,Core,src
+699c48c9c09999340c11b57ed13044a6c929fa74,Make double-click work again in IE,Core,src
+02c569fdf4540365218b81e8cae96f6bf1fcfeb3,Introduce an extra DIV for scrolling,Core,deps
+612c6c9b2de394c14eb95459a5e11549912b12cd,Fix windows detection,Core,src
+e653b1b87fe9e39b1a0eef3f87d0108d19d02acc,Fix brace indenting for clojure maps.,Core,src
+8b8b7b061e441f8409b080ade327cacbc732272c,[xml-fold addon] Add fast-case return to findMatchingTag,Core,src
+34867cfa79789fae89e86d95af673b3b651b7a17,prevent line numbers from confusing click-position-detection,Core,src
+d920ded71aac00e96b847c7b85b24eb68a831cab,"stop clicks on the scrollbar, so that they do not unfocus the input",Core,src
+28c2f3ee0af54db2b62f72fe1a55cd9343167a16,[vim] Clean up and simplify selectCompanionObject a bit,Core,src
+1e246293de1653bba7d08e26c85eae812bbbeb78,Bump version number post-5.13.2,Core,src
+7b8ed766a8a545a6bedc594a34f466ebe260baf7,[css mode] Recognize SVG properties,Core,src
+dff59d6dc2b956c59aef252c09983dc4d7163fdc,[matchbrackets addon] Work around IE7 bug,Core,tools
+1108748b77c23696957be341ebbf52100342fa2c,[closetag addon] Fix bug in code that updated the autoCloseTags option,Core,src
+50ed255a3b7470ffacc6263f99a96531d364fb19,Integrate OCaml mode,Core,src
+7589048c5be1b558b3e48891aa2499be32d918e2,"clean up line replacement, fix corner cases",Core,src
+029285fc719aa309542b5a39c1fe21fc8d942162,Make sure viewportChange is fired properly,Core,src
+2670b1e1ab3f96b3de37d1c903104f95e3a4c36b,be a little slower to give up polling for changes,Core,src
+2c452498c550cffb45ed26fc33fb2be5332cc99a,[vim] Make option aliases for programmatic option API,Core,src
+404257d4311970f270c6e93a36124744b2347d46,Clean up VIM,Core,src
+54c8517baf789793c64ea4306168f92cf3e6cb70,Make line widget behavior more precisely configurable,Core,src
+8336267179ae5e5e4faca4fc2ae7ea1f5d887ed8,Remove byte-order mark from formatting.js,Core,src
+fb4eb18b601102a954a5c52e49570f6876fc4155,make sure the editor polls its input directly after being focused,Core,src
